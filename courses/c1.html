@@ -5,20 +5,222 @@
   <button id="bLogin">관리자 로그인</button>
   <button id="bStudent">일반으로 보기</button>
 </div>
-<div class="note admonly" id="lockNote"><b>잠금 설정</b> — 각 행의 <b>잠김/열림</b> 을 눌러 바꾼다.
-바꾼 값은 이 브라우저에만 남으므로, <b>설정 파일 저장</b> 을 눌러 <code>../assets/locks.js</code> 에 덮어쓴 뒤
-git 에 올려야 모두에게 적용된다.
-<div style="margin-top:8px">
-  <button id="bSaveLocks">설정 파일 저장</button>
-  <span id="lockMsg" style="margin-left:10px;font-size:12.5px"></span>
-</div></div>
 <div class="login" id="loginBox">
   <label>아이디 <input id="lu" autocomplete="off"></label>
   <label>비밀번호 <input id="lp" type="password" autocomplete="off"></label>
   <button id="bDo">확인</button>
   <span class="msg" id="lmsg"></span>
 </div>
-<table><tr><th>능력단위</th><th>강사</th><th>시작일</th><th>종료일</th><th>본평가</th><th>결석자평가</th><th>재평가</th><th class="sc">사전평가</th><th class="sc">능력단위</th><th>평가내역</th></tr><tr data-m="m01"><td class="nm"><a class="mlink" data-m="m01" href="../modules/m01.html">화면 설계</a></td><td>정*균</td><td>2026-02-24</td><td>2026-03-05</td><td>2026-03-05</td><td>-</td><td>-</td><td class="pre sc">50.00</td><td class="sc">86.88</td><td><a class="btn" data-m="m01" href="../modules/m01.html">평가내역</a><button class="lk" data-m="m01" type="button"></button></td></tr><tr data-m="m02"><td class="nm"><a class="mlink" data-m="m02" href="../modules/m02.html">UI 디자인</a></td><td>정*균</td><td>2026-03-05</td><td>2026-03-18</td><td>2026-03-18</td><td>-</td><td>-</td><td class="pre sc">37.50</td><td class="sc">85.63</td><td><a class="btn" data-m="m02" href="../modules/m02.html">평가내역</a><button class="lk" data-m="m02" type="button"></button></td></tr><tr data-m="m03"><td class="nm"><a class="mlink" data-m="m03" href="../modules/m03.html">화면 구현</a></td><td>정*균</td><td>2026-03-18</td><td>2026-03-27</td><td>2026-03-27</td><td>-</td><td>-</td><td class="pre sc">62.50</td><td class="sc">87.19</td><td><a class="btn" data-m="m03" href="../modules/m03.html">평가내역</a><button class="lk" data-m="m03" type="button"></button></td></tr><tr data-m="m04"><td class="nm"><a class="mlink" data-m="m04" href="../modules/m04.html">요구사항 확인</a></td><td>정*균</td><td>2026-03-30</td><td>2026-04-06</td><td>2026-04-06</td><td>-</td><td>-</td><td class="pre sc">43.75</td><td class="sc">72.5</td><td><a class="btn" data-m="m04" href="../modules/m04.html">평가내역</a><button class="lk" data-m="m04" type="button"></button></td></tr><tr data-m="m05"><td class="nm"><a class="mlink" data-m="m05" href="../modules/m05.html">데이터베이스 구현</a></td><td>정*균</td><td>2026-04-07</td><td>2026-04-14</td><td>2026-04-14</td><td>-</td><td>-</td><td class="pre sc">25.00</td><td class="sc">82.5</td><td><a class="btn" data-m="m05" href="../modules/m05.html">평가내역</a><button class="lk" data-m="m05" type="button"></button></td></tr><tr data-m="m06"><td class="nm"><a class="mlink" data-m="m06" href="../modules/m06.html">SQL활용</a></td><td>정*균</td><td>2026-04-14</td><td>2026-04-20</td><td>2026-04-20</td><td>-</td><td>-</td><td class="pre sc">81.25</td><td class="sc">86.5</td><td><a class="btn" data-m="m06" href="../modules/m06.html">평가내역</a><button class="lk" data-m="m06" type="button"></button></td></tr><tr data-m="m07"><td class="nm"><a class="mlink" data-m="m07" href="../modules/m07.html">개발 환경 운영 지원</a></td><td>김*우,정*균</td><td>2026-04-20</td><td>2026-04-27</td><td>2026-04-27</td><td>-</td><td>-</td><td class="pre sc">31.25</td><td class="sc">87.5</td><td><a class="btn" data-m="m07" href="../modules/m07.html">평가내역</a><button class="lk" data-m="m07" type="button"></button></td></tr><tr data-m="m08"><td class="nm"><a class="mlink" data-m="m08" href="../modules/m08.html">프로그래밍 언어 활용</a></td><td>정*균</td><td>2026-04-27</td><td>2026-05-11</td><td>2026-05-11</td><td>-</td><td>-</td><td class="pre sc">75.00</td><td class="sc">92.5</td><td><a class="btn" data-m="m08" href="../modules/m08.html">평가내역</a><button class="lk" data-m="m08" type="button"></button></td></tr><tr data-m="m09"><td class="nm"><a class="mlink" data-m="m09" href="../modules/m09.html">네트워크 프로그래밍 구현</a></td><td>정*균</td><td>2026-05-11</td><td>2026-05-19</td><td>2026-05-19</td><td>-</td><td>-</td><td class="pre sc">62.50</td><td class="sc">77.5</td><td><a class="btn" data-m="m09" href="../modules/m09.html">평가내역</a><button class="lk" data-m="m09" type="button"></button></td></tr><tr data-m="m10"><td class="nm"><a class="mlink" data-m="m10" href="../modules/m10.html">인터페이스 구현</a></td><td>정*균</td><td>2026-05-19</td><td>2026-05-27</td><td>2026-05-27</td><td>-</td><td>-</td><td class="pre sc">62.50</td><td class="sc">93</td><td><a class="btn" data-m="m10" href="../modules/m10.html">평가내역</a><button class="lk" data-m="m10" type="button"></button></td></tr><tr data-m="m11"><td class="nm"><a class="mlink" data-m="m11" href="../modules/m11.html">애플리케이션 설계</a></td><td>정*균</td><td>2026-05-27</td><td>2026-06-08</td><td>2026-06-08</td><td>2026-06-09</td><td>-</td><td class="pre sc">37.50</td><td class="sc">76.5</td><td><a class="btn" data-m="m11" href="../modules/m11.html">평가내역</a><button class="lk" data-m="m11" type="button"></button></td></tr><tr data-m="m12"><td class="nm"><a class="mlink" data-m="m12" href="../modules/m12.html">서버프로그램 구현</a></td><td>정*균</td><td>2026-06-08</td><td>2026-06-18</td><td>2026-06-18</td><td>-</td><td>-</td><td class="pre sc">43.75</td><td class="sc">82.5</td><td><a class="btn" data-m="m12" href="../modules/m12.html">평가내역</a><button class="lk" data-m="m12" type="button"></button></td></tr><tr data-m="m13"><td class="nm"><a class="mlink" data-m="m13" href="../modules/m13.html">통합 구현</a></td><td>정*균</td><td>2026-06-18</td><td>2026-06-25</td><td>2026-06-25</td><td>-</td><td>-</td><td class="pre sc">62.50</td><td class="sc">91</td><td><a class="btn" data-m="m13" href="../modules/m13.html">평가내역</a><button class="lk" data-m="m13" type="button"></button></td></tr><tr data-m="m14"><td class="nm"><a class="mlink" data-m="m14" href="../modules/m14.html">애플리케이션 테스트 수행</a></td><td>정*균</td><td>2026-06-25</td><td>2026-07-02</td><td>2026-07-02</td><td>-</td><td>-</td><td class="pre sc">62.50</td><td class="sc">82.29</td><td><a class="btn" data-m="m14" href="../modules/m14.html">평가내역</a><button class="lk" data-m="m14" type="button"></button></td></tr><tr data-m="m15"><td class="nm"><a class="mlink" data-m="m15" href="../modules/m15.html">애플리케이션 배포</a></td><td>정*균</td><td>2026-07-02</td><td>2026-07-08</td><td>2026-07-08</td><td>2026-07-10</td><td>-</td><td class="pre sc">56.25</td><td class="sc">91.29</td><td><a class="btn" data-m="m15" href="../modules/m15.html">평가내역</a><button class="lk" data-m="m15" type="button"></button></td></tr><tr data-m="m16"><td class="nm"><a class="mlink" data-m="m16" href="../modules/m16.html">(비NCS 실기)공공 데이터 융합 DBMS 구축</a></td><td>정*균</td><td>2026-07-08</td><td>2026-07-21</td><td>-</td><td>-</td><td>-</td><td class="pre sc">0</td><td class="sc">0</td><td><a class="btn" data-m="m16" href="../modules/m16.html">평가내역</a><button class="lk" data-m="m16" type="button"></button></td></tr><tr data-m="m17"><td class="nm"><a class="mlink" data-m="m17" href="../modules/m17.html">(비NCS 실기)공공 데이터 융합 실무 프로젝트</a></td><td>정*균</td><td>2026-07-21</td><td>2026-08-12</td><td>-</td><td>-</td><td>-</td><td class="pre sc">0</td><td class="sc">0</td><td><a class="btn" data-m="m17" href="../modules/m17.html">평가내역</a><button class="lk" data-m="m17" type="button"></button></td></tr></table><footer>(디지털 컨버전스) 공공데이터 융합 풀스택 개발자 양성과정E · 2026-02-24 ~ 2026-08-12 · 담당 정우균</footer></div>
+
+<div class="note admonly" id="mNote"><b>능력단위 관리</b> — 표에서 <b>수정·삭제</b> 하고, 각 행의
+<b>잠김/열림</b> 으로 학생이 평가내역을 열 수 있는지 정한다. 바꾼 것은 이 브라우저에만 남는다.
+<b>설정 파일 저장</b> 을 눌러 <code>assets/modules.js</code> 와 <code>assets/locks.js</code> 에
+덮어쓴 뒤 git 에 올려야 모두에게 적용된다.
+<form class="cform" id="mForm">
+  <input id="mName" placeholder="능력단위명" required>
+  <input id="mTc" placeholder="강사" value="정*균">
+  <span class="cdate">기간 <input type="date" id="mSd"> ~ <input type="date" id="mEd"></span>
+  <button type="submit">능력단위 추가</button>
+</form>
+<div style="margin-top:8px">
+  <button id="bSaveMods" type="button">설정 파일 저장</button>
+  <button id="bResetMods" type="button">되돌리기</button>
+  <span id="mMsg" style="margin-left:10px;font-size:12.5px"></span>
+</div></div>
+<table id="mtable"></table><footer>(디지털 컨버전스) 공공데이터 융합 풀스택 개발자 양성과정E · 2026-02-24 ~ 2026-08-12 · 담당 정우균</footer></div><script src="../assets/locks.js"></script>
+<script src="../assets/modules.js"></script>
+<script>
+(function(){
+  var MKEY='exam_modules';
+  var COLS=[['name','능력단위','text'],['tc','강사','text'],['sd','시작일','date'],
+            ['ed','종료일','date'],['ev','본평가','date'],['ab','결석자평가','date'],
+            ['re','재평가','date'],['pre','사전평가','text'],['sc','능력단위','text'],
+            ['page','평가내역','text']];
+  var editing=-1;
+
+  function base(){ return (window.EXAM_MODULES||[]).slice(); }
+  function list(){
+    try{ var d=localStorage.getItem(MKEY); if(d) return JSON.parse(d); }catch(e){}
+    return base();
+  }
+  function save(v){ try{ localStorage.setItem(MKEY, JSON.stringify(v)); }catch(e){
+    alert('저장 공간이 부족하다.'); } }
+  function esc(s){ return String(s==null?'':s)
+    .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+  function ymd(d){ return d.getFullYear()+'-'+('0'+(d.getMonth()+1)).slice(-2)+'-'+('0'+d.getDate()).slice(-2); }
+  function isDate(s){ return /^\d{4}-\d{2}-\d{2}$/.test(String(s||'')); }
+
+  // 잠금 : 기본값 assets/locks.js, 관리자가 바꾼 것은 이 브라우저에만
+  var LKEY='exam_locks';
+  function ovr(){ try{return JSON.parse(localStorage.getItem(LKEY)||'{}');}catch(e){return {};} }
+  function locked(m){ var o=ovr(); return (m in o) ? o[m] : !!(window.EXAM_LOCKS||{})[m]; }
+  function setLock(m,v){ var o=ovr(); o[m]=v; try{localStorage.setItem(LKEY,JSON.stringify(o));}catch(e){} }
+
+  function draw(){
+    var v=list(), adm=EXAM_AUTH.isAdmin(), h='';
+    h+='<tr><th>능력단위</th><th>강사</th><th>시작일</th><th>종료일</th><th>본평가</th>'+
+       '<th>결석자평가</th><th>재평가</th><th class="sc">사전평가</th><th class="sc">능력단위</th>'+
+       '<th>평가내역</th></tr>';
+    v.forEach(function(m,i){
+      if(adm && i===editing){
+        var tds='';
+        COLS.forEach(function(c){
+          var val=m[c[0]]||'';
+          var type=(c[2]==='date' && (isDate(val)||val==='')) ? 'date' : 'text';
+          var cls=(c[0]==='pre'||c[0]==='sc') ? ' class="sc"' : '';
+          tds+='<td'+cls+'><input class="mi" data-f="'+c[0]+'" type="'+type+'" value="'+esc(val)+'"></td>';
+        });
+        h+='<tr class="med">'+tds+'</tr>'+
+           '<tr class="med"><td colspan="10" class="mrow">'+
+           '<button class="mok" data-i="'+i+'" type="button">저장</button>'+
+           '<button class="mno" type="button">취소</button>'+
+           '<span class="mhint">날짜가 아닌 값(예: -)은 그대로 적는다. 평가내역은 modules/mNN.html</span>'+
+           '</td></tr>';
+        return;
+      }
+      var lk=locked(m.id), shut=(!adm && lk), pg=m.page||'';
+      var nm = (pg && !shut)
+        ? '<a class="mlink" href="../'+esc(pg)+'">'+esc(m.name)+'</a>'
+        : '<span class="mlink d">'+esc(m.name)+'</span>';
+      var btn = (pg && !shut)
+        ? '<a class="btn" href="../'+esc(pg)+'">평가내역</a>'
+        : '<a class="btn d">평가내역</a>';
+      var tools = adm
+        ? '<button class="lk'+(lk?' on':'')+'" data-m="'+esc(m.id)+'" type="button">'+
+          (lk?'잠김':'열림')+'</button>'+
+          '<button class="med2" data-i="'+i+'" type="button">수정</button>'+
+          '<button class="mdel" data-i="'+i+'" type="button">삭제</button>'
+        : '';
+      h+='<tr'+(lk?'':' class="open"')+'><td class="nm">'+nm+'</td><td>'+esc(m.tc)+'</td>'+
+         '<td>'+esc(m.sd)+'</td><td>'+esc(m.ed)+'</td><td>'+esc(m.ev||'-')+'</td>'+
+         '<td>'+esc(m.ab||'-')+'</td><td>'+esc(m.re||'-')+'</td>'+
+         '<td class="pre sc">'+esc(m.pre)+'</td><td class="sc">'+esc(m.sc)+'</td>'+
+         '<td class="tdb">'+btn+tools+'</td></tr>';
+    });
+    document.getElementById('mtable').innerHTML=h;
+
+    document.querySelectorAll('.lk').forEach(function(b){
+      b.onclick=function(){ setLock(b.dataset.m, !locked(b.dataset.m)); draw(); };
+    });
+    document.querySelectorAll('.med2').forEach(function(b){
+      b.onclick=function(){ editing=+b.dataset.i; draw(); };
+    });
+    document.querySelectorAll('.mno').forEach(function(b){
+      b.onclick=function(){ editing=-1; draw(); };
+    });
+    document.querySelectorAll('.mdel').forEach(function(b){
+      b.onclick=function(){
+        var w=list(), i=+b.dataset.i;
+        if(!confirm('"'+w[i].name+'" 을 지운다. 계속할까?')) return;
+        w.splice(i,1); save(w); editing=-1; draw();
+        document.getElementById('mMsg').textContent='지웠다. 설정 파일 저장을 눌러야 남는다.';
+      };
+    });
+    document.querySelectorAll('.mok').forEach(function(b){
+      b.onclick=function(){
+        var w=list(), i=+b.dataset.i, got={};
+        document.querySelectorAll('tr.med .mi').forEach(function(e){ got[e.dataset.f]=e.value.trim(); });
+        if(!got.name){ alert('능력단위명은 비울 수 없다.'); return; }
+        COLS.forEach(function(c){ w[i][c[0]]=got[c[0]]; });
+        save(w); editing=-1; draw();
+        document.getElementById('mMsg').textContent='고쳤다. 설정 파일 저장을 눌러야 남는다.';
+      };
+    });
+  }
+
+  // 추가
+  function setDefaultDates(){
+    var a=document.getElementById('mSd'), b2=document.getElementById('mEd');
+    if(!a||!b2) return;
+    var s0=new Date(), e0=new Date(); e0.setDate(e0.getDate()+7);
+    a.value=ymd(s0); b2.value=ymd(e0);
+  }
+  var mf=document.getElementById('mForm');
+  if(mf) mf.addEventListener('submit',function(e){
+    e.preventDefault();
+    var v=list(), n=1, used={};
+    v.forEach(function(x){ used[x.id]=1; });
+    while(used['m'+('0'+n).slice(-2)]) n++;
+    var id='m'+('0'+n).slice(-2);
+    v.push({id:id, name:document.getElementById('mName').value.trim(),
+            tc:document.getElementById('mTc').value.trim(),
+            sd:document.getElementById('mSd').value, ed:document.getElementById('mEd').value,
+            ev:'-', ab:'-', re:'-', pre:'0', sc:'0', page:''});
+    save(v); mf.reset(); setDefaultDates(); draw();
+    document.getElementById('mMsg').textContent=
+      id+' 을 추가했다. 평가내역 페이지가 있으면 수정에서 modules/'+id+'.html 을 적는다. '+
+      '설정 파일 저장을 눌러야 남는다.';
+  });
+  var br2=document.getElementById('bResetMods');
+  if(br2) br2.onclick=function(){
+    if(!confirm('파일에 저장된 내용으로 되돌린다. 계속할까?')) return;
+    try{ localStorage.removeItem(MKEY); localStorage.removeItem(LKEY); }catch(e){}
+    editing=-1; draw(); document.getElementById('mMsg').textContent='';
+  };
+  // 잠금이 파일 기본값과 달라졌는지
+  function lockChanged(){
+    var o=ovr(), base=(window.EXAM_LOCKS||{});
+    return Object.keys(o).some(function(k){ return !!o[k] !== !!base[k]; });
+  }
+  function locksText(){
+    var NL=String.fromCharCode(10), out={};
+    list().forEach(function(m){ out[m.id]=locked(m.id); });
+    return [
+      '/* 모듈별 잠금 상태.  true = 잠김(일반은 평가내역을 못 연다)',
+      ' * courses/c1.html 의 [설정 파일 저장] 이 이 파일을 덮어쓴다. 손으로 고쳐도 된다.',
+      ' * 고친 뒤 git 에 올려야 학생 화면에 적용된다.',
+      ' */',
+      'window.EXAM_LOCKS = '+JSON.stringify(out,null,2)+';',
+      ''
+    ].join(NL);
+  }
+  async function put(name, txt, mime){
+    if(window.showSaveFilePicker){
+      try{
+        var h=await showSaveFilePicker({suggestedName:name,
+          types:[{description:'JavaScript',accept:{'text/javascript':['.js']}}]});
+        var w=await h.createWritable(); await w.write(txt); await w.close();
+        return 'saved';
+      }catch(e){ if(e.name==='AbortError') return 'cancel'; }
+    }
+    var a=document.createElement('a');
+    a.href='data:'+mime+';charset=utf-8,'+encodeURIComponent(txt);
+    a.download=name; document.body.appendChild(a); a.click(); a.remove();
+    return 'download';
+  }
+
+  var bs2=document.getElementById('bSaveMods');
+  if(bs2) bs2.onclick=async function(){
+    var NL=String.fromCharCode(10);
+    var txt=[
+      '/* 능력단위 평가 모듈 목록.',
+      ' * courses/c1.html 의 [설정 파일 저장] 이 이 파일을 덮어쓴다. 손으로 고쳐도 된다.',
+      ' * 고친 뒤 git 에 올려야 모두에게 적용된다.',
+      ' */',
+      'window.EXAM_MODULES = '+JSON.stringify(list(),null,2)+';',
+      ''
+    ].join(NL);
+    var m=document.getElementById('mMsg');
+    var r=await put('modules.js', txt, 'text/javascript');
+    if(r==='cancel'){ m.textContent=''; return; }
+    // 잠금도 바꿨으면 locks.js 까지 이어서 저장한다
+    if(lockChanged()){
+      m.textContent='modules.js 저장 완료. 이어서 locks.js 를 저장한다.';
+      var r2=await put('locks.js', locksText(), 'text/javascript');
+      m.textContent = (r2==='cancel')
+        ? 'modules.js 만 저장했다. 잠금을 반영하려면 다시 눌러 locks.js 도 저장한다.'
+        : 'modules.js · locks.js 저장 완료. git add/commit/push 하면 적용된다.';
+      return;
+    }
+    m.textContent = (r==='saved')
+      ? 'modules.js 저장 완료. git add/commit/push 하면 적용된다.'
+      : 'modules.js 를 내려받았다. assets/ 에 덮어쓴 뒤 git 에 올린다.';
+  };
+  setDefaultDates();
+  window.__drawMods = draw;
+})();
+</script>
+
 <script src="../assets/auth.js"></script>
 <script src="../assets/locks.js"></script>
 <script>
@@ -26,62 +228,12 @@ git 에 올려야 모두에게 적용된다.
   var box=document.getElementById('roleBox'), now=document.getElementById('roleNow'),
       login=document.getElementById('loginBox'),
       msg=document.getElementById('lmsg');
-  // 잠금 : 기본값은 assets/locks.js, 관리자가 화면에서 바꾼 것은 이 브라우저에만 남는다
-  var LKEY='exam_locks';
-  function ovr(){ try{return JSON.parse(localStorage.getItem(LKEY)||'{}');}catch(e){return {};} }
-  function locked(m){ var o=ovr(); return (m in o) ? o[m] : !!(window.EXAM_LOCKS||{})[m]; }
-  function setLock(m,v){ var o=ovr(); o[m]=v; try{localStorage.setItem(LKEY,JSON.stringify(o));}catch(e){} }
-  function paintLocks(adm){
-    document.querySelectorAll('tr[data-m]').forEach(function(tr){
-      var m=tr.dataset.m, lk=locked(m), shut=(!adm && lk);
-      var btn=tr.querySelector('.btn'), lnk=tr.querySelector('.mlink'), tg=tr.querySelector('.lk');
-      btn.classList.toggle('d',shut);
-      lnk.classList.toggle('d',shut);
-      if(shut){ btn.removeAttribute('href'); lnk.removeAttribute('href'); }
-      else { btn.href='../modules/'+m+'.html'; lnk.href='../modules/'+m+'.html'; }
-      tg.textContent = lk ? '잠김' : '열림';
-      tg.classList.toggle('on',lk);
-      tr.classList.toggle('open',!lk);
-    });
-  }
-  document.querySelectorAll('.lk').forEach(function(tg){
-    tg.onclick=function(){ setLock(tg.dataset.m, !locked(tg.dataset.m)); paint(); };
-  });
-
-  // 지금 화면의 잠금 상태를 assets/locks.js 내용으로 만든다.
-  // 값은 JSON 이지만, file:// 로 열었을 때 fetch 가 막히므로 .js 로 감싸 script 태그로 읽는다.
-  function locksText(){
-    var ms=[].map.call(document.querySelectorAll('tr[data-m]'),function(tr){return tr.dataset.m;});
-    var o={}; ms.forEach(function(m){ o[m]=locked(m); });
-    return '/* 모듈별 잠금 상태.  true = 잠김(일반은 평가내역을 못 연다)\n'+
-           ' * index.html 의 [설정 파일 저장] 이 이 파일을 덮어쓴다. 손으로 고쳐도 된다.\n'+
-           ' * 고친 뒤 git 에 올려야 학생 화면에 적용된다.\n */\n'+
-           'window.EXAM_LOCKS = '+JSON.stringify(o,null,2)+';\n';
-  }
-  var lmsg2=document.getElementById('lockMsg');
-  document.getElementById('bSaveLocks').onclick=async function(){
-    var txt=locksText();
-    if(window.showSaveFilePicker){                 // clone 한 폴더의 파일에 바로 덮어쓴다
-      try{
-        var h=await showSaveFilePicker({suggestedName:'locks.js',
-          types:[{description:'JavaScript',accept:{'text/javascript':['.js']}}]});
-        var w=await h.createWritable(); await w.write(txt); await w.close();
-        lmsg2.textContent='저장했다. git add/commit/push 하면 학생 화면에 적용된다.';
-        return;
-      }catch(e){ if(e.name==='AbortError'){ lmsg2.textContent=''; return; } }
-    }
-    var a=document.createElement('a');            // 안 되면 내려받기로
-    a.href='data:text/javascript;charset=utf-8,'+encodeURIComponent(txt);
-    a.download='locks.js'; document.body.appendChild(a); a.click(); a.remove();
-    lmsg2.textContent='locks.js 를 내려받았다. assets/locks.js 에 덮어쓴 뒤 git 에 올린다.';
-  };
-
   function paint(){
     var adm=EXAM_AUTH.isAdmin();
     now.textContent=EXAM_AUTH.label();
     box.classList.toggle('adm',adm);
     document.body.classList.toggle('admin',adm);
-    paintLocks(adm);
+    if(window.__drawMods) window.__drawMods();
     document.getElementById('bLogin').style.display=adm?'none':'';
     document.getElementById('bStudent').textContent=adm?'관리자 해제':'일반으로 보기';
     if(adm) login.classList.remove('on');
