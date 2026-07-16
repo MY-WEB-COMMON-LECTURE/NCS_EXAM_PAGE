@@ -1,0 +1,39 @@
+<meta charset="utf-8"><title>과목 목록</title><link rel="stylesheet" href="assets/site.css"><div class="top"><div class="brand"><a href="index.html">평가 자료</a></div></div><div class="wrap"><h1 class="only">과목 목록<span id="gWho" class="who2">보기 모드 <b id="gName"></b><button id="gOut">로그아웃</button></span></h1>
+<div class="gate" id="gate">
+  <h2>로그인</h2>
+  <p>아이디와 비밀번호를 넣어야 과목으로 들어갈 수 있다.</p>
+  <div class="gf">
+    <label>아이디 <input id="gu" autocomplete="username"></label>
+    <label>비밀번호 <input id="gp" type="password" autocomplete="current-password"></label>
+    <button id="gDo">들어가기</button>
+  </div>
+  <div class="gmsg" id="gmsg"></div>
+</div>
+<div class="cgrid" id="cards"><a class="ccard" href="courses/c1.html"><h3>(디지털 컨버전스) 공공데이터 융합 풀스택 개발자 양성과정E</h3><dl><dt>기간</dt><dd>2026-02-24 ~ 2026-08-10</dd><dt>시간</dt><dd>900시간</dd></dl><span class="go">평가 모듈 목록</span></a><div class="ccard na"><h3>정보처리산업기사 과정평가형</h3><dl><dt>기간</dt><dd>-</dd><dt>시간</dt><dd>-</dd></dl><span class="go">준비 중</span></div><div class="ccard na"><h3>빅데이터 UI 전문가 양성과정</h3><dl><dt>기간</dt><dd>-</dd><dt>시간</dt><dd>-</dd></dl><span class="go">준비 중</span></div></div><footer>담당 정우균</footer></div>
+<script src="assets/auth.js"></script>
+<script>
+(function(){
+  var gate=document.getElementById('gate'), cards=document.getElementById('cards'),
+      who=document.getElementById('gWho'), msg=document.getElementById('gmsg');
+  function paint(){
+    var on=EXAM_AUTH.signedIn();
+    gate.style.display = on ? 'none' : '';
+    cards.style.display = on ? '' : 'none';
+    who.style.display = on ? '' : 'none';
+    if(on) document.getElementById('gName').textContent=EXAM_AUTH.label();
+  }
+  async function go(){
+    msg.className='gmsg';
+    var r=await EXAM_AUTH.signIn(document.getElementById('gu').value,
+                                 document.getElementById('gp').value);
+    if(r){ document.getElementById('gp').value=''; paint(); }
+    else { msg.className='gmsg err'; msg.textContent='아이디 또는 비밀번호가 맞지 않다.'; }
+  }
+  document.getElementById('gDo').onclick=go;
+  ['gu','gp'].forEach(function(id){
+    document.getElementById(id).addEventListener('keydown',function(e){ if(e.key==='Enter') go(); });
+  });
+  document.getElementById('gOut').onclick=function(){ EXAM_AUTH.signOut(); paint(); };
+  paint();
+})();
+</script>

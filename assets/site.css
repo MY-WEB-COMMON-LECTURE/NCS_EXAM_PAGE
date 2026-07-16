@@ -1,0 +1,125 @@
+
+*{box-sizing:border-box}
+body{margin:0;background:#fff;color:#000;
+     font-family:"Malgun Gothic","Segoe UI",-apple-system,sans-serif;line-height:1.7;font-size:15px}
+a{color:#000}
+.top{border-bottom:2px solid #000;position:sticky;top:0;background:#fff;z-index:20}
+.top .brand{padding:11px 18px 6px;font-weight:700;font-size:15px;letter-spacing:-.01em}
+.top .brand a{color:#000;text-decoration:none}
+.top .brand a:hover{border-bottom:1px solid #000}
+.top .brand small{font-weight:400;color:#555;font-size:12px;margin-left:8px}
+.nav{display:flex;flex-wrap:wrap;gap:0;padding:0 12px 9px}
+.nav a{display:block;padding:3px 9px;margin:2px;font-size:12.5px;text-decoration:none;
+       border:1px solid #ccc;white-space:nowrap;color:#000}
+.nav a:hover{border-color:#000;background:#f0f0f0}
+.nav a.act{background:#000;color:#fff;border-color:#000;font-weight:700}
+.nav a.na{color:#888;border-style:dashed}
+.wrap{max-width:1180px;margin:0 auto;padding:26px 18px 70px}
+h1{font-size:21px;margin:0 0 4px}
+.sub{color:#555;font-size:13px;margin:0 0 16px;padding-bottom:12px;border-bottom:1px solid #000}
+h1.only{margin:0 0 4px;padding-bottom:12px;border-bottom:1px solid #000}
+table{border-collapse:collapse;width:100%;font-size:13px}
+th,td{border:1px solid #999;padding:6px 8px;text-align:center}
+th{background:#eee;font-weight:700;white-space:nowrap}
+td.nm{text-align:left}
+tr.on td{background:#f4f4f4;font-weight:700}
+tr.on td.nm a{border-bottom:2px solid #000;padding-bottom:1px}
+.pre{color:#555}
+.btn{display:inline-block;border:1px solid #000;padding:2px 9px;font-size:12px;text-decoration:none;background:#fff}
+.btn:hover{background:#000;color:#fff}
+.btn.d{border-style:dashed;color:#888;border-color:#bbb;pointer-events:none;background:#f6f6f6}
+
+/* 사전평가·능력단위 점수 : 관리자에게만 */
+body:not(.admin) .sc{display:none}
+
+/* 모듈명 링크 : 잠기면 못 누른다 */
+.mlink{text-decoration:none;border-bottom:1px solid #000}
+.mlink.d{color:#888;border-bottom:1px dashed #bbb;pointer-events:none}
+
+/* 잠금 토글 : 관리자에게만 */
+.lk{display:none;margin-left:5px;border:1px solid #000;background:#fff;color:#000;
+    font-size:11px;padding:1px 7px;cursor:pointer;font-family:inherit}
+.lk:hover{background:#000;color:#fff}
+.lk.on{background:#000;color:#fff}
+.admonly{display:none}
+body.admin .admonly{display:block}
+code{background:#eee;border:1px solid #ddd;padding:0 4px;font-family:Consolas,monospace;font-size:12px}
+body.admin .lk{display:inline-block}
+tr.open td{background:#f4f4f4}
+tr.open td.nm .mlink{border-bottom-width:2px;font-weight:700}
+.note{border:1px solid #000;border-left-width:4px;padding:9px 13px;margin:16px 0;font-size:13.5px;background:#fafafa}
+.note b{font-weight:700}
+/* 과목 카드 : 열 4개 고정, 행은 늘어나는 대로 */
+.cgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:18px 0}
+.ccard{display:flex;flex-direction:column;border:1px solid #000;padding:16px;
+       text-decoration:none;color:#000;min-height:150px}
+.ccard h3{margin:0 0 10px;font-size:15px;line-height:1.5;flex:1}
+.ccard dl{margin:0 0 12px;font-size:12px;display:grid;grid-template-columns:34px 1fr;gap:1px 8px}
+.ccard dt{color:#555}.ccard dd{margin:0}
+.ccard .go{display:inline-block;border:1px solid #000;padding:2px 9px;font-size:12px;align-self:flex-start}
+.ccard:hover{background:#000;color:#fff}
+.ccard:hover dt{color:#ccc}
+.ccard:hover .go{border-color:#fff}
+.ccard.na{border-style:dashed;border-color:#bbb;color:#888;cursor:default}
+.ccard.na .go{border-color:#ccc;color:#888}
+.ccard.na:hover{background:#fff;color:#888}
+@media (max-width:1100px){.cgrid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:640px){.cgrid{grid-template-columns:1fr}}
+
+.cards{display:flex;gap:12px;flex-wrap:wrap;margin:16px 0}
+.card{border:1px solid #000;padding:14px 16px;flex:1 1 300px;min-width:280px}
+.card h3{margin:0 0 3px;font-size:15px}
+.card .d{color:#555;font-size:12.5px;margin:0 0 10px;min-height:34px}
+.card dl{margin:0 0 12px;font-size:12.5px;display:grid;grid-template-columns:74px 1fr;gap:2px 8px}
+.card dt{color:#555}.card dd{margin:0}
+.card .go{display:flex;gap:6px}
+footer{margin-top:34px;border-top:1px solid #000;padding-top:10px;color:#555;font-size:12.5px}
+.empty{border:1px dashed #999;padding:34px 20px;text-align:center;color:#666;font-size:13.5px;margin:18px 0}
+@media (max-width:760px){.nav{padding:0 8px 8px}table{font-size:12px}th,td{padding:4px 5px}}
+
+/* 로그인 문 */
+.gate{border:1px solid #000;max-width:420px;margin:28px auto;padding:22px 24px}
+.gate h2{margin:0 0 6px;font-size:17px}
+.gate p{margin:0 0 16px;font-size:12.5px;color:#555}
+.gate .gf{display:flex;flex-direction:column;gap:12px}
+.gate label{font-size:12.5px;color:#555;display:flex;align-items:center;gap:8px}
+.gate input{flex:1;border:none;border-bottom:1px solid #000;padding:3px 4px;
+            font-family:inherit;font-size:13.5px;outline:none;background:transparent}
+.gate input:focus{background:#f2f2f2}
+.gate button{border:1px solid #000;background:#000;color:#fff;padding:6px 0;
+             font-size:13px;cursor:pointer;font-family:inherit;margin-top:4px}
+.gate button:hover{background:#fff;color:#000}
+.gmsg{margin-top:10px;font-size:12.5px;min-height:18px}
+.gmsg.err{font-weight:700}
+.who2{float:right;font-size:12.5px;font-weight:400;color:#555}
+.who2 b{border:1px solid #000;padding:1px 8px;font-size:12px;color:#000;margin:0 6px}
+.who2 button{border:1px solid #000;background:#fff;color:#000;padding:2px 9px;
+             font-size:12px;cursor:pointer;font-family:inherit}
+.who2 button:hover{background:#000;color:#fff}
+
+/* 보기 모드 */
+.role{border:1px solid #000;padding:12px 15px;margin:0 0 18px;display:flex;
+      align-items:center;gap:12px;flex-wrap:wrap}
+.role .now{font-size:13px}
+.role .now b{border:1px solid #000;padding:1px 9px;font-size:12px}
+.role.adm{background:#000;color:#fff}
+.role.adm .now b{border-color:#fff}
+.role .sp{flex:1}
+.role button{border:1px solid #000;background:#fff;color:#000;padding:4px 12px;
+             font-size:12.5px;cursor:pointer;font-family:inherit}
+.role button:hover{background:#000;color:#fff}
+.role.adm button{border-color:#fff;background:#000;color:#fff}
+.role.adm button:hover{background:#fff;color:#000}
+.login{border:1px solid #000;border-top:none;padding:14px 15px;margin:-18px 0 18px;
+       display:none;font-size:13px}
+.login.on{display:block}
+.login label{display:inline-block;margin-right:12px}
+.login input{border:none;border-bottom:1px solid #000;padding:2px 4px;font-family:inherit;
+             font-size:13px;outline:none;background:transparent;min-width:130px}
+.login .msg{margin-left:10px;font-size:12.5px}
+.login .msg.err{font-weight:700}
+#bSaveLocks{border:1px solid #000;background:#fff;color:#000;padding:3px 11px;
+            font-size:12.5px;cursor:pointer;font-family:inherit}
+#bSaveLocks:hover{background:#000;color:#fff}
+.warn{border:1px solid #000;border-left-width:4px;background:#f2f2f2;padding:9px 13px;
+      margin:14px 0;font-size:12.5px;color:#333}
