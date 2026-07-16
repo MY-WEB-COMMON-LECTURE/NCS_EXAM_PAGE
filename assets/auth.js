@@ -40,6 +40,22 @@ window.EXAM_AUTH = (function () {
       return true;
     },
 
+    /* 상단 헤더 오른쪽의 보기 모드 + 로그아웃. 모든 페이지에서 부른다. */
+    paintTop: function (up) {
+      var box = document.getElementById('tUser');
+      if (!box) return;
+      var on = this.signedIn();
+      box.style.display = on ? '' : 'none';
+      if (!on) return;
+      var name = document.getElementById('tName');
+      if (name) name.textContent = this.label();
+      var out = document.getElementById('tOut');
+      if (out && !out.onclick) {
+        var self = this;
+        out.onclick = function () { self.signOut(); location.href = (up || '') + 'index.html'; };
+      }
+    },
+
     /* ---------- 보기 모드 ---------- */
     role: function () { return get(KEY) === 'admin' ? 'admin' : 'student'; },
     isAdmin: function () { return this.role() === 'admin'; },
