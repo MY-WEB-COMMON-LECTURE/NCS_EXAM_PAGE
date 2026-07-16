@@ -69,12 +69,28 @@ tr.open td.nm .mlink{border-bottom-width:2px;font-weight:700}
 .ccard.na{border-style:dashed;border-color:#bbb;color:#888;cursor:default}
 .ccard.na .go{border-color:#ccc;color:#888}
 .ccard.na:hover{background:#fff;color:#888}
-/* 카드 + 지우기(관리자) */
+/* 카드 + 수정·지우기(관리자) */
 .cwrap{display:flex;flex-direction:column}
 .cwrap .ccard{flex:1}
-.cdel{border:1px solid #000;border-top:none;background:#fff;color:#000;padding:3px 0;
-      font-size:11.5px;cursor:pointer;font-family:inherit}
-.cdel:hover{background:#000;color:#fff}
+.ctools{display:flex}
+.ctools button{flex:1;border:1px solid #000;border-top:none;background:#fff;color:#000;
+               padding:3px 0;font-size:11.5px;cursor:pointer;font-family:inherit}
+.ctools button+button{border-left:none}
+.ctools button:hover{background:#000;color:#fff}
+
+/* 카드 수정 중 */
+.ccard.ed{border-width:2px;gap:6px;cursor:default}
+.ccard.ed:hover{background:#fff;color:#000}
+.ei{border:1px solid #999;padding:5px 7px;font-family:inherit;font-size:12.5px;
+    outline:none;width:100%}
+.ei:focus{border-color:#000}
+.erow{display:flex;gap:6px;margin-top:2px}
+.erow button{flex:1;border:1px solid #000;padding:4px 0;font-size:12px;
+             cursor:pointer;font-family:inherit}
+.eok{background:#000;color:#fff}
+.eok:hover{background:#fff;color:#000}
+.eno{background:#fff;color:#000}
+.eno:hover{background:#000;color:#fff}
 @media (max-width:1100px){.cgrid{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:640px){.cgrid{grid-template-columns:1fr}}
 

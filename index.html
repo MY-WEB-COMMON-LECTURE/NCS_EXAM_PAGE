@@ -39,25 +39,61 @@
   function esc(s){ return String(s==null?'':s)
     .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
 
+  var editing = -1;                    // 지금 고치고 있는 카드 (없으면 -1)
+
   function draw(){
     var cs=list(), adm=EXAM_AUTH.isAdmin(), h='';
     cs.forEach(function(c,i){
+      // 고치는 중인 카드는 입력칸으로 바꾼다
+      if(adm && i===editing){
+        h+='<div class="cwrap"><div class="ccard ed">'+
+           '<input class="ei" data-f="name" value="'+esc(c.name)+'" placeholder="과목명">'+
+           '<input class="ei" data-f="period" value="'+esc(c.period||'')+'" placeholder="기간">'+
+           '<input class="ei" data-f="hours" value="'+esc(c.hours||'')+'" placeholder="시간">'+
+           '<input class="ei" data-f="page" value="'+esc(c.page||'')+'" '+
+             'placeholder="들어갈 페이지 (비우면 준비 중)">'+
+           '<div class="erow"><button class="eok" data-i="'+i+'" type="button">저장</button>'+
+           '<button class="eno" type="button">취소</button></div>'+
+           '</div></div>';
+        return;
+      }
       var meta='<dl><dt>기간</dt><dd>'+esc(c.period||'-')+'</dd>'+
                '<dt>시간</dt><dd>'+esc(c.hours||'-')+'</dd></dl>';
-      var del = adm ? '<button class="cdel" data-i="'+i+'" type="button">지우기</button>' : '';
+      var tools = adm ? '<div class="ctools">'+
+           '<button class="ced" data-i="'+i+'" type="button">수정</button>'+
+           '<button class="cdel" data-i="'+i+'" type="button">지우기</button></div>' : '';
       if(c.page)
         h+='<div class="cwrap"><a class="ccard" href="'+esc(c.page)+'"><h3>'+esc(c.name)+'</h3>'+
-           meta+'<span class="go">평가 모듈 목록</span></a>'+del+'</div>';
+           meta+'<span class="go">평가 모듈 목록</span></a>'+tools+'</div>';
       else
         h+='<div class="cwrap"><div class="ccard na"><h3>'+esc(c.name)+'</h3>'+
-           meta+'<span class="go">준비 중</span></div>'+del+'</div>';
+           meta+'<span class="go">준비 중</span></div>'+tools+'</div>';
     });
     document.getElementById('cards').innerHTML=h;
+
     document.querySelectorAll('.cdel').forEach(function(b){
       b.onclick=function(){
         var v=list(), i=+b.dataset.i;
         if(!confirm('"'+v[i].name+'" 을 지운다. 계속할까?')) return;
-        v.splice(i,1); save(v); draw();
+        v.splice(i,1); save(v); editing=-1; draw();
+      };
+    });
+    document.querySelectorAll('.ced').forEach(function(b){
+      b.onclick=function(){ editing=+b.dataset.i; draw(); };
+    });
+    document.querySelectorAll('.eno').forEach(function(b){
+      b.onclick=function(){ editing=-1; draw(); };
+    });
+    document.querySelectorAll('.eok').forEach(function(b){
+      b.onclick=function(){
+        var v=list(), i=+b.dataset.i, box=b.closest('.ccard');
+        var got={};
+        box.querySelectorAll('.ei').forEach(function(e){ got[e.dataset.f]=e.value.trim(); });
+        if(!got.name){ alert('과목명은 비울 수 없다.'); return; }
+        v[i].name=got.name; v[i].period=got.period;
+        v[i].hours=got.hours; v[i].page=got.page;
+        save(v); editing=-1; draw();
+        document.getElementById('cMsg').textContent='고쳤다. 설정 파일 저장을 눌러야 남는다.';
       };
     });
   }
