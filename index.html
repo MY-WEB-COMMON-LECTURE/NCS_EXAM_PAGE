@@ -11,11 +11,12 @@
 
 <div class="note admonly" id="cNote"><b>과목 관리</b> — 추가하거나 지운 것은 이 브라우저에만 남는다.
 <b>설정 파일 저장</b> 을 눌러 <code>assets/courses.js</code> 에 덮어쓴 뒤 git 에 올려야 모두에게 적용된다.
+과목 페이지를 만들면 <code>courses/</code> 에 저장할 위치를 묻는다.
 <form class="cform" id="cForm">
   <input id="cName" placeholder="과목명" required>
   <input id="cPeriod" placeholder="기간 (예: 2026-02-24 ~ 2026-08-12)">
   <input id="cHours" placeholder="시간 (예: 900시간)">
-  <input id="cPage" placeholder="들어갈 페이지 (비우면 준비 중)">
+  <label class="cchk"><input type="checkbox" id="cMake" checked> 과목 페이지도 만들기</label>
   <button type="submit">과목 추가</button>
 </form>
 <div style="margin-top:8px">
@@ -62,16 +63,72 @@
   }
   window.__drawCards = draw;
 
+  /* 새 과목 페이지 HTML.
+     모듈이 아직 없으므로 '준비 중' 안내만 담은 빈 과목 페이지를 만든다.
+     모듈이 생기면 이 파일에 표를 채워 넣으면 된다.
+     줄바꿈은 문자열에 넣지 않고 join 으로 만든다(문자열이 끊기는 것을 막는다). */
+  function pageHtml(c){
+    var NL=String.fromCharCode(10);
+    return [
+      '<meta charset="utf-8"><title>'+esc(c.name)+'</title>',
+      '<link rel="stylesheet" href="../assets/site.css">',
+      '<script src="../assets/auth.js"><\/script>',
+      '<script>EXAM_AUTH.guard("../");<\/script>',
+      '<div class="top"><div class="tbar">',
+      '<div class="brand"><a href="../index.html">평가 자료</a>',
+      '<small>'+esc(c.name)+'</small></div>',
+      '<div class="tuser" id="tUser"><b id="tName"></b>',
+      '<button id="tOut" type="button">로그아웃</button></div></div></div>',
+      '<script>EXAM_AUTH.paintTop("../");<\/script>',
+      '<div class="wrap"><h1>능력단위 평가 모듈 목록</h1>',
+      '<p class="sub">'+esc(c.name)+
+        (c.hours ? ' · '+esc(c.hours) : '')+(c.period ? ' · '+esc(c.period) : '')+'</p>',
+      '<div class="empty">평가 모듈이 아직 등록되지 않았다.<br>',
+      '<a href="../index.html">과목 목록으로</a></div>',
+      '<footer>'+esc(c.name)+(c.period ? ' · '+esc(c.period) : '')+' · 담당 정우균</footer>',
+      '</div>', ''
+    ].join(NL);
+  }
+  async function putFile(name, txt){
+    if(window.showSaveFilePicker){
+      try{
+        var h=await showSaveFilePicker({suggestedName:name,
+          types:[{description:'HTML',accept:{'text/html':['.html']}}]});
+        var w=await h.createWritable(); await w.write(txt); await w.close();
+        return 'saved';
+      }catch(e){ if(e.name==='AbortError') return 'cancel'; }
+    }
+    var a=document.createElement('a');
+    a.href='data:text/html;charset=utf-8,'+encodeURIComponent(txt);
+    a.download=name; document.body.appendChild(a); a.click(); a.remove();
+    return 'download';
+  }
+
   var cf=document.getElementById('cForm');
-  if(cf) cf.addEventListener('submit',function(e){
+  if(cf) cf.addEventListener('submit',async function(e){
     e.preventDefault();
-    var v=list();
-    v.push({id:'c'+(v.length+1), name:document.getElementById('cName').value.trim(),
-            period:document.getElementById('cPeriod').value.trim(),
-            hours:document.getElementById('cHours').value.trim(),
-            page:document.getElementById('cPage').value.trim()});
-    save(v); cf.reset(); draw();
-    document.getElementById('cMsg').textContent='추가했다. 설정 파일 저장을 눌러야 남는다.';
+    var v=list(), msg=document.getElementById('cMsg');
+    // id 는 c1,c2... 중 안 쓰는 다음 번호로 (지웠다 추가해도 겹치지 않게)
+    var n=1, used={}; v.forEach(function(x){ used[x.id]=1; });
+    while(used['c'+n]) n++;
+    var c={id:'c'+n, name:document.getElementById('cName').value.trim(),
+           period:document.getElementById('cPeriod').value.trim(),
+           hours:document.getElementById('cHours').value.trim(), page:''};
+    var make=document.getElementById('cMake').checked;
+    if(make) c.page='courses/'+c.id+'.html';
+    v.push(c); save(v); draw();
+    cf.reset(); document.getElementById('cMake').checked=true;
+
+    if(!make){ msg.textContent='추가했다. 설정 파일 저장을 눌러야 남는다.'; return; }
+    var r=await putFile(c.id+'.html', pageHtml(c));
+    if(r==='cancel'){
+      c.page=''; save(v); draw();          // 페이지를 안 만들었으면 '준비 중' 으로 되돌린다
+      msg.textContent='페이지를 만들지 않았다. 준비 중 카드로 두었다.';
+    }else if(r==='saved'){
+      msg.textContent='courses/'+c.id+'.html 을 만들었다. 설정 파일 저장까지 누른 뒤 git 에 올린다.';
+    }else{
+      msg.textContent=c.id+'.html 을 내려받았다. courses/ 에 넣고 설정 파일 저장까지 누른 뒤 git 에 올린다.';
+    }
   });
   var br=document.getElementById('bResetCourses');
   if(br) br.onclick=function(){

@@ -83,6 +83,8 @@ tr.open td.nm .mlink{border-bottom-width:2px;font-weight:700}
 .cform input{border:1px solid #999;padding:5px 8px;font-family:inherit;font-size:12.5px;
              outline:none;flex:1 1 150px;min-width:0}
 .cform input:focus{border-color:#000}
+.cchk{display:flex;align-items:center;gap:5px;font-size:12.5px;color:#333;white-space:nowrap}
+.cchk input{flex:none}
 .cform button{border:1px solid #000;background:#000;color:#fff;padding:5px 14px;
               font-size:12.5px;cursor:pointer;font-family:inherit;white-space:nowrap}
 .cform button:hover{background:#fff;color:#000}
