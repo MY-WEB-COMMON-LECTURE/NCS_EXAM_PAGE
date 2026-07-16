@@ -69,8 +69,26 @@ tr.open td.nm .mlink{border-bottom-width:2px;font-weight:700}
 .ccard.na{border-style:dashed;border-color:#bbb;color:#888;cursor:default}
 .ccard.na .go{border-color:#ccc;color:#888}
 .ccard.na:hover{background:#fff;color:#888}
+/* 카드 + 지우기(관리자) */
+.cwrap{display:flex;flex-direction:column}
+.cwrap .ccard{flex:1}
+.cdel{border:1px solid #000;border-top:none;background:#fff;color:#000;padding:3px 0;
+      font-size:11.5px;cursor:pointer;font-family:inherit}
+.cdel:hover{background:#000;color:#fff}
 @media (max-width:1100px){.cgrid{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:640px){.cgrid{grid-template-columns:1fr}}
+
+/* 과목 추가 폼 */
+.cform{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
+.cform input{border:1px solid #999;padding:5px 8px;font-family:inherit;font-size:12.5px;
+             outline:none;flex:1 1 150px;min-width:0}
+.cform input:focus{border-color:#000}
+.cform button{border:1px solid #000;background:#000;color:#fff;padding:5px 14px;
+              font-size:12.5px;cursor:pointer;font-family:inherit;white-space:nowrap}
+.cform button:hover{background:#fff;color:#000}
+#bSaveCourses,#bResetCourses{border:1px solid #000;background:#fff;color:#000;padding:3px 11px;
+              font-size:12.5px;cursor:pointer;font-family:inherit}
+#bSaveCourses:hover,#bResetCourses:hover{background:#000;color:#fff}
 
 .cards{display:flex;gap:12px;flex-wrap:wrap;margin:16px 0}
 .card{border:1px solid #000;padding:14px 16px;flex:1 1 300px;min-width:280px}

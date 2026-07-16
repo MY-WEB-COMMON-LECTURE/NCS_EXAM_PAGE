@@ -8,7 +8,104 @@
     <p class="gmsg" id="gmsg"></p>
   </form>
 </div>
-<div class="cgrid" id="cards"><a class="ccard" href="courses/c1.html"><h3>(디지털 컨버전스) 공공데이터 융합 풀스택 개발자 양성과정E</h3><dl><dt>기간</dt><dd>2026-02-24 ~ 2026-08-10</dd><dt>시간</dt><dd>900시간</dd></dl><span class="go">평가 모듈 목록</span></a><div class="ccard na"><h3>정보처리산업기사 과정평가형</h3><dl><dt>기간</dt><dd>-</dd><dt>시간</dt><dd>-</dd></dl><span class="go">준비 중</span></div><div class="ccard na"><h3>빅데이터 UI 전문가 양성과정</h3><dl><dt>기간</dt><dd>-</dd><dt>시간</dt><dd>-</dd></dl><span class="go">준비 중</span></div></div><footer>담당 정우균</footer></div>
+
+<div class="note admonly" id="cNote"><b>과목 관리</b> — 추가하거나 지운 것은 이 브라우저에만 남는다.
+<b>설정 파일 저장</b> 을 눌러 <code>assets/courses.js</code> 에 덮어쓴 뒤 git 에 올려야 모두에게 적용된다.
+<form class="cform" id="cForm">
+  <input id="cName" placeholder="과목명" required>
+  <input id="cPeriod" placeholder="기간 (예: 2026-02-24 ~ 2026-08-12)">
+  <input id="cHours" placeholder="시간 (예: 900시간)">
+  <input id="cPage" placeholder="들어갈 페이지 (비우면 준비 중)">
+  <button type="submit">과목 추가</button>
+</form>
+<div style="margin-top:8px">
+  <button id="bSaveCourses" type="button">설정 파일 저장</button>
+  <button id="bResetCourses" type="button">되돌리기</button>
+  <span id="cMsg" style="margin-left:10px;font-size:12.5px"></span>
+</div></div>
+<div class="cgrid" id="cards"></div><footer>담당 정우균</footer></div>
+<script src="assets/courses.js"></script>
+<script>
+(function(){
+  var CKEY='exam_courses';
+  function base(){ return (window.EXAM_COURSES||[]).slice(); }
+  function list(){
+    try{ var d=localStorage.getItem(CKEY); if(d) return JSON.parse(d); }catch(e){}
+    return base();
+  }
+  function save(v){ try{ localStorage.setItem(CKEY, JSON.stringify(v)); }catch(e){
+    alert('저장 공간이 부족하다.'); } }
+  function esc(s){ return String(s==null?'':s)
+    .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+  function draw(){
+    var cs=list(), adm=EXAM_AUTH.isAdmin(), h='';
+    cs.forEach(function(c,i){
+      var meta='<dl><dt>기간</dt><dd>'+esc(c.period||'-')+'</dd>'+
+               '<dt>시간</dt><dd>'+esc(c.hours||'-')+'</dd></dl>';
+      var del = adm ? '<button class="cdel" data-i="'+i+'" type="button">지우기</button>' : '';
+      if(c.page)
+        h+='<div class="cwrap"><a class="ccard" href="'+esc(c.page)+'"><h3>'+esc(c.name)+'</h3>'+
+           meta+'<span class="go">평가 모듈 목록</span></a>'+del+'</div>';
+      else
+        h+='<div class="cwrap"><div class="ccard na"><h3>'+esc(c.name)+'</h3>'+
+           meta+'<span class="go">준비 중</span></div>'+del+'</div>';
+    });
+    document.getElementById('cards').innerHTML=h;
+    document.querySelectorAll('.cdel').forEach(function(b){
+      b.onclick=function(){
+        var v=list(), i=+b.dataset.i;
+        if(!confirm('"'+v[i].name+'" 을 지운다. 계속할까?')) return;
+        v.splice(i,1); save(v); draw();
+      };
+    });
+  }
+  window.__drawCards = draw;
+
+  var cf=document.getElementById('cForm');
+  if(cf) cf.addEventListener('submit',function(e){
+    e.preventDefault();
+    var v=list();
+    v.push({id:'c'+(v.length+1), name:document.getElementById('cName').value.trim(),
+            period:document.getElementById('cPeriod').value.trim(),
+            hours:document.getElementById('cHours').value.trim(),
+            page:document.getElementById('cPage').value.trim()});
+    save(v); cf.reset(); draw();
+    document.getElementById('cMsg').textContent='추가했다. 설정 파일 저장을 눌러야 남는다.';
+  });
+  var br=document.getElementById('bResetCourses');
+  if(br) br.onclick=function(){
+    if(!confirm('파일에 저장된 내용으로 되돌린다. 계속할까?')) return;
+    try{ localStorage.removeItem(CKEY); }catch(e){}
+    draw(); document.getElementById('cMsg').textContent='';
+  };
+  var bs=document.getElementById('bSaveCourses');
+  if(bs) bs.onclick=async function(){
+    var txt=[
+      '/* 과목 목록.',
+      ' * index.html 의 [설정 파일 저장] 이 이 파일을 덮어쓴다. 손으로 고쳐도 된다.',
+      ' * 고친 뒤 git 에 올려야 모두에게 적용된다.',
+      ' */',
+      'window.EXAM_COURSES = '+JSON.stringify(list(),null,2)+';',
+      ''
+    ].join(String.fromCharCode(10));
+    var m=document.getElementById('cMsg');
+    if(window.showSaveFilePicker){
+      try{
+        var h=await showSaveFilePicker({suggestedName:'courses.js',
+          types:[{description:'JavaScript',accept:{'text/javascript':['.js']}}]});
+        var w=await h.createWritable(); await w.write(txt); await w.close();
+        m.textContent='저장했다. git add/commit/push 하면 적용된다.'; return;
+      }catch(e){ if(e.name==='AbortError'){ m.textContent=''; return; } }
+    }
+    var a=document.createElement('a');
+    a.href='data:text/javascript;charset=utf-8,'+encodeURIComponent(txt);
+    a.download='courses.js'; document.body.appendChild(a); a.click(); a.remove();
+    m.textContent='courses.js 를 내려받았다. assets/courses.js 에 덮어쓴 뒤 git 에 올린다.';
+  };
+})();
+</script>
+
 <script>
 (function(){
   var gate=document.getElementById('gate'), cards=document.getElementById('cards'),
@@ -17,7 +114,9 @@
     var on=EXAM_AUTH.signedIn();
     gate.style.display = on ? 'none' : '';
     cards.style.display = on ? '' : 'none';
+    document.body.classList.toggle('admin', EXAM_AUTH.isAdmin());
     EXAM_AUTH.paintTop('');
+    if(on && window.__drawCards) window.__drawCards();
   }
   document.getElementById('gForm').addEventListener('submit', async function(e){
     e.preventDefault();
