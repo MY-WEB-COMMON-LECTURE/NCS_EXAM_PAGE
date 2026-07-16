@@ -14,7 +14,7 @@
 과목 페이지를 만들면 <code>courses/</code> 에 저장할 위치를 묻는다.
 <form class="cform" id="cForm">
   <input id="cName" placeholder="과목명" required>
-  <input id="cPeriod" placeholder="기간 (예: 2026-02-24 ~ 2026-08-12)">
+  <span class="cdate">기간 <input type="date" id="cFrom"> ~ <input type="date" id="cTo"></span>
   <input id="cHours" placeholder="시간 (예: 900시간)">
   <label class="cchk"><input type="checkbox" id="cMake" checked> 과목 페이지도 만들기</label>
   <button type="submit">과목 추가</button>
@@ -39,6 +39,24 @@
   function esc(s){ return String(s==null?'':s)
     .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
 
+  // 'YYYY-MM-DD ~ YYYY-MM-DD' 를 두 조각으로. 형식이 다르면 빈 값으로 둔다.
+  function splitP(p){
+    var m=/^(\d{4}-\d{2}-\d{2})\s*~\s*(\d{4}-\d{2}-\d{2})$/.exec(String(p||'').trim());
+    return m ? [m[1], m[2]] : ['', ''];
+  }
+  function joinP(a,b){ return (a && b) ? (a+' ~ '+b) : ''; }
+  function ymd(d){
+    return d.getFullYear()+'-'+('0'+(d.getMonth()+1)).slice(-2)+'-'+('0'+d.getDate()).slice(-2);
+  }
+  // 기본값 : 오늘 ~ 5개월 뒤
+  function setDefaultDates(){
+    var f=document.getElementById('cFrom'), t=document.getElementById('cTo');
+    if(!f||!t) return;
+    var s0=new Date(), e0=new Date();
+    e0.setMonth(e0.getMonth()+5);
+    f.value=ymd(s0); t.value=ymd(e0);
+  }
+
   var editing = -1;                    // 지금 고치고 있는 카드 (없으면 -1)
 
   function draw(){
@@ -48,7 +66,9 @@
       if(adm && i===editing){
         h+='<div class="cwrap"><div class="ccard ed">'+
            '<input class="ei" data-f="name" value="'+esc(c.name)+'" placeholder="과목명">'+
-           '<input class="ei" data-f="period" value="'+esc(c.period||'')+'" placeholder="기간">'+
+           '<div class="edate"><input type="date" class="ei" data-f="from" value="'+
+             esc(splitP(c.period)[0])+'"><span>~</span>'+
+           '<input type="date" class="ei" data-f="to" value="'+esc(splitP(c.period)[1])+'"></div>'+
            '<input class="ei" data-f="hours" value="'+esc(c.hours||'')+'" placeholder="시간">'+
            '<input class="ei" data-f="page" value="'+esc(c.page||'')+'" '+
              'placeholder="들어갈 페이지 (비우면 준비 중)">'+
@@ -90,7 +110,7 @@
         var got={};
         box.querySelectorAll('.ei').forEach(function(e){ got[e.dataset.f]=e.value.trim(); });
         if(!got.name){ alert('과목명은 비울 수 없다.'); return; }
-        v[i].name=got.name; v[i].period=got.period;
+        v[i].name=got.name; v[i].period=joinP(got.from, got.to);
         v[i].hours=got.hours; v[i].page=got.page;
         save(v); editing=-1; draw();
         document.getElementById('cMsg').textContent='고쳤다. 설정 파일 저장을 눌러야 남는다.';
@@ -140,6 +160,7 @@
     return 'download';
   }
 
+  setDefaultDates();
   var cf=document.getElementById('cForm');
   if(cf) cf.addEventListener('submit',async function(e){
     e.preventDefault();
@@ -148,12 +169,13 @@
     var n=1, used={}; v.forEach(function(x){ used[x.id]=1; });
     while(used['c'+n]) n++;
     var c={id:'c'+n, name:document.getElementById('cName').value.trim(),
-           period:document.getElementById('cPeriod').value.trim(),
+           period:joinP(document.getElementById('cFrom').value,
+                        document.getElementById('cTo').value),
            hours:document.getElementById('cHours').value.trim(), page:''};
     var make=document.getElementById('cMake').checked;
     if(make) c.page='courses/'+c.id+'.html';
     v.push(c); save(v); draw();
-    cf.reset(); document.getElementById('cMake').checked=true;
+    cf.reset(); document.getElementById('cMake').checked=true; setDefaultDates();
 
     if(!make){ msg.textContent='추가했다. 설정 파일 저장을 눌러야 남는다.'; return; }
     var r=await putFile(c.id+'.html', pageHtml(c));

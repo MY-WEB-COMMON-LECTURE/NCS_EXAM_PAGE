@@ -99,6 +99,10 @@ tr.open td.nm .mlink{border-bottom-width:2px;font-weight:700}
 .cform input{border:1px solid #999;padding:5px 8px;font-family:inherit;font-size:12.5px;
              outline:none;flex:1 1 150px;min-width:0}
 .cform input:focus{border-color:#000}
+.cdate{display:flex;align-items:center;gap:5px;font-size:12.5px;color:#333;white-space:nowrap}
+.cdate input{flex:none;width:140px}
+.edate{display:flex;align-items:center;gap:4px;font-size:12px;color:#555}
+.edate input{flex:1;min-width:0}
 .cchk{display:flex;align-items:center;gap:5px;font-size:12.5px;color:#333;white-space:nowrap}
 .cchk input{flex:none}
 .cform button{border:1px solid #000;background:#000;color:#fff;padding:5px 14px;
