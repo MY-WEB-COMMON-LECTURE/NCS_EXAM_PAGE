@@ -1,9 +1,9 @@
 /* 로그인과 보기 모드(관리자 / 일반) 관리.
  *
  * 계정
- *   user  : 들어오기만 한다
- *   admin : 들어오면서 관리자 모드가 된다
- * 비밀번호 원문은 두지 않고 SHA-256 해시만 비교한다.
+ *   user  : 들어오기만 합니다
+ *   admin : 들어오면서 관리자 모드가 됩니다
+ * 비밀번호 원문은 두지 않고 SHA-256 해시만 비교합니다.
  */
 window.EXAM_AUTH = (function () {
   var IN = 'exam_in';        // 로그인 여부
@@ -34,13 +34,13 @@ window.EXAM_AUTH = (function () {
     },
     signOut: function () { del(IN); del(KEY); },
 
-    /* 로그인 안 했으면 첫 화면으로 돌려보낸다. up 은 index.html 까지의 상대 경로. */
+    /* 로그인 안 했으면 첫 화면으로 돌려보냅니다. up 은 index.html 까지의 상대 경로. */
     guard: function (up) {
       if (!this.signedIn()) { location.replace((up || '') + 'index.html'); return false; }
       return true;
     },
 
-    /* 상단 헤더 오른쪽의 보기 모드 + 로그아웃. 모든 페이지에서 부른다. */
+    /* 상단 헤더 오른쪽의 보기 모드 + 로그아웃. 모든 페이지에서 부릅니다. */
     paintTop: function (up) {
       var box = document.getElementById('tUser');
       if (!box) return;

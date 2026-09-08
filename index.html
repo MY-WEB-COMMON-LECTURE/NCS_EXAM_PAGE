@@ -9,9 +9,9 @@
   </form>
 </div>
 
-<div class="note admonly" id="cNote"><b>과목 관리</b> — 추가하거나 지운 것은 이 브라우저에만 남는다.
-<b>설정 파일 저장</b> 을 눌러 <code>assets/courses.js</code> 에 덮어쓴 뒤 git 에 올려야 모두에게 적용된다.
-과목 페이지를 만들면 <code>courses/</code> 에 저장할 위치를 묻는다.
+<div class="note admonly" id="cNote"><b>과목 관리</b> — 추가하거나 지운 것은 이 브라우저에만 남습니다.
+<b>설정 파일 저장</b> 을 눌러 <code>assets/courses.js</code> 에 덮어쓴 뒤 git 에 올려야 모두에게 적용됩니다.
+과목 페이지를 만들면 <code>courses/</code> 에 저장할 위치를 묻습니다.
 <form class="cform" id="cForm">
   <input id="cName" placeholder="과목명" required>
   <span class="cdate">기간 <input type="date" id="cFrom"> ~ <input type="date" id="cTo"></span>
@@ -35,11 +35,11 @@
     return base();
   }
   function save(v){ try{ localStorage.setItem(CKEY, JSON.stringify(v)); }catch(e){
-    alert('저장 공간이 부족하다.'); } }
+    alert('저장 공간이 부족합니다.'); } }
   function esc(s){ return String(s==null?'':s)
     .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
 
-  // 'YYYY-MM-DD ~ YYYY-MM-DD' 를 두 조각으로. 형식이 다르면 빈 값으로 둔다.
+  // 'YYYY-MM-DD ~ YYYY-MM-DD' 를 두 조각으로. 형식이 다르면 빈 값으로 둡니다.
   function splitP(p){
     var m=/^(\d{4}-\d{2}-\d{2})\s*~\s*(\d{4}-\d{2}-\d{2})$/.exec(String(p||'').trim());
     return m ? [m[1], m[2]] : ['', ''];
@@ -62,7 +62,7 @@
   function draw(){
     var cs=list(), adm=EXAM_AUTH.isAdmin(), h='';
     cs.forEach(function(c,i){
-      // 고치는 중인 카드는 입력칸으로 바꾼다
+      // 고치는 중인 카드는 입력칸으로 바꿉니다
       if(adm && i===editing){
         h+='<div class="cwrap"><div class="ccard ed">'+
            '<input class="ei" data-f="name" value="'+esc(c.name)+'" placeholder="과목명">'+
@@ -94,7 +94,7 @@
     document.querySelectorAll('.cdel').forEach(function(b){
       b.onclick=function(){
         var v=list(), i=+b.dataset.i;
-        if(!confirm('"'+v[i].name+'" 을 지운다. 계속할까?')) return;
+        if(!confirm('"'+v[i].name+'" 을(를) 삭제합니다. 계속할까요?')) return;
         v.splice(i,1); save(v); editing=-1; draw();
       };
     });
@@ -109,20 +109,20 @@
         var v=list(), i=+b.dataset.i, box=b.closest('.ccard');
         var got={};
         box.querySelectorAll('.ei').forEach(function(e){ got[e.dataset.f]=e.value.trim(); });
-        if(!got.name){ alert('과목명은 비울 수 없다.'); return; }
+        if(!got.name){ alert('과목명은 비워 둘 수 없습니다.'); return; }
         v[i].name=got.name; v[i].period=joinP(got.from, got.to);
         v[i].hours=got.hours; v[i].page=got.page;
         save(v); editing=-1; draw();
-        document.getElementById('cMsg').textContent='고쳤다. 설정 파일 저장을 눌러야 남는다.';
+        document.getElementById('cMsg').textContent='고쳤습니다. 설정 파일 저장을 눌러야 반영됩니다.';
       };
     });
   }
   window.__drawCards = draw;
 
   /* 새 과목 페이지 HTML.
-     모듈이 아직 없으므로 '준비 중' 안내만 담은 빈 과목 페이지를 만든다.
-     모듈이 생기면 이 파일에 표를 채워 넣으면 된다.
-     줄바꿈은 문자열에 넣지 않고 join 으로 만든다(문자열이 끊기는 것을 막는다). */
+     모듈이 아직 없으므로 '준비 중' 안내만 담은 빈 과목 페이지를 만듭니다.
+     모듈이 생기면 이 파일에 표를 채워 넣으면 됩니다.
+     줄바꿈은 문자열에 넣지 않고 join 으로 만듭니다(문자열이 끊기는 것을 막습니다). */
   function pageHtml(c){
     var NL=String.fromCharCode(10);
     return [
@@ -139,7 +139,7 @@
       '<div class="wrap"><h1>능력단위 평가 모듈 목록</h1>',
       '<p class="sub">'+esc(c.name)+
         (c.hours ? ' · '+esc(c.hours) : '')+(c.period ? ' · '+esc(c.period) : '')+'</p>',
-      '<div class="empty">평가 모듈이 아직 등록되지 않았다.<br>',
+      '<div class="empty">평가 모듈이 아직 등록되지 않았습니다.<br>',
       '<a href="../index.html">과목 목록으로</a></div>',
       '<footer>'+esc(c.name)+(c.period ? ' · '+esc(c.period) : '')+' · 담당 정우균</footer>',
       '</div>', ''
@@ -177,20 +177,20 @@
     v.push(c); save(v); draw();
     cf.reset(); document.getElementById('cMake').checked=true; setDefaultDates();
 
-    if(!make){ msg.textContent='추가했다. 설정 파일 저장을 눌러야 남는다.'; return; }
+    if(!make){ msg.textContent='추가했습니다. 설정 파일 저장을 눌러야 반영됩니다.'; return; }
     var r=await putFile(c.id+'.html', pageHtml(c));
     if(r==='cancel'){
-      c.page=''; save(v); draw();          // 페이지를 안 만들었으면 '준비 중' 으로 되돌린다
-      msg.textContent='페이지를 만들지 않았다. 준비 중 카드로 두었다.';
+      c.page=''; save(v); draw();          // 페이지를 안 만들었으면 '준비 중' 으로 되돌립니다
+      msg.textContent='페이지는 만들지 않고 준비 중 카드로 두었습니다.';
     }else if(r==='saved'){
-      msg.textContent='courses/'+c.id+'.html 을 만들었다. 설정 파일 저장까지 누른 뒤 git 에 올린다.';
+      msg.textContent='courses/'+c.id+'.html 을 만들었습니다. 설정 파일 저장까지 누른 뒤 git 에 올립니다.';
     }else{
-      msg.textContent=c.id+'.html 을 내려받았다. courses/ 에 넣고 설정 파일 저장까지 누른 뒤 git 에 올린다.';
+      msg.textContent=c.id+'.html 을 내려받았습니다. courses/ 에 넣고 설정 파일 저장까지 누른 뒤 git 에 올립니다.';
     }
   });
   var br=document.getElementById('bResetCourses');
   if(br) br.onclick=function(){
-    if(!confirm('파일에 저장된 내용으로 되돌린다. 계속할까?')) return;
+    if(!confirm('파일에 저장된 내용으로 되돌립니다. 계속할까요?')) return;
     try{ localStorage.removeItem(CKEY); }catch(e){}
     draw(); document.getElementById('cMsg').textContent='';
   };
@@ -198,8 +198,8 @@
   if(bs) bs.onclick=async function(){
     var txt=[
       '/* 과목 목록.',
-      ' * index.html 의 [설정 파일 저장] 이 이 파일을 덮어쓴다. 손으로 고쳐도 된다.',
-      ' * 고친 뒤 git 에 올려야 모두에게 적용된다.',
+      ' * index.html 의 [설정 파일 저장] 이 이 파일을 덮어씁니다. 손으로 고쳐도 됩니다.',
+      ' * 고친 뒤 git 에 올려야 모두에게 적용됩니다.',
       ' */',
       'window.EXAM_COURSES = '+JSON.stringify(list(),null,2)+';',
       ''
@@ -210,13 +210,13 @@
         var h=await showSaveFilePicker({suggestedName:'courses.js',
           types:[{description:'JavaScript',accept:{'text/javascript':['.js']}}]});
         var w=await h.createWritable(); await w.write(txt); await w.close();
-        m.textContent='저장했다. git add/commit/push 하면 적용된다.'; return;
+        m.textContent='저장했습니다. git add · commit · push 하면 사이트에 반영됩니다.'; return;
       }catch(e){ if(e.name==='AbortError'){ m.textContent=''; return; } }
     }
     var a=document.createElement('a');
     a.href='data:text/javascript;charset=utf-8,'+encodeURIComponent(txt);
     a.download='courses.js'; document.body.appendChild(a); a.click(); a.remove();
-    m.textContent='courses.js 를 내려받았다. assets/courses.js 에 덮어쓴 뒤 git 에 올린다.';
+    m.textContent='courses.js 를 내려받았습니다. assets/courses.js 에 덮어쓴 뒤 git 에 올려 주세요.';
   };
 })();
 </script>
@@ -239,7 +239,7 @@
     var r=await EXAM_AUTH.signIn(document.getElementById('gu').value,
                                  document.getElementById('gp').value);
     if(r){ document.getElementById('gp').value=''; paint(); }
-    else { msg.className='gmsg err'; msg.textContent='아이디 또는 비밀번호가 맞지 않다.'; }
+    else { msg.className='gmsg err'; msg.textContent='아이디 또는 비밀번호가 맞지 않습니다.'; }
   });
   paint();
 })();
