@@ -157,9 +157,22 @@ async function main() {
   }
   if (!pass) { console.error('비밀번호가 없어 중단합니다.'); process.exit(1); }
 
-  const salt = crypto.randomBytes(16);
+  /* 솔트는 한 번 만들어 두고 계속 씁니다.
+   * 빌드마다 새로 만들면 사람들이 저장해 둔 키가 전부 무효가 되어
+   * 「로그인 유지」를 켜 두었어도 배포할 때마다 다시 로그인해야 합니다.
+   * 솔트는 비밀이 아니라 사전 공격을 어렵게 하는 값이라 저장소에 두어도 됩니다. */
+  const SALT_FILE = join(ROOT, 'tools/publish-salt.txt');
+  let salt;
+  if (existsSync(SALT_FILE)) {
+    salt = Buffer.from(readFileSync(SALT_FILE, 'utf8').trim(), 'base64');
+    console.log('솔트 재사용 — 저장해 둔 키가 그대로 유효합니다');
+  } else {
+    salt = crypto.randomBytes(16);
+    writeFileSync(SALT_FILE, salt.toString('base64') + '\n');
+    console.log('솔트를 새로 만들었습니다 → tools/publish-salt.txt');
+  }
   const key = crypto.pbkdf2Sync(pass, salt, ITER, 32, 'sha256');
-  console.log('키 준비 완료 (PBKDF2-SHA256 · %d회)\n', ITER);
+  console.log('키 준비 완료 (PBKDF2-SHA256 · ' + ITER + '회)\n');
 
   if (existsSync(OUT)) {
     for (const f of readdirSync(OUT)) {
