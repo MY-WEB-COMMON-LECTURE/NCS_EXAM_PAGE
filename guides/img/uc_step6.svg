@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 660" width="900" height="660">
+<style>text{font-family:"Malgun Gothic",sans-serif;fill:#000}</style>
+<defs><marker id="on" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M1,1 L9,4 L1,7" fill="none" stroke="#000"/></marker><marker id="og" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M1,1 L9,4 L1,7" fill="none" stroke="#bbb"/></marker></defs>
+<rect width="900" height="660" fill="#fff"/>
+<text x="20" y="28" font-size="14" font-weight="700">6단계. 조건이 맞을 때만 하는 것을 extend 로 붙입니다</text>
+<line x1="20" y1="38" x2="880" y2="38" stroke="#ccc"/>
+<rect x="190" y="72" width="520" height="560" fill="none" stroke="#bbb"/>
+<text x="200" y="92" font-size="12" fill="#bbb">쇼핑몰</text>
+<circle cx="90" cy="140" r="11" fill="#fff" stroke="#bbb"/><path d="M90 151 v30 M72 162 h36 M90 181 l-15 24 M90 181 l15 24" stroke="#bbb" fill="none"/><text x="90" y="222" font-size="12" text-anchor="middle" fill="#bbb">비회원</text>
+<circle cx="90" cy="420" r="11" fill="#fff" stroke="#bbb"/><path d="M90 431 v30 M72 442 h36 M90 461 l-15 24 M90 461 l15 24" stroke="#bbb" fill="none"/><text x="90" y="502" font-size="12" text-anchor="middle" fill="#bbb">회원</text>
+<circle cx="810" cy="150" r="11" fill="#fff" stroke="#bbb"/><path d="M810 161 v30 M792 172 h36 M810 191 l-15 24 M810 191 l15 24" stroke="#bbb" fill="none"/><text x="810" y="232" font-size="12" text-anchor="middle" fill="#bbb">관리자</text>
+<rect x="760" y="430" width="100" height="44" fill="#fff" stroke="#bbb"/>
+<text x="810" y="448" font-size="10" text-anchor="middle" fill="#bbb">&#171;system&#187;</text>
+<text x="810" y="464" font-size="12" text-anchor="middle" fill="#bbb">결제 시스템</text>
+<ellipse cx="300" cy="120" rx="68" ry="22" fill="#fff" stroke="#bbb"/><text x="300" y="124" font-size="12" text-anchor="middle" fill="#bbb">회원가입</text>
+<ellipse cx="300" cy="190" rx="68" ry="22" fill="#fff" stroke="#bbb"/><text x="300" y="194" font-size="12" text-anchor="middle" fill="#bbb">상품 검색</text>
+<ellipse cx="300" cy="260" rx="68" ry="22" fill="#fff" stroke="#bbb"/><text x="300" y="264" font-size="12" text-anchor="middle" fill="#bbb">상품 조회</text>
+<ellipse cx="300" cy="350" rx="68" ry="22" fill="#fff" stroke="#bbb"/><text x="300" y="354" font-size="12" text-anchor="middle" fill="#bbb">장바구니 담기</text>
+<ellipse cx="300" cy="430" rx="68" ry="22" fill="#fff" stroke="#bbb"/><text x="300" y="434" font-size="12" text-anchor="middle" fill="#bbb">주문</text>
+<ellipse cx="300" cy="510" rx="68" ry="22" fill="#fff" stroke="#bbb"/><text x="300" y="514" font-size="12" text-anchor="middle" fill="#bbb">주문 조회</text>
+<ellipse cx="560" cy="120" rx="68" ry="22" fill="#fff" stroke="#bbb"/><text x="560" y="124" font-size="12" text-anchor="middle" fill="#bbb">상품 관리</text>
+<ellipse cx="560" cy="190" rx="68" ry="22" fill="#fff" stroke="#bbb"/><text x="560" y="194" font-size="12" text-anchor="middle" fill="#bbb">주문 관리</text>
+<ellipse cx="560" cy="280" rx="68" ry="22" fill="#fff" stroke="#bbb"/><text x="560" y="284" font-size="12" text-anchor="middle" fill="#bbb">로그인</text>
+<ellipse cx="560" cy="430" rx="68" ry="22" fill="#fff" stroke="#bbb"/><text x="560" y="434" font-size="12" text-anchor="middle" fill="#bbb">결제</text>
+<ellipse cx="560" cy="550" rx="68" ry="22" fill="#fff" stroke="#bbb"/><text x="560" y="554" font-size="12" text-anchor="middle" fill="#bbb">주문 취소</text>
+<line x1="108" y1="160" x2="232" y2="120" stroke="#bbb"/>
+<line x1="108" y1="164" x2="232" y2="190" stroke="#bbb"/>
+<line x1="108" y1="168" x2="232" y2="260" stroke="#bbb"/>
+<line x1="108" y1="440" x2="232" y2="350" stroke="#bbb"/>
+<line x1="108" y1="444" x2="232" y2="430" stroke="#bbb"/>
+<line x1="108" y1="448" x2="232" y2="510" stroke="#bbb"/>
+<line x1="792" y1="170" x2="628" y2="124" stroke="#bbb"/>
+<line x1="792" y1="176" x2="628" y2="188" stroke="#bbb"/>
+<line x1="760" y1="452" x2="628" y2="432" stroke="#bbb"/>
+<line x1="366" y1="342" x2="494" y2="288" stroke="#bbb" stroke-dasharray="5 3" marker-end="url(#og)"/>
+<line x1="366" y1="422" x2="496" y2="292" stroke="#bbb" stroke-dasharray="5 3" marker-end="url(#og)"/>
+<line x1="368" y1="430" x2="492" y2="430" stroke="#bbb" stroke-dasharray="5 3" marker-end="url(#og)"/>
+<text x="430" y="306" font-size="10" text-anchor="middle" fill="#bbb">«include»</text>
+<text x="446" y="370" font-size="10" text-anchor="middle" fill="#bbb">«include»</text>
+<text x="430" y="424" font-size="10" text-anchor="middle" fill="#bbb">«include»</text>
+<line x1="494" y1="542" x2="370" y2="518" stroke="#000" stroke-dasharray="5 3" marker-end="url(#on)"/>
+<text x="432" y="550" font-size="10" text-anchor="middle" fill="#000">«extend»</text>
+<text x="432" y="564" font-size="10" text-anchor="middle" fill="#000">[배송 전]</text>
+</svg>

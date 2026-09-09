@@ -28,6 +28,14 @@
   .out{display:inline-block;border:1px solid #000;padding:1px 8px;font-size:11.5px;margin:2px 4px 2px 0}
   .hit{display:inline-block;background:#eee;border:1px solid #999;padding:1px 8px;font-size:11.5px;margin:2px 4px 2px 0}
   .cc{font-size:12.5px;color:#555;margin:5px 0 0}
+  figure{margin:10px 0 12px}
+  figure img{display:block;width:100%;border:1px solid #ccc}
+  figcaption{font-size:12px;color:#555;margin-top:5px}
+  .draw{border-left:3px solid #000;padding:2px 0 2px 12px;margin:10px 0}
+  .draw b.n{display:block;font-size:13px;margin-bottom:3px}
+  .q{border:1px solid #000;padding:10px 13px;margin:10px 0;font-size:13.5px}
+  .q b.t{display:block;font-size:11.5px;letter-spacing:.05em;margin-bottom:5px}
+  ol.qa{margin:4px 0 0 20px}ol.qa li{margin:5px 0}
   th,td{text-align:left;vertical-align:top}
   td.c{text-align:center;white-space:nowrap}
   dt{font-weight:700;font-size:13.5px;margin:12px 0 3px}
@@ -257,45 +265,129 @@
       <h3><i>6</i>유스케이스 다이어그램</h3>
 
       <h4>이게 무엇인가</h4>
-      <p><b>누가(액터) 이 시스템으로 무엇을 하는가(유스케이스)</b>를 한 장에 그린 그림입니다.
+      <p><b>누가(액터) 이 시스템으로 무엇을 하는가(유스케이스)</b> 를 한 장에 그린 그림입니다.
          안을 어떻게 만드는지는 그리지 않습니다. <b>밖에서 본 시스템</b>입니다.</p>
-      <p>앞 단계가 그대로 재료입니다. <b>매트릭스의 액터 열이 액터</b>이고,
+      <p>세 가지 일을 합니다.</p>
+      <ul>
+        <li><b>빠진 요구사항을 찾습니다.</b> 앞에서 적은 SR 번호가 모두 타원으로 나타나는지 눈으로 셉니다</li>
+        <li><b>만들 범위를 굳힙니다.</b> 경계 안에 있으면 우리가 만들고, 밖에 있으면 남이 만듭니다</li>
+        <li><b>다음 문서의 목차가 됩니다.</b> 타원 하나가 명세서 한 건이고, 화면 목록 한 줄입니다</li>
+      </ul>
+
+      <h4>쓰는 기호</h4>
+      <p>요소 네 가지와 관계선 네 가지가 전부입니다. 이 여덟 개만 알면 그릴 수 있습니다.</p>
+      <figure>
+        <img src="img/uc_notation.svg" alt="유스케이스 다이어그램 표기법">
+        <figcaption>기호는 이게 전부입니다. 관계선 네 가지를 섞어 쓰면 02 · 03번에서 10점을 잃습니다.</figcaption>
+      </figure>
+
+      <h4>무엇이 액터이고 무엇이 유스케이스인가</h4>
+      <p>여기서 대부분 막힙니다. 판단 기준을 정해 두고 봅니다.</p>
+      <p><b>액터는 시스템 밖에서 시스템을 쓰는 쪽</b>입니다. 세 가지를 물어봅니다.</p>
+      <ol>
+        <li>시스템 <b>밖</b>에 있는가 — 안에 있으면 액터가 아니라 그냥 기능입니다</li>
+        <li>시스템에 <b>무언가를 시키거나</b> 시스템이 <b>무언가를 요청하는</b> 상대인가</li>
+        <li><b>역할</b>인가 — 「김철수」가 아니라 「회원」입니다. 한 사람이 두 역할을 할 수도 있습니다</li>
+      </ol>
+      <p>사람이 아니어도 액터입니다. 결제 대행사처럼 밖에서 불려 오는 시스템은
+         <code>&#171;system&#187;</code> 을 붙인 사각형으로 그립니다.</p>
+
+      <p><b>유스케이스는 액터가 시스템으로 이루려는 목표 하나</b>입니다. 화면 이름이 아닙니다.</p>
+      <div class="ex"><span class="x">잘못</span>상품 목록 화면 &nbsp;·&nbsp; 장바구니 페이지 &nbsp;·&nbsp; DB 저장</div>
+      <div class="ex"><span class="o">좋음</span>상품을 검색한다 &nbsp;·&nbsp; 장바구니에 담는다 &nbsp;·&nbsp; 주문한다</div>
+      <p class="cc">화면 이름을 쓰면 화면을 바꿀 때마다 다이어그램을 고쳐야 합니다.
+         「DB 저장」처럼 시스템 내부 동작을 쓰면 액터의 목표가 아니라 구현입니다.
+         <b>동사로 끝나면 대체로 맞습니다.</b></p>
+      <p>앞 단계가 그대로 재료입니다. <b>매트릭스의 액터 열이 액터</b>이고
          <b>칸의 문장이 유스케이스</b>입니다. 새로 지어내지 않습니다.</p>
 
-      <h4>관계선 네 가지 — 여기서 점수가 갈립니다</h4>
-      <table>
-        <tr><th style="width:110px">관계</th><th style="width:180px">선 모양</th><th>언제 쓰나 · 화살표 방향</th></tr>
-        <tr><td><b>연관</b></td><td>실선, <b>화살촉 없음</b></td><td>액터가 그 일을 한다</td></tr>
-        <tr><td><b>include</b></td><td>점선 + 속 빈 화살촉</td><td><b>항상</b> 거친다. 화살표는 <b>기반 → 포함</b>. 주문 → 결제</td></tr>
-        <tr><td><b>extend</b></td><td>점선 + 속 빈 화살촉</td><td><b>조건이 맞을 때만</b>. 화살표는 <b>반대로 확장 → 기반</b>. 주문 취소 → 주문 조회</td></tr>
-        <tr><td><b>일반화</b></td><td>실선 + 속 빈 삼각형</td><td>상속. 자식 → 부모. 회원 ▷ 비회원</td></tr>
-      </table>
+      <h4>그리는 순서 — 7단계</h4>
+      <p>아래 순서대로 그립니다. 각 그림에서 <b>검게 그려진 것이 그 단계에서 새로 추가한 것</b>이고,
+         회색은 앞 단계에서 이미 그린 것입니다.</p>
 
-      <h4>어떻게 그리나</h4>
-      <ol>
-        <li>시스템 경계 사각형을 그리고 이름을 씁니다</li>
-        <li>액터를 밖에 놓습니다. 사람이 아닌 외부 시스템은 <code>«system»</code> 사각형으로 그립니다</li>
-        <li>매트릭스의 문장을 타원으로 하나씩 옮깁니다</li>
-        <li>액터와 타원을 <b>실선</b>으로 잇습니다</li>
-        <li>공통으로 반복되는 절차를 빼내 <b>include</b> 로 묶습니다</li>
-        <li>조건이 맞을 때만 나타나는 것을 <b>extend</b> 로 붙이고 조건을 <code>[배송 전]</code> 처럼 대괄호로 적습니다</li>
-        <li>겹치는 액터를 <b>일반화</b>로 묶습니다</li>
+      <div class="draw"><b class="n">1단계 · 시스템 경계를 그립니다</b>
+        사각형 하나를 그리고 왼쪽 위에 시스템 이름을 적습니다.
+        이 선이 <b>우리가 만들 것과 만들지 않을 것</b>의 경계입니다.</div>
+      <figure><img src="img/uc_step1.svg" alt="1단계 시스템 경계"></figure>
+
+      <div class="draw"><b class="n">2단계 · 액터를 경계 밖에 놓습니다</b>
+        위의 세 가지 질문으로 걸러낸 액터를 <b>경계 바깥</b>에 세웁니다.
+        사람은 막대 인간으로, 외부 시스템은 <code>&#171;system&#187;</code> 사각형으로 그립니다.
+        왼쪽에 주로 쓰는 사람을, 오른쪽에 관리자와 외부 시스템을 두면 선이 덜 엉킵니다.</div>
+      <figure><img src="img/uc_step2.svg" alt="2단계 액터"></figure>
+
+      <div class="draw"><b class="n">3단계 · 유스케이스를 타원으로 넣습니다</b>
+        매트릭스의 문장을 하나씩 타원으로 옮깁니다. 아직 선은 긋지 않습니다.
+        <b>비슷한 것끼리 세로로 묶어</b> 두면 다음 단계에서 선이 겹치지 않습니다.
+        예시는 왼쪽에 사용자가 쓰는 것, 오른쪽에 관리자용과 공통 절차를 모았습니다.</div>
+      <figure><img src="img/uc_step3.svg" alt="3단계 유스케이스"></figure>
+
+      <div class="draw"><b class="n">4단계 · 액터와 유스케이스를 실선으로 잇습니다</b>
+        「이 액터가 이 일을 직접 시작하는가」를 물어 보고 맞으면 긋습니다.
+        <b>화살촉을 달지 않습니다.</b> 여기가 가장 흔한 실수입니다.
+        선이 열 개를 넘으면 타원 위치를 바꿔 정리합니다.</div>
+      <figure><img src="img/uc_step4.svg" alt="4단계 연관"></figure>
+
+      <div class="draw"><b class="n">5단계 · 항상 거치는 절차를 include 로 묶습니다</b>
+        여러 유스케이스에 <b>똑같이 반복되는 절차</b>가 보이면 따로 빼내 타원으로 만들고,
+        원래 자리에서 점선 화살표를 그쪽으로 긋습니다.
+        예시에서는 장바구니 담기 · 주문 · 주문 조회가 <b>예외 없이</b> 로그인을 거치므로 빼냈습니다.
+        화살표는 <b>기반에서 나갑니다.</b></div>
+      <figure><img src="img/uc_step5.svg" alt="5단계 include"></figure>
+
+      <div class="draw"><b class="n">6단계 · 조건부는 extend 로 붙입니다</b>
+        <b>어떤 조건일 때만</b> 나타나는 것을 찾아 점선 화살표로 붙이고 조건을 대괄호로 적습니다.
+        예시의 주문 취소는 배송이 시작되기 전인 주문에만 나타납니다.
+        화살표가 <b>기반 쪽으로 들어옵니다.</b> include 와 방향이 반대입니다.</div>
+      <figure><img src="img/uc_step6.svg" alt="6단계 extend"></figure>
+
+      <div class="draw"><b class="n">7단계 · 겹치는 액터를 일반화로 묶습니다</b>
+        한 액터가 다른 액터가 하는 일을 <b>전부 하면서 더 하는</b> 경우, 선을 여러 개 더 긋는 대신
+        속 빈 삼각형으로 잇습니다. 삼각형은 <b>부모 쪽</b>에 붙입니다.
+        회원은 비회원이 하는 것을 다 할 수 있으므로 회원 ▷ 비회원입니다.</div>
+      <figure>
+        <img src="img/uc_step7.svg" alt="7단계 일반화 — 완성">
+        <figcaption>완성입니다. 포트폴리오 제출서의 예시와 같은 그림입니다.</figcaption>
+      </figure>
+
+      <h4>include 와 extend 를 가르는 법</h4>
+      <p>둘 다 점선에 속 빈 화살촉이라 헷갈립니다. <b>두 가지만 순서대로</b> 물어보면 됩니다.</p>
+      <ol class="qa">
+        <li><b>「항상 하는가?」</b> — 예외 없이 매번 거치면 <b>include</b>, 어떤 때만이면 <b>extend</b></li>
+        <li><b>「빼내도 원래 것이 말이 되는가?」</b> — 로그인을 빼면 주문이 성립하지 않으므로 include,
+            주문 취소를 빼도 주문 조회는 그대로이므로 extend</li>
       </ol>
+      <table>
+        <tr><th style="width:80px"></th><th style="width:120px">언제</th><th style="width:150px">화살표 방향</th><th>예시</th></tr>
+        <tr><td><b>include</b></td><td>항상</td><td>기반 → 포함</td><td>주문 → 결제, 주문 → 로그인</td></tr>
+        <tr><td><b>extend</b></td><td>조건이 맞을 때만</td><td><b>확장 → 기반</b></td><td>주문 취소 → 주문 조회 <code>[배송 전]</code></td></tr>
+      </table>
+      <p class="cc">방향은 규칙으로 외웁니다. <b>include 는 나가고 extend 는 들어옵니다.</b></p>
 
-      <div class="try">
-        <b class="t">같이 해보기 — 데일리마켓에서 관계 뽑기</b>
-        <b>include</b> — 장바구니 · 주문 · 주문 조회는 <b>예외 없이</b> 로그인을 거칩니다.
-        같은 절차가 세 군데 반복되므로 「로그인」을 따로 빼내 세 곳에서 include 합니다.<br>
-        <b>extend</b> — 주문 취소는 <b>배송이 시작되기 전인 주문에만</b> 나타납니다.
-        항상이 아니므로 extend 이고 조건은 <code>[배송 전]</code> 입니다.<br>
-        <b>일반화</b> — 회원은 비회원이 하는 것(가입 · 검색 · 조회)을 다 할 수 있고 더 합니다.
-        회원 쪽에 선을 네 개 더 긋는 대신 <b>회원 ▷ 비회원</b> 삼각형 하나로 대신합니다.
+      <h4>자주 틀리는 표기</h4>
+      <figure>
+        <img src="img/uc_mistake.svg" alt="자주 틀리는 표기">
+        <figcaption>채점 항목 02 · 03번이 이 두 가지를 봅니다. 합쳐서 10점입니다.</figcaption>
+      </figure>
+      <p>그 밖에 자주 나오는 것들입니다.</p>
+      <ul>
+        <li><b>include 되는 유스케이스에 액터 선을 또 그었습니다.</b> 로그인은 다른 유스케이스가 부르는
+            공통 절차이므로 액터와 직접 잇지 않아도 됩니다</li>
+        <li><b>타원 안에 화면 이름을 썼습니다.</b> 「상품 목록 화면」이 아니라 「상품을 조회한다」입니다</li>
+        <li><b>액터를 경계 안에 넣었습니다.</b> 액터는 항상 밖입니다</li>
+        <li><b>extend 에 조건을 안 적었습니다.</b> 조건이 없으면 extend 를 쓸 이유가 없습니다</li>
+      </ul>
+
+      <div class="q">
+        <b class="t">스스로 점검</b>
+        <ol class="qa">
+          <li>앞에서 적은 SR 번호가 <b>모두</b> 타원으로 나타났습니까. 빠진 것이 있으면 그 요구사항은 설계에서 누락된 것입니다</li>
+          <li>연관선 중에 화살촉이 달린 것이 하나라도 있습니까</li>
+          <li>extend 화살표가 <b>확장 쪽에서 기반 쪽으로</b> 갑니까. 조건을 대괄호로 적었습니까</li>
+          <li>타원 이름이 전부 동사로 끝납니까</li>
+          <li>액터가 전부 경계 밖에 있습니까</li>
+        </ol>
       </div>
-
-      <p><b>「항상인가, 조건이 맞을 때만인가」</b> 만 따지면 include 와 extend 를 헷갈리지 않습니다.
-         다만 <b>화살표 방향은 따로 외웁니다.</b> include 는 기반에서 나가고 extend 는 기반으로 들어옵니다.</p>
-      <p class="cc">include 되는 유스케이스에는 액터 선을 따로 잇지 않아도 됩니다.
-         「로그인」에 액터 선이 없는 이유가 이것입니다.</p>
 
       <span class="out">유스케이스 다이어그램</span>
       <span class="hit">01 02 03</span>
