@@ -10,19 +10,19 @@
 <circle cx="80" cy="204" r="9" fill="#fff" stroke="#000"/><path d="M80 213 v24 M66 222 h28 M80 237 l-12 19 M80 237 l12 19" stroke="#000" fill="none"/>
 <text x="80" y="268" font-size="11" font-weight="400" text-anchor="middle" fill="#000">회원</text>
 <ellipse cx="290" cy="86" rx="62" ry="19" fill="#fff" stroke="#000"/>
-<text x="290" y="90" font-size="11" font-weight="400" text-anchor="middle" fill="#000">회원가입한다</text>
+<text x="290" y="90" font-size="11" font-weight="400" text-anchor="middle" fill="#000">회원가입</text>
 <line x1="100" y1="90" x2="228" y2="86" stroke="#000"/>
 <line x1="100" y1="210" x2="228" y2="86" stroke="#888"/>
 <ellipse cx="290" cy="136" rx="62" ry="19" fill="#fff" stroke="#000"/>
-<text x="290" y="140" font-size="11" font-weight="400" text-anchor="middle" fill="#000">상품을 검색한다</text>
+<text x="290" y="140" font-size="11" font-weight="400" text-anchor="middle" fill="#000">상품 검색</text>
 <line x1="100" y1="93" x2="228" y2="136" stroke="#000"/>
 <line x1="100" y1="213" x2="228" y2="136" stroke="#888"/>
 <ellipse cx="290" cy="186" rx="62" ry="19" fill="#fff" stroke="#000"/>
-<text x="290" y="190" font-size="11" font-weight="400" text-anchor="middle" fill="#000">상품을 조회한다</text>
+<text x="290" y="190" font-size="11" font-weight="400" text-anchor="middle" fill="#000">상품 조회</text>
 <line x1="100" y1="96" x2="228" y2="186" stroke="#000"/>
 <line x1="100" y1="216" x2="228" y2="186" stroke="#888"/>
 <ellipse cx="290" cy="246" rx="46" ry="19" fill="#fff" stroke="#000"/>
-<text x="290" y="250" font-size="11" font-weight="400" text-anchor="middle" fill="#000">주문한다</text>
+<text x="290" y="250" font-size="11" font-weight="400" text-anchor="middle" fill="#000">주문</text>
 <line x1="100" y1="219" x2="244" y2="246" stroke="#000"/>
 <text x="400" y="150" font-size="11.5" font-weight="400" text-anchor="start" fill="#000">비회원이 하는 세 가지를 회원도 다 합니다.</text>
 <text x="400" y="168" font-size="11.5" font-weight="400" text-anchor="start" fill="#555">선이 세 개 더 늘어납니다.</text>
@@ -38,7 +38,7 @@
 <text x="96" y="485" font-size="11" font-weight="400" text-anchor="middle" fill="#000"></text>
 <text x="66" y="431" font-size="11" font-weight="400" text-anchor="end" fill="#000">회원</text>
 <ellipse cx="330" cy="435" rx="50" ry="19" fill="#fff" stroke="#000"/>
-<text x="330" y="439" font-size="11" font-weight="400" text-anchor="middle" fill="#000">주문한다</text>
+<text x="330" y="439" font-size="11" font-weight="400" text-anchor="middle" fill="#000">주문</text>
 <line x1="116" y1="437" x2="280" y2="435" stroke="#000"/>
 <line x1="96" y1="412" x2="96" y2="369" stroke="#000"/>
 <path d="M96 355 L89 369 L103 369 Z" fill="#fff" stroke="#000"/>
