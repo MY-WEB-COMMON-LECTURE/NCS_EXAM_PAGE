@@ -1,82 +1,59 @@
 <meta charset="utf-8"><title>화면 설계 — 채점판</title>
+<link rel="stylesheet" href="../../assets/site.css">
 <style>
-  *{box-sizing:border-box}
-  body{margin:0;background:#fff;color:#000;
-       font-family:"Malgun Gothic","Segoe UI",-apple-system,sans-serif;line-height:1.7;font-size:15px}
-  .wrap{max-width:960px;margin:0 auto;padding:30px 24px 90px}
-
-  .sitehead{border-bottom:1px solid #ccc;padding:8px 14px;font-size:12.5px;background:#fff;
-            white-space:nowrap;overflow-x:auto}
-  .sitehead a{color:#000;text-decoration:none;border-bottom:1px solid #000}
-  .sitehead a:hover{background:#000;color:#fff}
-  .sitehead .cur{color:#555}
-  .tuser{float:right;font-size:12px}
-  .tuser b{margin-right:7px}
-  .stick{position:sticky;top:0;z-index:30;background:#fff}
-  .bar{background:#fff;border-bottom:2px solid #000;padding:8px 14px;
-       display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:12.5px}
+  /* 이 페이지에만 있는 것. 공통 규칙은 assets/site.css 에 있습니다. */
+  .bar{border-bottom:1px solid #000;padding:0 18px 9px;display:flex;align-items:center;
+       gap:8px;flex-wrap:wrap;font-size:12.5px}
   .bar b{font-size:13px}
   .bar .sp{flex:1}
-  .bar button,.tuser button{font-family:inherit;font-size:12px;padding:3px 10px;background:#fff;
+  .bar button{font-family:inherit;font-size:12px;padding:3px 10px;background:#fff;
        border:1px solid #000;cursor:pointer}
-  .bar button:hover,.tuser button:hover{background:#000;color:#fff}
+  .bar button:hover{background:#000;color:#fff}
   .bar select,.bar input{font-family:inherit;font-size:12px;padding:2px 5px;border:1px solid #000}
 
-  /* 점수판 */
-  .score{display:flex;align-items:center;gap:14px;border:2px solid #000;padding:9px 14px;
-         font-size:13px;background:#fafafa}
+  .score{display:flex;align-items:center;gap:14px;border:2px solid #000;padding:9px 14px;font-size:13px}
   .score .big{font-size:26px;font-weight:700;line-height:1}
   .score .lv{font-size:15px;font-weight:700;border:1px solid #000;padding:2px 10px}
   .score .pass{background:#000;color:#fff;font-weight:700;padding:2px 12px}
-  .score .fail{background:#fff;color:#000;border:2px solid #000;font-weight:700;padding:1px 11px}
+  .score .fail{border:2px solid #000;font-weight:700;padding:1px 11px}
   .score .sp{flex:1}
 
   .kicker{font-size:11.5px;letter-spacing:.08em;color:#555;padding-bottom:6px;border-bottom:1px solid #000}
-  h1{margin:13px 0 4px;font-size:22px;font-weight:700}
-  .sub{color:#333;margin:0 0 8px;font-size:14px}
-  .meta{color:#555;font-size:12.5px;margin:0;padding-bottom:11px;border-bottom:2px solid #000}
-
+  .meta{color:#555;font-size:12.5px;margin:0 0 16px;padding-bottom:11px;border-bottom:2px solid #000}
   section{padding:22px 0;border-top:1px solid #ccc}
-  h2{margin:0 0 10px;font-size:17px;font-weight:700;border-bottom:1px solid #000;padding-bottom:6px;overflow:hidden}
+  h2{margin:0 0 10px;font-size:17px;font-weight:700;border-bottom:1px solid #000;
+     padding-bottom:6px;overflow:hidden}
   h2 .n{display:inline-block;min-width:23px;height:23px;line-height:21px;text-align:center;
-        border:1px solid #000;font-size:12px;margin-right:9px;vertical-align:2px;font-weight:700}
+     border:1px solid #000;font-size:12px;margin-right:9px;vertical-align:2px;font-weight:700}
   .badge{float:right;font-size:11.5px;font-weight:700;border:1px solid #000;padding:1px 9px;
-         background:#000;color:#fff;margin-left:5px}
+     background:#000;color:#fff;margin-left:5px}
   .badge.g{background:#fff;color:#000}
   .lead{color:#555;margin:6px 0 10px;font-size:13px}
 
-  table{border-collapse:collapse;width:100%;margin:9px 0;font-size:13px}
-  th,td{border:1px solid #000;padding:5px 8px;text-align:left;vertical-align:middle}
-  th{background:#f0f0f0;font-weight:700}
+  th,td{text-align:left;vertical-align:middle}
   td.num,th.num{text-align:right;width:56px}
   td.gt{width:190px;white-space:nowrap}
   td.lb{background:#f7f7f7;font-weight:700;width:120px}
-  tr.miss td{background:#fdf6f6}
-
+  tr.miss td{background:#f2f2f2}
   .gt label{display:inline-block;margin-right:9px;font-size:12.5px;cursor:pointer}
   .gt input{margin-right:3px}
   .got{display:inline-block;min-width:26px;text-align:right;font-weight:700}
 
-  .note{margin:11px 0;border:1px solid #999;padding:9px 12px;background:#fafafa;font-size:13.5px}
   .note .tag{display:block;font-weight:700;font-size:11px;letter-spacing:.05em;margin-bottom:3px}
-  .note.warn{border-color:#000;border-left-width:4px;background:#f2f2f2}
   .note ul{margin:4px 0 2px 18px;padding:0}
   .note li{margin:2px 0}
 
   textarea{font-family:inherit;font-size:13.5px;width:100%;border:1px solid #000;background:#fafafa;
-           padding:7px 9px;line-height:1.6;resize:vertical}
+     padding:7px 9px;line-height:1.6;resize:vertical}
   textarea:focus{outline:none;background:#ffe}
   input.tx{font-family:inherit;font-size:13.5px;border:0;border-bottom:1px solid #000;
-           background:#fafafa;padding:1px 4px}
+     background:#fafafa;padding:1px 4px}
   select.rb{font-family:inherit;font-size:12.5px;padding:2px 5px;border:1px solid #000}
-
   .out{width:100%;height:230px;font-family:Consolas,"D2Coding",monospace;font-size:12.5px;
-       border:1px solid #000;padding:8px;white-space:pre;overflow:auto;background:#f7f7f7}
-
-  footer{margin-top:34px;padding-top:12px;border-top:2px solid #000;font-size:12px;color:#555}
+     border:1px solid #000;padding:8px;white-space:pre;overflow:auto;background:#f7f7f7}
 
   @media print{
-    .stick,.sitehead,.bar,.noprint{display:none !important}
+    .top,.noprint{display:none !important}
     body{font-size:10.5pt}
     .wrap{max-width:none;padding:0}
     section,table{page-break-inside:avoid}
@@ -88,15 +65,11 @@
 <script src="../../assets/auth.js"></script>
 <script>EXAM_AUTH.guard("../../");</script>
 
-<div class="stick">
-  <div class="sitehead">
-    <a href="../../index.html">과목 목록</a> &nbsp;/&nbsp;
-    <a href="../../courses/c1.html">평가 모듈 목록</a> &nbsp;/&nbsp;
-    <a href="../../modules/m01.html">화면 설계</a> &nbsp;/&nbsp;
-    <span class="cur">채점판</span>
-    <span class="tuser" id="tUser"><b id="tName"></b><button id="tOut" type="button">로그아웃</button></span>
-  </div>
-  <div class="bar">
+<div class="top"><div class="tbar">
+  <div class="brand"><a href="../../index.html">평가 자료</a><small><a href="../../courses/c1.html">평가 모듈 목록</a> / <a href="../../modules/m01.html">화면 설계</a> / 채점판</small></div>
+  <div class="tuser" id="tUser"><b id="tName"></b><button id="tOut" type="button">로그아웃</button></div>
+</div>
+<div class="bar">
     <b>화면 설계 · 채점판</b>
     <label>대상 <input id="who" class="tx" placeholder="팀명 또는 성명" size="14" style="border:1px solid #000;padding:2px 5px"></label>
     <button id="bSave" type="button">저장</button>
@@ -107,7 +80,8 @@
     <button id="bCopy" type="button">결과 복사</button>
     <button id="bPrint" type="button">인쇄</button>
     <button id="bReset" type="button">초기화</button>
-  </div>
+</div>
+
 </div>
 
 <div class="wrap">

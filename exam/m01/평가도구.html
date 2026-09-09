@@ -1,70 +1,45 @@
 <meta charset="utf-8"><title>평가도구 · 화면 설계 (HWP 채움도우미)</title>
+<link rel="stylesheet" href="../../assets/site.css">
 <style>
-  *{box-sizing:border-box}
-  body{font-family:"Malgun Gothic",sans-serif;color:#222;margin:0;background:#f7f8f9;line-height:1.7}
-  .wrap{max-width:1020px;margin:0 auto;padding:26px 20px 80px}
-  h1{font-size:22px;margin:0 0 4px}
-  .sub{color:#666;font-size:13px;margin-bottom:16px}
-
-  .sitehead{border-bottom:1px solid #ccc;padding:8px 14px;font-size:12.5px;background:#fff;
-            white-space:nowrap;overflow-x:auto}
-  .sitehead a{color:#222;text-decoration:none;border-bottom:1px solid #888}
-  .sitehead a:hover{background:#222;color:#fff}
-  .sitehead .cur{color:#666}
-  .tuser{float:right;font-size:12px}
-  .tuser b{margin-right:7px}
-  .tuser button{font-family:inherit;font-size:12px;padding:2px 9px;background:#fff;border:1px solid #888;cursor:pointer}
-
-  .blk{background:#fff;border:1px solid #dfe3e6;border-radius:8px;margin:0 0 20px;overflow:hidden}
+  /* 이 페이지에만 있는 것. 공통 규칙은 assets/site.css 에 있습니다. */
+  .blk{border:1px solid #000;margin:0 0 18px}
   .bh{display:flex;align-items:center;justify-content:space-between;gap:10px;
-      background:#f1f4f7;border-bottom:1px solid #dfe3e6;padding:9px 14px}
-  .bt{font-size:13.5px;font-weight:700;color:#2f4f7a}
-  .bd{padding:14px}
-
-  button{font-family:inherit;cursor:pointer;border:0;border-radius:4px;font-weight:700;color:#fff}
-  button.cp{font-size:12px;background:#2f6feb;padding:5px 13px;white-space:nowrap}
-  button.cp:hover{background:#2557b8}
-  button.ok{background:#1a7f37 !important}
-  button.mini{font-size:11px;background:#7a8798;padding:2px 9px;float:right;margin:0 0 4px 8px}
-  button.mini:hover{background:#5b6675}
-
-  table{border-collapse:collapse;width:100%;font-size:13.5px}
-  th,td{border:1px solid #c9cfd5;padding:7px 10px;text-align:left;vertical-align:top}
-  th{background:#eef2f6;font-weight:700}
-  td.lb{background:#f6f8fa;font-weight:700;width:140px}
+      background:#eee;border-bottom:1px solid #000;padding:8px 12px}
+  .bt{font-size:13.5px;font-weight:700}
+  .bd{padding:12px}
+  button.cp,button.mini{font-family:inherit;cursor:pointer;background:#fff;color:#000;
+      border:1px solid #000;font-size:12px;padding:2px 10px;white-space:nowrap}
+  button.cp:hover,button.mini:hover{background:#000;color:#fff}
+  button.mini{font-size:11px;float:right;margin:0 0 4px 8px}
+  button.ok{background:#000;color:#fff}
+  th,td{text-align:left;vertical-align:top}
+  td.lb{background:#f7f7f7;font-weight:700;width:140px}
   td.num,th.num{text-align:right;width:64px}
-  ul{margin:4px 0 4px 18px;padding:0}li{margin:2px 0}
-  code{background:#f0f1f3;border-radius:4px;padding:1px 5px;font-family:Consolas,monospace;font-size:12.5px}
-
-  .hint{background:#eef4ff;border:1px solid #cfe0ff;border-radius:6px;padding:10px 13px;
-        margin:0 0 12px;font-size:13px;color:#24406e}
-  .warn{border-left:3px solid #b8860b;background:#fffdf5;padding:9px 12px;margin:0 0 18px;font-size:13px}
-  .tot{text-align:right;font-weight:700;color:#2f4f7a;font-size:13px;margin-top:8px}
-  .fix{color:#9aa0a6;font-size:12px;font-weight:400}
-  .ok2{color:#1a7f37;font-weight:700}
-  .bad{color:#b3261e;font-weight:700}
+  ul{margin:4px 0 4px 18px;padding:0}
+  li{margin:2px 0}
+  .tot{text-align:right;font-weight:700;font-size:13px;margin-top:8px}
+  .fix{color:#777;font-size:12px;font-weight:400}
+  .ok2{font-weight:700}
+  .bad{font-weight:700;text-decoration:underline}
   .cell{white-space:pre-wrap}
-
-  @media print{body{background:#fff}button{display:none}.blk{break-inside:avoid}.sitehead{display:none}}
+  @media print{button{display:none}.blk{break-inside:avoid}.top{display:none}}
 </style>
 
 <script src="../../assets/auth.js"></script>
 <script>EXAM_AUTH.guard("../../");</script>
 
-<div class="sitehead">
-  <a href="../../index.html">과목 목록</a> &nbsp;/&nbsp;
-  <a href="../../courses/c1.html">평가 모듈 목록</a> &nbsp;/&nbsp;
-  <a href="../../modules/m01.html">화면 설계</a> &nbsp;/&nbsp;
-  <span class="cur">평가도구 (HWP 채움도우미)</span>
-  <span class="tuser" id="tUser"><b id="tName"></b><button id="tOut" type="button">로그아웃</button></span>
-</div>
+<div class="top"><div class="tbar">
+  <div class="brand"><a href="../../index.html">평가 자료</a><small><a href="../../courses/c1.html">평가 모듈 목록</a> / <a href="../../modules/m01.html">화면 설계</a> / 평가도구</small></div>
+  <div class="tuser" id="tUser"><b id="tName"></b><button id="tOut" type="button">로그아웃</button></div>
+</div></div>
+
 
 <div class="wrap">
 
 <h1>화면 설계 — 내부평가 평가도구</h1>
 <p class="sub">능력단위 화면 설계 (2001020224_23v6) / 5수준 · 평가방법 <b>포트폴리오 (100점)</b> · 합격선 60점</p>
 
-<div class="hint">
+<div class="note">
   <b>사용법</b><br>
   · <b>[복사]</b> — 각 칸의 파란 단추를 누르면 그 칸 내용만 클립보드에 담깁니다.
     <code>화면설계_평가도구(100점).hwp</code> 의 해당 칸에 <b>Ctrl+V</b>.<br>
