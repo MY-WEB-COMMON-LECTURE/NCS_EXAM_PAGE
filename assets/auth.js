@@ -9,7 +9,7 @@ window.EXAM_AUTH = (function () {
   var IN = 'exam_in';        // 로그인 여부
   var KEY = 'exam_role';     // 보기 모드
   var H_USER = 'b4008f2e05d41c643ce8fd7a108fe8f32ec91d638e1d5e6f9fbbddcd69d166e3';
-  var H_ADMIN = '90413c6e056b8b9e4327b4c07faa7ce334f89cab55b14ebc05c61faa4b950849';
+  var H_ADMIN = '10b360a5cadb54979d992d4bf04726cefb1a9cbefe48750f2873cdf0ac85e4da';
 
   function get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
   function set(k, v) { try { localStorage.setItem(k, v); } catch (e) { } }
