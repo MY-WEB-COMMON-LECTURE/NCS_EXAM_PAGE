@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400" width="900" height="400">
+<style>text{font-family:"Malgun Gothic",sans-serif;fill:#000}</style>
+<rect width="900" height="400" fill="#fff"/>
+<text x="20" y="26" font-size="13.5" font-weight="700">2단계 · 글자 크기를 정하는 법</text>
+<line x1="20" y1="36" x2="880" y2="36" stroke="#ccc"/>
+<text x="30" y="62" font-size="12" font-weight="700" text-anchor="start" fill="#000">쓰는 자리를 먼저 적고, 그 자리에 크기를 배정합니다</text>
+<text x="30" y="122" font-size="12" font-weight="600" text-anchor="start" fill="#000">Display</text>
+<text x="130" y="122" font-size="11" font-weight="400" text-anchor="start" fill="#6b7280">28 / 700</text>
+<text x="210" y="122" font-size="11.5" font-weight="400" text-anchor="start" fill="#6b7280">메인 배너 문구</text>
+<text x="380" y="122" font-size="28" font-weight="700" text-anchor="start" fill="#000">신선한 사과 1kg 12,900원</text>
+<text x="30" y="166" font-size="12" font-weight="600" text-anchor="start" fill="#000">Heading 1</text>
+<text x="130" y="166" font-size="11" font-weight="400" text-anchor="start" fill="#6b7280">24 / 700</text>
+<text x="210" y="166" font-size="11.5" font-weight="400" text-anchor="start" fill="#6b7280">화면 제목</text>
+<text x="380" y="166" font-size="24" font-weight="700" text-anchor="start" fill="#000">신선한 사과 1kg 12,900원</text>
+<text x="30" y="206" font-size="12" font-weight="600" text-anchor="start" fill="#000">Price</text>
+<text x="130" y="206" font-size="11" font-weight="400" text-anchor="start" fill="#6b7280">20 / 700</text>
+<text x="210" y="206" font-size="11.5" font-weight="400" text-anchor="start" fill="#6b7280">상품 가격</text>
+<text x="380" y="206" font-size="20" font-weight="700" text-anchor="start" fill="#e8590c">신선한 사과 1kg 12,900원</text>
+<text x="30" y="242" font-size="12" font-weight="600" text-anchor="start" fill="#000">Body</text>
+<text x="130" y="242" font-size="11" font-weight="400" text-anchor="start" fill="#6b7280">16 / 400</text>
+<text x="210" y="242" font-size="11.5" font-weight="400" text-anchor="start" fill="#6b7280">본문과 상품명</text>
+<text x="380" y="242" font-size="16" font-weight="400" text-anchor="start" fill="#000">신선한 사과 1kg 12,900원</text>
+<text x="30" y="278" font-size="12" font-weight="600" text-anchor="start" fill="#000">Caption</text>
+<text x="130" y="278" font-size="11" font-weight="400" text-anchor="start" fill="#6b7280">12 / 400</text>
+<text x="210" y="278" font-size="11.5" font-weight="400" text-anchor="start" fill="#6b7280">배송 안내 · 보조 문구</text>
+<text x="380" y="278" font-size="12" font-weight="400" text-anchor="start" fill="#000">신선한 사과 1kg 12,900원</text>
+<line x1="20" y1="300" x2="880" y2="300" stroke="#ccc"/>
+<text x="30" y="326" font-size="11.5" font-weight="400" text-anchor="start" fill="#000">단계는 다섯에서 일곱 개면 충분합니다. 크기를 자잘하게 나누면 지키기 어렵습니다.</text>
+<text x="30" y="346" font-size="11.5" font-weight="400" text-anchor="start" fill="#000">견본은 실제 크기로 그려 넣습니다. 28px 이라고 글로만 쓰면 대조할 수 없습니다.</text>
+</svg>

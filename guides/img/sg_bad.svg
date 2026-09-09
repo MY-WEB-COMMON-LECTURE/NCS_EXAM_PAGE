@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 330" width="900" height="330">
+<style>text{font-family:"Malgun Gothic",sans-serif;fill:#000}</style>
+<rect width="900" height="330" fill="#fff"/>
+<text x="20" y="26" font-size="13.5" font-weight="700">자주 나오는 잘못 — 왼쪽이 잘못된 것, 오른쪽이 고친 것</text>
+<line x1="20" y1="36" x2="880" y2="36" stroke="#ccc"/>
+<line x1="450" y1="50" x2="450" y2="310" stroke="#ccc"/>
+<text x="30" y="70" font-size="12" font-weight="700" text-anchor="start" fill="#000">① 글로만 적었습니다</text>
+<rect x="30" y="82" width="390" height="86" rx="0" fill="#fff" stroke="#d1d5db" stroke-width="1"/>
+<text x="44" y="104" font-size="11.5" font-weight="400" text-anchor="start" fill="#000">색상 : 파란색 계열과 주황색</text>
+<text x="44" y="124" font-size="11.5" font-weight="400" text-anchor="start" fill="#000">폰트 : 고딕체, 적당한 크기</text>
+<text x="44" y="144" font-size="11.5" font-weight="400" text-anchor="start" fill="#000">레이아웃 : 반응형으로 구성</text>
+<rect x="480" y="82" width="390" height="86" rx="0" fill="#fff" stroke="#d1d5db" stroke-width="1"/>
+<rect x="494" y="96" width="40" height="26" rx="0" fill="#2b4c7e" stroke="none" stroke-width="1"/>
+<rect x="540" y="96" width="40" height="26" rx="0" fill="#e8590c" stroke="none" stroke-width="1"/>
+<text x="588" y="106" font-size="11" font-weight="400" text-anchor="start" fill="#000">#2B4C7E · #E8590C</text>
+<text x="588" y="122" font-size="11" font-weight="400" text-anchor="start" fill="#000">Pretendard 16px / 행간 1.5</text>
+<text x="494" y="146" font-size="11.5" font-weight="400" text-anchor="start" fill="#000">12칼럼 · 거터 24 · 상품 4열 (≥1280)</text>
+<text x="30" y="190" font-size="11.5" font-weight="400" text-anchor="start" fill="#6b7280">견본을 그려 넣고 값을 숫자로 적어야 과제 3과 대조할 수 있습니다.</text>
+<text x="30" y="226" font-size="12" font-weight="700" text-anchor="start" fill="#000">② 강조색을 아무 데나 썼습니다</text>
+<rect x="30" y="240" width="180" height="56" rx="6" fill="#fff" stroke="#d1d5db" stroke-width="1"/>
+<text x="44" y="262" font-size="12" font-weight="400" text-anchor="start" fill="#e8590c">장바구니</text>
+<text x="110" y="262" font-size="12" font-weight="700" text-anchor="start" fill="#e8590c">12,900원</text>
+<text x="44" y="282" font-size="12" font-weight="400" text-anchor="start" fill="#e8590c">더 보기</text>
+<rect x="480" y="240" width="180" height="56" rx="6" fill="#fff" stroke="#d1d5db" stroke-width="1"/>
+<text x="494" y="262" font-size="12" font-weight="400" text-anchor="start" fill="#111827">장바구니</text>
+<text x="560" y="262" font-size="12" font-weight="700" text-anchor="start" fill="#e8590c">12,900원</text>
+<text x="494" y="282" font-size="12" font-weight="400" text-anchor="start" fill="#2b4c7e">더 보기</text>
+<text x="240" y="268" font-size="11" font-weight="400" text-anchor="start" fill="#6b7280">강조색이 세 곳에</text>
+<text x="690" y="268" font-size="11" font-weight="400" text-anchor="start" fill="#6b7280">가격에만</text>
+<text x="30" y="318" font-size="11.5" font-weight="400" text-anchor="start" fill="#6b7280">강조색이 넓게 퍼지면 정작 가격이 눈에 띄지 않습니다.</text>
+</svg>
