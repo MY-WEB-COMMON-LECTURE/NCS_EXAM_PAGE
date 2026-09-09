@@ -1,47 +1,101 @@
 <meta charset="utf-8"><title>화면 설계 — 준비 교안</title>
 <link rel="stylesheet" href="../assets/site.css">
 <style>
-  /* 이 페이지에만 있는 것. 공통 규칙은 assets/site.css 에 있습니다. */
-  h2.sec{font-size:17px;margin:30px 0 8px;border-bottom:1px solid #000;padding-bottom:6px}
-  .lv{border:1px solid #000;margin:0 0 20px}
-  .lvh{background:#000;color:#fff;padding:8px 14px;display:flex;align-items:baseline;gap:10px}
-  .lvh b{font-size:15px}
-  .lvh span{font-size:12.5px;color:#ccc}
-  .lvb{padding:0 14px}
-  .step{border-top:1px solid #ccc;padding:16px 0}
+  /* 이 페이지에만 있는 것. 상단 바 · 브랜드 등 공통 규칙은 assets/site.css 에 있습니다. */
+  :root{
+    --ink:#1b1d21; --mu:#6b7280; --mu2:#9aa1ab;
+    --ln:#e6e8eb; --ln2:#f0f1f3; --tint:#f7f8fa; --accent:#2b4c7e;
+  }
+  .wrap{max-width:900px}
+  body{color:var(--ink)}
+  h1{font-size:24px;letter-spacing:-.02em;margin:0 0 6px}
+  .sub{color:var(--mu);font-size:12.5px;border-bottom:1px solid var(--ln);padding-bottom:14px;margin-bottom:26px}
+
+  /* 안내 상자 */
+  .note,.warn{border:0;border-radius:8px;background:var(--tint);
+              padding:16px 18px;margin:18px 0;font-size:13.5px;line-height:1.75;color:var(--ink)}
+  .warn{background:#fdf8f3}
+  .note b,.warn b{font-weight:700}
+
+  /* 절 제목 */
+  h2.sec{font-size:15px;font-weight:700;letter-spacing:-.01em;margin:46px 0 14px;
+         padding:0 0 10px;border-bottom:1px solid var(--ln)}
+
+  /* 레벨 */
+  .lv{border:0;margin:0 0 8px}
+  .lvh{background:none;color:var(--ink);padding:26px 0 10px;display:flex;
+       align-items:baseline;gap:12px;border-bottom:1px solid var(--ln)}
+  .lvh b{font-size:14px;font-weight:700;letter-spacing:-.01em}
+  .lvh span{font-size:12px;color:var(--mu2);font-weight:400}
+  .lvb{padding:0}
+
+  /* 단계 */
+  .step{border-top:1px solid var(--ln2);padding:26px 0 22px}
   .step:first-child{border-top:0}
-  .step h3{margin:0 0 8px;font-size:15px}
-  .step h3 i{font-style:normal;display:inline-block;min-width:22px;height:22px;line-height:20px;
-     text-align:center;border:1px solid #000;font-size:11.5px;margin-right:8px;vertical-align:1px}
-  .step h4{margin:16px 0 6px;font-size:13.5px}
-  .step p{margin:0 0 8px;font-size:13.5px}
-  .step ul,.step ol{margin:6px 0 9px 20px;padding:0}
-  .step li{margin:4px 0;font-size:13.5px}
-  .try{border:1px solid #000;border-left-width:4px;padding:11px 14px;margin:10px 0;font-size:13.5px}
-  .try b.t{display:block;font-size:11.5px;letter-spacing:.05em;margin-bottom:6px}
-  .ex{margin:6px 0;font-size:13.5px}
-  .ex .x,.ex .o{display:inline-block;min-width:52px;font-weight:700;font-size:11.5px;
-     border:1px solid #000;text-align:center;margin-right:8px;vertical-align:1px}
-  .ex .o{background:#000;color:#fff}
-  .out{display:inline-block;border:1px solid #000;padding:1px 8px;font-size:11.5px;margin:2px 4px 2px 0}
-  .hit{display:inline-block;background:#eee;border:1px solid #999;padding:1px 8px;font-size:11.5px;margin:2px 4px 2px 0}
-  .cc{font-size:12.5px;color:#555;margin:6px 0 0}
-  figure{margin:12px 0 14px}
-  figure img{display:block;width:100%;border:1px solid #ccc}
-  figcaption{font-size:12px;color:#555;margin-top:6px}
-  .draw{border-left:3px solid #000;padding:2px 0 2px 13px;margin:12px 0}
-  .draw b.n{display:block;font-size:13px;margin-bottom:4px}
-  .q{border:1px solid #000;padding:11px 14px;margin:12px 0;font-size:13.5px}
-  .q b.t{display:block;font-size:11.5px;letter-spacing:.05em;margin-bottom:6px}
-  ol.qa{margin:6px 0 0 20px}ol.qa li{margin:6px 0}
-  table.sym td{vertical-align:middle}
-  table.sym svg{display:block;margin:0 auto}
+  .step h3{margin:0 0 14px;font-size:15px;font-weight:700;letter-spacing:-.01em;
+           display:flex;align-items:center;gap:10px}
+  .step h3 i{font-style:normal;flex:0 0 auto;width:24px;height:24px;line-height:24px;
+     text-align:center;border-radius:50%;background:var(--accent);color:#fff;
+     font-size:11.5px;font-weight:700;margin:0}
+  .step h4{margin:22px 0 8px;font-size:13px;font-weight:700;color:var(--accent);letter-spacing:-.01em}
+  .step p{margin:0 0 10px;font-size:13.5px;line-height:1.8}
+  .step ul,.step ol{margin:8px 0 12px 20px;padding:0}
+  .step li{margin:6px 0;font-size:13.5px;line-height:1.75}
+
+  /* 상자 */
+  .try,.q{border:0;border-radius:8px;background:var(--tint);
+          padding:16px 18px;margin:14px 0;font-size:13.5px;line-height:1.8}
+  .try b.t,.q b.t{display:block;font-size:11px;font-weight:700;letter-spacing:.06em;
+                  color:var(--accent);margin-bottom:10px}
+  .draw{border-left:2px solid var(--ln);padding:2px 0 2px 16px;margin:18px 0 10px;
+        font-size:13.5px;line-height:1.8}
+  .draw b.n{display:block;font-size:13px;font-weight:700;margin-bottom:5px}
+
+  /* 잘못 · 좋음 */
+  .ex{margin:8px 0;font-size:13.5px}
+  .ex .x,.ex .o{display:inline-block;min-width:46px;font-weight:700;font-size:10.5px;
+     border:0;border-radius:4px;padding:2px 0;text-align:center;margin-right:10px;vertical-align:1px}
+  .ex .x{background:#f2f3f5;color:var(--mu)}
+  .ex .o{background:var(--accent);color:#fff}
+
+  /* 꼬리표 */
+  .out,.hit{display:inline-block;border:0;border-radius:20px;padding:3px 12px;
+            font-size:11px;margin:10px 6px 0 0}
+  .out{background:#eef1f5;color:var(--accent);font-weight:700}
+  .hit{background:#f2f3f5;color:var(--mu)}
+  .cc{font-size:12.5px;color:var(--mu);margin:8px 0 0;line-height:1.75}
+
+  /* 그림 */
+  figure{margin:16px 0 18px}
+  figure img{display:block;width:100%;border:1px solid var(--ln);border-radius:8px}
+  figcaption{font-size:12px;color:var(--mu2);margin-top:8px}
+
+  /* 표 — 세로선을 없애고 가로 실선만 */
+  table{border-collapse:collapse;width:100%;margin:12px 0;font-size:13px}
+  th,td{border:0;border-bottom:1px solid var(--ln);padding:11px 12px 11px 0;
+        text-align:left;vertical-align:top;line-height:1.7}
+  th{font-size:11.5px;font-weight:700;color:var(--mu);background:none;
+     border-bottom:1px solid var(--ink);white-space:nowrap;padding-bottom:8px}
+  tr:last-child td{border-bottom:0}
+  td.c,th.c{text-align:center;white-space:nowrap}
   td.nm{font-weight:700;white-space:nowrap}
-  th,td{text-align:left;vertical-align:top}
-  td.c{text-align:center;white-space:nowrap}
-  dt{font-weight:700;font-size:13.5px;margin:14px 0 4px}
-  dd{margin:0;font-size:13.5px}
-  @media print{.top{display:none}.lv,.step{break-inside:avoid}}
+  table.sym td{vertical-align:middle;padding-left:0}
+  table.sym svg{display:block}
+
+  ol.qa{margin:8px 0 0 20px}
+  ol.qa li{margin:8px 0}
+  dt{font-weight:700;font-size:13.5px;margin:18px 0 5px;color:var(--accent)}
+  dd{margin:0;font-size:13.5px;line-height:1.8}
+  code{background:#f2f3f5;border:0;border-radius:4px;padding:1px 5px;font-size:12px}
+  footer{border-top:1px solid var(--ln);color:var(--mu2);font-size:12px;
+         margin-top:44px;padding-top:16px;line-height:1.8}
+  a{color:var(--accent)}
+
+  @media print{
+    .top{display:none}
+    .lv,.step,figure,table{break-inside:avoid}
+    .note,.warn,.try,.q{background:none;border:1px solid #ccc}
+  }
 </style>
 <script src="../assets/auth.js"></script>
 <script>EXAM_AUTH.guard("../");</script>
