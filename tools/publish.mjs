@@ -33,6 +33,8 @@ const OUT = join(ROOT, arg('out', '../NCS_EXAM_PAGE_PUB'));
 const PAGES = [
   'index.html',
   ...readdirSync(join(ROOT, 'courses')).filter(f => f.endsWith('.html')).map(f => `courses/${f}`),
+  ...(existsSync(join(ROOT, 'guides'))
+    ? readdirSync(join(ROOT, 'guides')).filter(f => f.endsWith('.html')).map(f => `guides/${f}`) : []),
   ...readdirSync(join(ROOT, 'modules')).filter(f => f.endsWith('.html')).map(f => `modules/${f}`),
   ...readdirSync(join(ROOT, 'exam/dbms')).filter(f => f.endsWith('.html')).map(f => `exam/dbms/${f}`),
   ...readdirSync(join(ROOT, 'exam/m01')).filter(f => f.endsWith('.html')).map(f => `exam/m01/${f}`),
