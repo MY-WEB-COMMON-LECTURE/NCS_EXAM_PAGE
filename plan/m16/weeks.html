@@ -1,0 +1,337 @@
+<meta charset="utf-8"><title>주차별 · 차시별 훈련 계획 — 공공데이터 융합 DBMS 구축</title>
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+  /* 이 페이지에만 있는 것. 공통 규칙은 assets/site.css 에 있습니다. */
+  .wrap{max-width:1320px}
+  h1{font-size:22px;letter-spacing:-.02em;margin:0 0 5px}
+  .sub{font-size:12.5px;color:#555;margin:0 0 4px;padding:0;border:0}
+  .sub b{color:#000}
+  .rule{border-bottom:2px solid #000;margin:12px 0 20px}
+
+  .pnav{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 18px}
+  .pnav a{border:1px solid #999;color:#555;font-size:12px;padding:3px 10px;text-decoration:none}
+  .pnav a.on{background:#000;border-color:#000;color:#fff;font-weight:700}
+  .pnav a:hover{border-color:#000;color:#000}
+  .pnav a.on:hover{color:#fff}
+
+  table{margin:0 0 6px;font-size:12.5px}
+  th,td{padding:6px 7px;vertical-align:middle}
+  th{font-size:11.5px}
+  td.l{text-align:left;line-height:1.6}
+  td.t{text-align:left;font-weight:700;white-space:nowrap}
+  td.el{writing-mode:vertical-rl;text-orientation:mixed;white-space:nowrap;
+        font-weight:700;font-size:12px;letter-spacing:.04em;background:#fafafa}
+  td.day{font-weight:700;background:#fafafa;line-height:1.7}
+  td.day small{display:block;font-weight:400;color:#555;font-size:11px}
+  tr.ev td{background:#f2f2f2;font-weight:700}
+  tr.sum td,tr.sum th{background:#eee;font-weight:700}
+  td.num{text-align:center}
+  td.z{color:#bbb}
+  .chk{color:#000;font-weight:700;white-space:nowrap}
+
+  .note{border:1px solid #000;padding:12px 15px;margin:18px 0;font-size:13px;line-height:1.8}
+  .note b.t{display:block;font-size:11.5px;letter-spacing:.05em;margin-bottom:7px}
+  .fn{font-size:12px;color:#555;line-height:1.85;margin:14px 0 0}
+  .fn b{color:#000}
+  @media print{.top,.pnav{display:none}table{font-size:10.5px}}
+</style>
+<script src="../../assets/auth.js"></script>
+<script>EXAM_AUTH.guard("../../");</script>
+
+<div class="top"><div class="tbar">
+  <div class="brand"><a href="../../index.html">평가 자료</a><small><a href="../../courses/c1.html">평가 모듈 목록</a> / 공공데이터 융합 DBMS 구축 / 운영계획서</small></div>
+  <div class="tuser" id="tUser"><b id="tName"></b><button id="tOut" type="button">로그아웃</button></div>
+</div></div>
+<script>EXAM_AUTH.paintTop("../../");</script>
+
+<div class="wrap">
+
+<h1>③ 주차별 · 차시별 훈련 계획</h1>
+<p class="sub">교과목 <b>공공데이터 융합 DBMS 구축</b> · 총 <b>56시간</b> (7일 × 8시간, 1일 4차시 × 2시간)</p>
+<p class="sub">능력단위요소 공공데이터 융합 기초 16시간 + 공공데이터 융합 DBMS 구축 40시간 · 평가 차시는 훈련시간에 포함</p>
+<div class="rule"></div>
+
+<div class="pnav">
+  <a href="index.html">① 교과개요</a>
+  <a href="ncs.html">② 성취기준 매핑</a>
+  <a class="on" href="weeks.html">③ 주차별계획</a>
+  <a href="lesson.html">④ 차시별 지도안</a>
+  <a href="eval.html">⑤ 평가계획</a>
+  <a href="notice.html">⑥ 훈련생 안내문</a>
+</div>
+
+<table>
+  <tr>
+    <th style="width:58px">일차</th>
+    <th style="width:42px">차시</th>
+    <th style="width:150px">단원 (대주제)</th>
+    <th>학습내용 (소주제 · 활동)</th>
+    <th style="width:46px">이론<br>(h)</th>
+    <th style="width:46px">실습<br>(h)</th>
+    <th style="width:46px">평가<br>(h)</th>
+    <th style="width:46px">소계<br>(h)</th>
+    <th style="width:132px">평가 · 과제</th>
+    <th style="width:34px">능력단위요소</th>
+  </tr>
+
+  <!-- ── 1일차 ───────────────────────────────────────── -->
+  <tr>
+    <td class="day" rowspan="4">1일차<small>07-13 (월)</small></td>
+    <td>1</td>
+    <td class="t">교과 오리엔테이션</td>
+    <td class="l">교과 목표와 평가 방법 안내(문제해결시나리오 100점) · 완성 예시 시연 · 데이터 흐름 파악(화면 → 서버 → ML → model.pkl) · 실습 환경 점검(Python 3.11 · Docker Desktop · 풀스택 템플릿)</td>
+    <td class="num">2.0</td><td class="num z">0.0</td><td class="num z">0.0</td><td class="num">2.0</td>
+    <td class="l">조 편성</td>
+    <td class="el" rowspan="8">공공데이터 융합 기초</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td class="t">공공데이터 검색 ·<br>확보 ①</td>
+    <td class="l">공공데이터포털 검색 방법 · 행 단위 데이터와 집계 데이터의 구분 · 학습이 불가능한 데이터의 유형 검토(타겟 없음 · 양성 과소 · 파일 과대 · 규모 부족)</td>
+    <td class="num">1.0</td><td class="num">1.0</td><td class="num z">0.0</td><td class="num">2.0</td>
+    <td class="l">—</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td class="t">공공데이터 검색 ·<br>확보 ②</td>
+    <td class="l">조별 데이터 선정과 CSV 내려받기 · 출처 · 제공기관 · 건수 · 갱신주기 · 이용허락범위 확인과 명시 · 선정 이유 서술</td>
+    <td class="num z">0.0</td><td class="num">2.0</td><td class="num z">0.0</td><td class="num">2.0</td>
+    <td class="l">데이터 선정서</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td class="t">구조 · 유형 ·<br>척도 파악</td>
+    <td class="l">pandas 로 데이터 적재(cp949) · 행과 열의 규모 확인 · 각 컬럼의 자료형과 척도(명목 · 순서 · 등간 · 비율) 판별 · 분석 가능 여부 판단</td>
+    <td class="num">0.5</td><td class="num">1.5</td><td class="num z">0.0</td><td class="num">2.0</td>
+    <td class="l">—</td>
+  </tr>
+
+  <!-- ── 2일차 ───────────────────────────────────────── -->
+  <tr>
+    <td class="day" rowspan="4">2일차<small>07-14 (화)</small></td>
+    <td>5</td>
+    <td class="t">품질 진단 ①</td>
+    <td class="l">결측치 건수와 비율 · 표기 불일치 · 희소 범주 · 이상치 탐지 · 진단 결과에 따른 정제 방향 수립</td>
+    <td class="num">0.5</td><td class="num">1.5</td><td class="num z">0.0</td><td class="num">2.0</td>
+    <td class="l">—</td>
+  </tr>
+  <tr>
+    <td>6</td>
+    <td class="t">품질 진단 ② —<br>인사이트 도출</td>
+    <td class="l">범주별 양성비율 집계와 교차표 작성 · 어떤 조건이 위험한지 수치로 제시 · 뒤의 모델 결과와 대조할 기준 확보</td>
+    <td class="num z">0.0</td><td class="num">2.0</td><td class="num z">0.0</td><td class="num">2.0</td>
+    <td class="l">품질 진단표</td>
+  </tr>
+  <tr>
+    <td>7</td>
+    <td class="t">타겟 정의</td>
+    <td class="l">이진 타겟 설계와 기준 설정 · 기준의 근거 서술 · 연속값을 중앙값으로 나눈 파생 타겟 · 클래스 불균형 확인</td>
+    <td class="num">0.5</td><td class="num">1.5</td><td class="num z">0.0</td><td class="num">2.0</td>
+    <td class="l">—</td>
+  </tr>
+  <tr>
+    <td>8</td>
+    <td class="t">독립변수 선별 ·<br>데이터 누수 배제</td>
+    <td class="l">데이터 누수의 개념 · 타겟을 구성하는 컬럼과 사후 결과값 식별 및 제외 · 남길 변수의 선정 근거 서술 · 컬럼명 영문 코드화</td>
+    <td class="num">0.5</td><td class="num">1.5</td><td class="num z">0.0</td><td class="num">2.0</td>
+    <td class="l">타겟 · 변수 정의서</td>
+  </tr>
+
+  <!-- ── 3일차 ───────────────────────────────────────── -->
+  <tr>
+    <td class="day" rowspan="4">3일차<small>07-15 (수)</small></td>
+    <td>9</td>
+    <td class="t">정제 · 가공</td>
+    <td class="l">결측치 처리 · 희소 범주 병합 · 파생변수 생성 · 범주형 인코딩 · 분석 가능한 형태로 데이터 구축</td>
+    <td class="num">0.5</td><td class="num">1.5</td><td class="num z">0.0</td><td class="num">2.0</td>
+    <td class="l">—</td>
+    <td class="el" rowspan="20">공공데이터 융합 DBMS 구축</td>
+  </tr>
+  <tr>
+    <td>10</td>
+    <td class="t">검증 데이터 분할</td>
+    <td class="l">학습과 검증을 8 대 2 로 분할 · 클래스 분포를 유지하는 층화 추출 · 분할 전후 양성비율 확인</td>
+    <td class="num">0.5</td><td class="num">1.5</td><td class="num z">0.0</td><td class="num">2.0</td>
+    <td class="l">—</td>
+  </tr>
+  <tr>
+    <td>11</td>
+    <td class="t">모델 학습</td>
+    <td class="l">랜덤포레스트 학습 · 불균형 데이터에서 클래스 가중치의 역할 · 주요 하이퍼파라미터 개요</td>
+    <td class="num">0.5</td><td class="num">1.5</td><td class="num z">0.0</td><td class="num">2.0</td>
+    <td class="l">—</td>
+  </tr>
+  <tr>
+    <td>12</td>
+    <td class="t">성능 평가 ·<br>지표 해석</td>
+    <td class="l">정확도 · ROC-AUC · Precision · Recall 출력 · 불균형에서 정확도만 보는 것의 위험 · 지표 선택 근거 서술 · ROC 곡선과 특성중요도 시각화 · 6차시 인사이트와 대조</td>
+    <td class="num">0.5</td><td class="num">1.5</td><td class="num z">0.0</td><td class="num">2.0</td>
+    <td class="l">모델 성능 보고</td>
+  </tr>
+
+  <!-- ── 4일차 ───────────────────────────────────────── -->
+  <tr>
+    <td class="day" rowspan="4">4일차<small>07-16 (목)</small></td>
+    <td>13</td>
+    <td class="t">모델 저장</td>
+    <td class="l">학습한 모델을 model.pkl 로 저장 · 라이브러리 버전 고정 · 학습 환경과 서비스 환경의 버전 일치 확인</td>
+    <td class="num">0.5</td><td class="num">1.5</td><td class="num z">0.0</td><td class="num">2.0</td>
+    <td class="l">—</td>
+  </tr>
+  <tr>
+    <td>14</td>
+    <td class="t">입력 정의서 작성</td>
+    <td class="l">feature_spec.json 의 구조(이름 · 표시명 · 종류 · 선택지) · 이 파일 하나가 API 문서와 입력 화면을 자동으로 만드는 원리</td>
+    <td class="num">0.5</td><td class="num">1.5</td><td class="num z">0.0</td><td class="num">2.0</td>
+    <td class="l">model.pkl ·<br>feature_spec.json</td>
+  </tr>
+  <tr>
+    <td>15</td>
+    <td class="t">ML API 뼈대</td>
+    <td class="l">FastAPI 개요와 설치 목록 작성 · 모델 로드와 예측 함수 분리 · 애플리케이션 생성과 시작 시 1회 모델 적재</td>
+    <td class="num">0.5</td><td class="num">1.5</td><td class="num z">0.0</td><td class="num">2.0</td>
+    <td class="l">—</td>
+  </tr>
+  <tr>
+    <td>16</td>
+    <td class="t">예측 엔드포인트</td>
+    <td class="l">요청 스키마 정의 · 상태 확인 · 입력 정의 · 예측 세 엔드포인트 구현 · 라벨과 확률 반환 · 자동 생성 문서로 확인</td>
+    <td class="num">0.5</td><td class="num">1.5</td><td class="num z">0.0</td><td class="num">2.0</td>
+    <td class="l">—</td>
+  </tr>
+
+  <!-- ── 5일차 ───────────────────────────────────────── -->
+  <tr>
+    <td class="day" rowspan="4">5일차<small>07-17 (금)</small></td>
+    <td>17</td>
+    <td class="t">이력 저장소 ·<br>오류 처리</td>
+    <td class="l">예측 이력 테이블 생성 · 생성 · 조회 · 수정 · 삭제 함수 작성 · 없는 자원과 잘못된 요청에 대한 오류 처리</td>
+    <td class="num">0.5</td><td class="num">1.5</td><td class="num z">0.0</td><td class="num">2.0</td>
+    <td class="l">—</td>
+  </tr>
+  <tr>
+    <td>18</td>
+    <td class="t">CRUD 엔드포인트</td>
+    <td class="l">이력 엔드포인트 다섯 개 추가 · 수정 시 값만 덮어쓰지 않고 새 입력으로 재예측 · 자동 생성 문서에서 네 동작 검증</td>
+    <td class="num">0.5</td><td class="num">1.5</td><td class="num z">0.0</td><td class="num">2.0</td>
+    <td class="l">ML API 동작 확인</td>
+  </tr>
+  <tr>
+    <td>19</td>
+    <td class="t">컨테이너 포장</td>
+    <td class="l">Dockerfile 작성 · 이미지 빌드 · 컨테이너로 ML API 기동 · 로컬 실행 결과와 대조</td>
+    <td class="num">0.5</td><td class="num">1.5</td><td class="num z">0.0</td><td class="num">2.0</td>
+    <td class="l">—</td>
+  </tr>
+  <tr>
+    <td>20</td>
+    <td class="t">풀스택 템플릿<br>이해</td>
+    <td class="l">템플릿 구성 확인(데이터베이스 · 캐시 · 서버 · 화면) · 이미 있는 것과 만들 것의 구분 · 인증 설정은 그대로 유지한다는 원칙</td>
+    <td class="num">1.0</td><td class="num">1.0</td><td class="num z">0.0</td><td class="num">2.0</td>
+    <td class="l">—</td>
+  </tr>
+
+  <!-- ── 6일차 ───────────────────────────────────────── -->
+  <tr>
+    <td class="day" rowspan="4">6일차<small>07-20 (월)</small></td>
+    <td>21</td>
+    <td class="t">컨테이너 통합<br>구성</td>
+    <td class="l">구성 파일에 ML 서비스 추가 · 서버가 ML 을 찾도록 주소 연결 · 다섯 컨테이너의 기동 순서와 의존 관계</td>
+    <td class="num">0.5</td><td class="num">1.5</td><td class="num z">0.0</td><td class="num">2.0</td>
+    <td class="l">—</td>
+  </tr>
+  <tr>
+    <td>22</td>
+    <td class="t">백엔드 중계<br>구현</td>
+    <td class="l">예측 컨트롤러 신규 작성 · ML 주소 주입 · 공통 전달 함수 · 요청 형태 변환 · 엔드포인트 일곱 개 연결 · 인증이 걸린 경로 유지</td>
+    <td class="num">0.5</td><td class="num">1.5</td><td class="num z">0.0</td><td class="num">2.0</td>
+    <td class="l">—</td>
+  </tr>
+  <tr>
+    <td>23</td>
+    <td class="t">예측 화면 구현</td>
+    <td class="l">예측 화면 신규 작성 · 상태와 초기 로딩 · 생성과 수정을 한 함수로 처리 · 입력 정의서를 읽어 폼을 자동 생성 · 경로 등록</td>
+    <td class="num">0.5</td><td class="num">1.5</td><td class="num z">0.0</td><td class="num">2.0</td>
+    <td class="l">—</td>
+  </tr>
+  <tr>
+    <td>24</td>
+    <td class="t">통합 기동 ·<br>동작 검증</td>
+    <td class="l">컨테이너 다섯 개 기동 · 회원가입과 로그인 · 예측과 이력의 생성 · 조회 · 수정 · 삭제 확인 · 실행화면 캡처 · 예측 결과를 6차시 인사이트로 해석</td>
+    <td class="num z">0.0</td><td class="num">2.0</td><td class="num z">0.0</td><td class="num">2.0</td>
+    <td class="l">실행화면 캡처</td>
+  </tr>
+
+  <!-- ── 7일차 · 평가 ────────────────────────────────── -->
+  <tr class="ev">
+    <td class="day" rowspan="4">7일차<small>07-21 (화)</small></td>
+    <td>25</td>
+    <td class="t">문제해결시나리오<br>평가 ①</td>
+    <td class="l">공공데이터 검색 · 확보 · 품질 진단 · 타겟 정의 (채점표 ① 공공데이터 융합 기초 30점)</td>
+    <td class="num z">0.0</td><td class="num z">0.0</td><td class="num">2.0</td><td class="num">2.0</td>
+    <td class="l">내부평가</td>
+  </tr>
+  <tr class="ev">
+    <td>26</td>
+    <td class="t">문제해결시나리오<br>평가 ②</td>
+    <td class="l">정제 · 가공 · 모델 학습 · 모델과 입력정의서 저장 (채점표 ② 01 · 02)</td>
+    <td class="num z">0.0</td><td class="num z">0.0</td><td class="num">2.0</td><td class="num">2.0</td>
+    <td class="l">내부평가</td>
+  </tr>
+  <tr class="ev">
+    <td>27</td>
+    <td class="t">문제해결시나리오<br>평가 ③</td>
+    <td class="l">모델 API 서비스 · 예측 이력 CRUD (채점표 ② 03 · 04)</td>
+    <td class="num z">0.0</td><td class="num z">0.0</td><td class="num">2.0</td><td class="num">2.0</td>
+    <td class="l">내부평가</td>
+  </tr>
+  <tr class="ev">
+    <td>28</td>
+    <td class="t">문제해결시나리오<br>평가 ④</td>
+    <td class="l">컨테이너 통합 · 인증 · 동작 검증과 결과 해석 (채점표 ② 05) · 제출물 확인(PPT · 소스 01 / 02 / 03 · 저장소 링크)</td>
+    <td class="num z">0.0</td><td class="num z">0.0</td><td class="num">2.0</td><td class="num">2.0</td>
+    <td class="l">내부평가 · 제출</td>
+  </tr>
+
+  <!-- ── 합계 ────────────────────────────────────────── -->
+  <tr class="sum">
+    <th colspan="4">합계</th>
+    <td class="num">13.0</td><td class="num">35.0</td><td class="num">8.0</td><td class="num">56.0</td>
+    <td class="l">문제해결시나리오 100점</td>
+    <td></td>
+  </tr>
+  <tr class="sum">
+    <th colspan="4">분류 집계 — 이론 / 실습(평가 포함) / 총계</th>
+    <td class="num">13.0</td><td class="num" colspan="2">43.0</td><td class="num">56.0</td>
+    <td class="l">실습 비율 77%</td>
+    <td></td>
+  </tr>
+</table>
+
+<p class="fn">
+  <b class="chk">✔</b> 차시 합계 28차시 × 2시간 = 56시간 — 교수계획서의 훈련시간과 일치<br>
+  <b class="chk">✔</b> 요소별 합계 — 공공데이터 융합 기초 16시간(1~8차시) · 공공데이터 융합 DBMS 구축 40시간(9~28차시)<br>
+  <b class="chk">✔</b> 평가 8시간 — 평가도구의 평가일자 2026-07-21 (09:00 ~ 18:00) 과 일치
+</p>
+
+<div class="note">
+  <b class="t">작성 요령</b>
+  차시 번호는 <b>④ 차시별 지도안</b> 및 훈련일지와 동일하게 유지합니다.
+  평가 시간은 능력단위 종료 시점에 실시하는 문제해결시나리오의 실제 소요 시간만 기재하며, 표준 양식의 규칙에 따라 훈련시간에 포함합니다.
+  능력단위요소 열의 시간은 <b>② 성취기준 매핑표</b>에서 집계됩니다.
+  본 교과목은 비NCS 자체 개발 교과목이므로 요소 코드 대신 요소명을 그대로 적습니다.
+</div>
+
+<p class="fn">
+  <b>일정 산정</b> — 평가일 2026-07-21(화)에서 역산한 연속 7 훈련일입니다.
+  평가 모듈 목록의 기간 표기(2026-07-08 ~ 2026-07-21)는 앞 교과목의 종료일과 겹쳐 적는 방식이어서 실제 훈련일 수와 다릅니다.
+  본 계획서는 교수계획서의 56시간을 기준으로 합니다.
+</p>
+
+<footer>
+  공공데이터 융합 DBMS 구축 · 56시간 · 담당 정우균 ·
+  (디지털컨버전스) 공공데이터 융합 풀스택 개발자 양성과정E<br>
+  시간 배분은 교수계획서(2026-02-24 ~ 2026-08-10, 900시간)의 교과목별 교수계획을 따랐습니다.
+</footer>
+
+</div>
