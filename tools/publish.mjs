@@ -36,6 +36,7 @@ const PAGES = [
   ...(existsSync(join(ROOT, 'guides'))
     ? readdirSync(join(ROOT, 'guides')).filter(f => f.endsWith('.html')).map(f => `guides/${f}`) : []),
   ...readdirSync(join(ROOT, 'modules')).filter(f => f.endsWith('.html')).map(f => `modules/${f}`),
+  /* plan/** 은 강사·심사용입니다. 채점 정답이 들어 있어 공개본에 넣지 않습니다. */
   ...readdirSync(join(ROOT, 'exam/dbms')).filter(f => f.endsWith('.html')).map(f => `exam/dbms/${f}`),
   ...readdirSync(join(ROOT, 'exam/m01')).filter(f => f.endsWith('.html')).map(f => `exam/m01/${f}`),
   'exam/m01/img/sample1/02_styleguide.html',

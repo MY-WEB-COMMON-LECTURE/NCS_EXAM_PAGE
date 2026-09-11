@@ -39,6 +39,7 @@
   var editing=-1;
 
   var GUIDE={ m01:'guides/m01.html' };            // 준비 가이드가 있는 모듈
+  var PLAN ={ m16:'plan/m16/index.html' };        // 운영계획서가 있는 모듈 (관리자 전용)
   function base(){ return (window.EXAM_MODULES||[]).slice(); }
   function list(){
     try{ var d=localStorage.getItem(MKEY); if(d) return JSON.parse(d); }catch(e){}
@@ -61,7 +62,7 @@
     var v=list(), adm=EXAM_AUTH.isAdmin(), h='';
     h+='<tr><th>능력단위</th><th>강사</th><th>시작일</th><th>종료일</th><th>본평가</th>'+
        '<th>결석자평가</th><th>재평가</th><th class="sc">사전평가</th><th class="sc">능력단위</th>'+
-       '<th>준비 가이드</th><th>평가내역</th></tr>';
+       '<th>준비 가이드</th>'+(adm?'<th class="sc">운영계획서</th>':'')+'<th>평가내역</th></tr>';
     v.forEach(function(m,i){
       if(adm && i===editing){
         var tds='';
@@ -72,7 +73,7 @@
           tds+='<td'+cls+'><input class="mi" data-f="'+c[0]+'" type="'+type+'" value="'+esc(val)+'"></td>';
         });
         h+='<tr class="med">'+tds+'</tr>'+
-           '<tr class="med"><td colspan="11" class="mrow">'+
+           '<tr class="med"><td colspan="'+(adm?12:11)+'" class="mrow">'+
            '<button class="mok" data-i="'+i+'" type="button">저장</button>'+
            '<button class="mno" type="button">취소</button>'+
            '<span class="mhint">날짜가 아닌 값(예: -)은 그대로 적습니다. 평가내역은 modules/mNN.html</span>'+
@@ -90,6 +91,11 @@
       var btn = (pg && !shut)
         ? '<a class="btn" href="../'+esc(pg)+'">평가내역</a>'
         : '<a class="btn d">평가내역</a>';
+      var pl = PLAN[m.id];
+      var pcell = adm
+        ? '<td class="tdb sc">'+(pl ? '<a class="btn" href="../'+esc(pl)+'">계획서</a>'
+                                    : '<a class="btn d">계획서</a>')+'</td>'
+        : '';
       var tools = adm
         ? '<button class="lk'+(lk?' on':'')+'" data-m="'+esc(m.id)+'" type="button">'+
           (lk?'잠김':'열림')+'</button>'+
@@ -100,7 +106,7 @@
          '<td>'+esc(m.sd)+'</td><td>'+esc(m.ed)+'</td><td>'+esc(m.ev||'-')+'</td>'+
          '<td>'+esc(m.ab||'-')+'</td><td>'+esc(m.re||'-')+'</td>'+
          '<td class="pre sc">'+esc(m.pre)+'</td><td class="sc">'+esc(m.sc)+'</td>'+
-         '<td class="tdb">'+gbtn+'</td>'+
+         '<td class="tdb">'+gbtn+'</td>'+pcell+
          '<td class="tdb">'+btn+tools+'</td></tr>';
     });
     document.getElementById('mtable').innerHTML=h;
