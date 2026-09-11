@@ -1,0 +1,456 @@
+<meta charset="utf-8"><title>차시별 상세 지도안 — 공공데이터 융합 DBMS 구축</title>
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+  /* 이 페이지에만 있는 것. 공통 규칙은 assets/site.css 에 있습니다. */
+  .wrap{max-width:1400px}
+  h1{font-size:22px;letter-spacing:-.02em;margin:0 0 5px}
+  .sub{font-size:12.5px;color:#555;margin:0 0 4px;padding:0;border:0}
+  .sub b{color:#000}
+  .rule{border-bottom:2px solid #000;margin:12px 0 20px}
+
+  .pnav{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 18px}
+  .pnav a{border:1px solid #999;color:#555;font-size:12px;padding:3px 10px;text-decoration:none}
+  .pnav a.on{background:#000;border-color:#000;color:#fff;font-weight:700}
+  .pnav a:hover{border-color:#000;color:#000}
+  .pnav a.on:hover{color:#fff}
+
+  table{margin:0 0 6px;font-size:12px;table-layout:fixed}
+  th,td{padding:6px 7px;vertical-align:middle;word-break:break-word}
+  th{font-size:11px}
+  td.l{text-align:left;line-height:1.6}
+  td.day{font-weight:700;background:#fafafa;line-height:1.7;white-space:nowrap}
+  td.day small{display:block;font-weight:400;color:#555;font-size:11px}
+  td.no{font-weight:700;font-size:13px;background:#fafafa}
+  td.tp{text-align:left;font-weight:700;line-height:1.5}
+  td.tp small{display:block;font-weight:400;color:#555;font-size:11px;margin-top:4px;line-height:1.5}
+  td.st{font-weight:700;white-space:nowrap;background:#fafafa}
+  td.mi{white-space:nowrap}
+  td.mt,td.tk,td.me{font-size:11.5px;color:#333;line-height:1.55}
+  tr.sb td,tr.sb th{background:#f2f2f2;font-weight:700;font-size:11px}
+  tr.ev td.st,tr.ev td.no,tr.ev td.tp{background:#eee}
+  tr.ev td{background:#f7f7f7}
+
+  .note{border:1px solid #000;padding:12px 15px;margin:18px 0;font-size:13px;line-height:1.8}
+  .note b.t{display:block;font-size:11.5px;letter-spacing:.05em;margin-bottom:7px}
+  .fn{font-size:12px;color:#555;line-height:1.85;margin:12px 0 0}
+  .fn b{color:#000}
+  .chk{font-weight:700}
+  @media print{.top,.pnav{display:none}table{font-size:9.5px}}
+</style>
+<script src="../../assets/auth.js"></script>
+<script>EXAM_AUTH.guard("../../");</script>
+
+<div class="top"><div class="tbar">
+  <div class="brand"><a href="../../index.html">평가 자료</a><small><a href="../../courses/c1.html">평가 모듈 목록</a> / 공공데이터 융합 DBMS 구축 / 운영계획서</small></div>
+  <div class="tuser" id="tUser"><b id="tName"></b><button id="tOut" type="button">로그아웃</button></div>
+</div></div>
+<script>EXAM_AUTH.paintTop("../../");</script>
+
+<div class="wrap">
+
+<h1>④ 차시별 상세 지도안</h1>
+<p class="sub">차시 = 2시간 (120분 : 50분 수업 + 10분 휴식 × 2) · 도입 → 전개 → 정리 · ③주차별계획과 차시 번호 일치</p>
+<p class="sub">교과목 <b>공공데이터 융합 DBMS 구축</b> · 총 <b>28차시 56시간</b> · 교육 24차시 · 평가 4차시</p>
+<div class="rule"></div>
+
+<div class="pnav">
+  <a href="index.html">① 교과개요</a>
+  <a href="ncs.html">② 성취기준 매핑</a>
+  <a href="weeks.html">③ 주차별계획</a>
+  <a class="on" href="lesson.html">④ 차시별 지도안</a>
+  <a href="eval.html">⑤ 평가계획</a>
+  <a href="notice.html">⑥ 훈련생 안내문</a>
+</div>
+
+<table>
+  <tr>
+    <th style="width:58px">일차</th>
+    <th style="width:34px">차시</th>
+    <th style="width:158px">학습주제 / 학습목표</th>
+    <th style="width:44px">단계</th>
+    <th style="width:44px">시간<br>(분)</th>
+    <th style="width:540px">교수 · 학습 활동 (강사 ↔ 훈련생)</th>
+    <th style="width:190px">교수자료 · 도구</th>
+    <th style="width:104px">평가 · 과제</th>
+    <th style="width:176px">비고</th>
+  </tr>
+
+  <tr>
+    <td class="day" rowspan="16">1일차<small>07-13 (월)</small></td>
+    <td class="no" rowspan="4">1</td>
+    <td class="tp" rowspan="4">교과 오리엔테이션<small>교과의 산출물과 평가 방법을 설명하고 실습 환경을 갖출 수 있다.</small></td>
+    <td class="st">도입</td><td class="mi">15</td>
+    <td class="l">교과 목표와 평가 방법 안내 · 문제해결시나리오 100점의 구성(기초 30 + 구축 70) 설명</td>
+    <td class="l mt" rowspan="4">작업지시서 · 완성 예시 실행화면 · 풀스택 템플릿</td>
+    <td class="l tk" rowspan="4">조 편성표</td>
+    <td class="l me" rowspan="4">포털 계정과 인증키 발급에 시간이 걸리므로 첫 차시에 안내한다</td>
+  </tr>
+  <tr><td class="st">전개</td><td class="mi">90</td><td class="l">[강사] 완성 예시 서비스 시연 — 회원가입 → 로그인 → 예측 → 이력 관리 → 데이터 흐름 설명(화면 → 서버 → ML → 모델 파일) → [훈련생] 실습 환경 점검(Python 3.11 · Docker Desktop) · 풀스택 템플릿 내려받기 → [강사] 순회 점검 · 설치 오류 해결 → 조 편성</td></tr>
+  <tr><td class="st">정리</td><td class="mi">15</td><td class="l">공공데이터포털 회원가입 안내 · 다음 차시 예고</td></tr>
+  <tr class="sb"><th colspan="2">소계</th><td class="l">✔ 120분 (2시간) 구성</td></tr>
+  <tr>
+    
+    <td class="no" rowspan="4">2</td>
+    <td class="tp" rowspan="4">공공데이터 검색 · 확보 ①<small>학습에 쓸 수 있는 공공데이터의 조건을 판별할 수 있다.</small></td>
+    <td class="st">도입</td><td class="mi">15</td>
+    <td class="l">지난 차시 환경 점검 결과 확인 · 「어떤 데이터가 학습 가능한가」 질문 제시</td>
+    <td class="l mt" rowspan="4">공공데이터포털 · 평가도구의 권장 및 탈락 사례 목록</td>
+    <td class="l tk" rowspan="4">—</td>
+    <td class="l me" rowspan="4">—</td>
+  </tr>
+  <tr><td class="st">전개</td><td class="mi">90</td><td class="l">[강사] 공공데이터포털 검색 시연(키워드 · 분류 · 파일형식) → 행 단위 데이터와 집계 데이터의 구분 → 학습이 불가능한 네 유형 검토(결과 컬럼 없음 · 양성 과소 · 파일 과대 · 규모 부족) → [훈련생] 조별로 후보 데이터 3건 검색 · 행수와 컬럼 확인</td></tr>
+  <tr><td class="st">정리</td><td class="mi">15</td><td class="l">조별 후보 3건 공유 · 다음 차시에 1건 확정함을 예고</td></tr>
+  <tr class="sb"><th colspan="2">소계</th><td class="l">✔ 120분 (2시간) 구성</td></tr>
+  <tr>
+    
+    <td class="no" rowspan="4">3</td>
+    <td class="tp" rowspan="4">공공데이터 검색 · 확보 ②<small>데이터를 확정하고 출처와 이용허락범위를 명시할 수 있다.</small></td>
+    <td class="st">도입</td><td class="mi">15</td>
+    <td class="l">후보 데이터 검토 · 조별 피드백</td>
+    <td class="l mt" rowspan="4">공공데이터포털 · 학생 제출용 문제지 1 · 3 항목</td>
+    <td class="l tk" rowspan="4">데이터 선정서 (승인 필수)</td>
+    <td class="l me" rowspan="4">승인되지 않은 조는 다음 차시 전까지 재선정한다</td>
+  </tr>
+  <tr><td class="st">전개</td><td class="mi">90</td><td class="l">[훈련생] 데이터 1건 확정 및 CSV 내려받기 → 출처 · 제공기관 · 건수 · 갱신주기 · 이용허락범위 확인 → 데이터셋 식별번호 기록 → 선정 이유 서술 → [강사] 조별 승인 · 중복 여부 확인</td></tr>
+  <tr><td class="st">정리</td><td class="mi">15</td><td class="l">데이터 선정서 제출 · 승인 결과 통보</td></tr>
+  <tr class="sb"><th colspan="2">소계</th><td class="l">✔ 120분 (2시간) 구성</td></tr>
+  <tr>
+    
+    <td class="no" rowspan="4">4</td>
+    <td class="tp" rowspan="4">구조 · 유형 · 척도 파악<small>데이터의 구조와 각 컬럼의 척도를 파악해 분석 가능 여부를 판단할 수 있다.</small></td>
+    <td class="st">도입</td><td class="mi">15</td>
+    <td class="l">한글 CSV 의 인코딩 문제 사례 제시</td>
+    <td class="l mt" rowspan="4">상세가이드 01 「라이브러리 &amp; 데이터 로드」 · 주피터 노트북</td>
+    <td class="l tk" rowspan="4">—</td>
+    <td class="l me" rowspan="4">—</td>
+  </tr>
+  <tr><td class="st">전개</td><td class="mi">90</td><td class="l">[강사] 데이터 적재 시연(cp949) → 행과 열의 규모 확인 → 컬럼별 자료형 확인 → 척도 구분 설명(명목 · 순서 · 등간 · 비율) → [훈련생] 본인 데이터로 동일 수행 → 분석 가능 여부 판단 · 컬럼 목록표 작성</td></tr>
+  <tr><td class="st">정리</td><td class="mi">15</td><td class="l">컬럼 목록표 정리 · 다음 차시 예고</td></tr>
+  <tr class="sb"><th colspan="2">소계</th><td class="l">✔ 120분 (2시간) 구성</td></tr>
+  <tr>
+    <td class="day" rowspan="16">2일차<small>07-14 (화)</small></td>
+    <td class="no" rowspan="4">5</td>
+    <td class="tp" rowspan="4">품질 진단 ①<small>데이터의 품질 문제를 수치로 진단하고 정제 방향을 세울 수 있다.</small></td>
+    <td class="st">도입</td><td class="mi">15</td>
+    <td class="l">결측치가 학습에 미치는 영향 사례 제시</td>
+    <td class="l mt" rowspan="4">상세가이드 01 「EDA — 데이터 파악」 · 주피터 노트북</td>
+    <td class="l tk" rowspan="4">—</td>
+    <td class="l me" rowspan="4">—</td>
+  </tr>
+  <tr><td class="st">전개</td><td class="mi">90</td><td class="l">[강사] 결측치 건수와 비율 집계 시연 → 표기 불일치 탐지 → 희소 범주 확인 → 이상치 탐지 → [훈련생] 본인 데이터 진단 · 항목별 수치 기록 → 정제 방향 수립</td></tr>
+  <tr><td class="st">정리</td><td class="mi">15</td><td class="l">진단 결과를 수치로 정리 · 정제 방향 공유</td></tr>
+  <tr class="sb"><th colspan="2">소계</th><td class="l">✔ 120분 (2시간) 구성</td></tr>
+  <tr>
+    
+    <td class="no" rowspan="4">6</td>
+    <td class="tp" rowspan="4">품질 진단 ② — 인사이트 도출<small>범주별 양성비율을 집계해 위험 조건을 수치로 제시할 수 있다.</small></td>
+    <td class="st">도입</td><td class="mi">15</td>
+    <td class="l">「어떤 조건에서 위험한가」 를 데이터로 답하는 문제 제시</td>
+    <td class="l mt" rowspan="4">상세가이드 01 「타겟 분포」 · 실행화면 01-1</td>
+    <td class="l tk" rowspan="4">품질 진단표 · 인사이트 3건</td>
+    <td class="l me" rowspan="4">이 차시의 인사이트가 11번 채점 항목(결과 해석)의 근거가 된다</td>
+  </tr>
+  <tr><td class="st">전개</td><td class="mi">90</td><td class="l">[강사] 타겟 분포 확인과 불균형 판단 시연 → 범주별 양성비율 집계 → 교차표 작성 → [훈련생] 본인 데이터에서 인사이트 3건 이상을 수치로 도출 → 조별 공유 · 상호 검토</td></tr>
+  <tr><td class="st">정리</td><td class="mi">15</td><td class="l">도출한 인사이트가 뒤의 모델 결과와 대조할 기준임을 확인</td></tr>
+  <tr class="sb"><th colspan="2">소계</th><td class="l">✔ 120분 (2시간) 구성</td></tr>
+  <tr>
+    
+    <td class="no" rowspan="4">7</td>
+    <td class="tp" rowspan="4">타겟 정의<small>분석 목적에 맞는 이진 타겟을 정의하고 기준을 근거와 함께 서술할 수 있다.</small></td>
+    <td class="st">도입</td><td class="mi">15</td>
+    <td class="l">이진분류의 개념 설명 · 앞 차시 인사이트 복습</td>
+    <td class="l mt" rowspan="4">상세가이드 01 「타겟 분리 &amp; 인코딩」 · 학생 제출용 문제지 5 항목</td>
+    <td class="l tk" rowspan="4">—</td>
+    <td class="l me" rowspan="4">—</td>
+  </tr>
+  <tr><td class="st">전개</td><td class="mi">90</td><td class="l">[강사] 타겟 정의 시연(기준을 세워 0 과 1 로 변환) → 데이터에 이미 있는 타겟과 연속값을 중앙값으로 나눈 파생 타겟 → [훈련생] 본인 타겟 정의와 기준 서술 → 클래스 불균형 확인 → [강사] 조별 점검</td></tr>
+  <tr><td class="st">정리</td><td class="mi">15</td><td class="l">타겟 기준의 근거가 서술되었는지 점검</td></tr>
+  <tr class="sb"><th colspan="2">소계</th><td class="l">✔ 120분 (2시간) 구성</td></tr>
+  <tr>
+    
+    <td class="no" rowspan="4">8</td>
+    <td class="tp" rowspan="4">독립변수 선별 · 데이터 누수 배제<small>데이터 누수가 되는 컬럼을 식별해 제외하고 남긴 변수의 근거를 서술할 수 있다.</small></td>
+    <td class="st">도입</td><td class="mi">15</td>
+    <td class="l">성능이 비정상적으로 높았던 사례 제시 · 원인 추정 질문</td>
+    <td class="l mt" rowspan="4">평가도구 「데이터 누수 주의」 · 주피터 노트북</td>
+    <td class="l tk" rowspan="4">타겟 · 변수 정의서</td>
+    <td class="l me" rowspan="4">누수 컬럼이 남아 있으면 이후의 모든 결과가 무효가 된다</td>
+  </tr>
+  <tr><td class="st">전개</td><td class="mi">90</td><td class="l">[강사] 데이터 누수의 개념 설명 → 타겟을 구성하는 컬럼과 사건 종료 후 확정되는 사후 결과값 식별 → 제외 근거 서술 방법 → 컬럼명 영문 코드화 → [훈련생] 본인 변수 목록 확정 · 제외 사유 작성</td></tr>
+  <tr><td class="st">정리</td><td class="mi">15</td><td class="l">타겟 · 변수 정의서 제출 · 다음 단계 예고</td></tr>
+  <tr class="sb"><th colspan="2">소계</th><td class="l">✔ 120분 (2시간) 구성</td></tr>
+  <tr>
+    <td class="day" rowspan="16">3일차<small>07-15 (수)</small></td>
+    <td class="no" rowspan="4">9</td>
+    <td class="tp" rowspan="4">정제 · 가공<small>진단 결과에 따라 데이터를 정제하여 분석 가능한 형태로 만들 수 있다.</small></td>
+    <td class="st">도입</td><td class="mi">15</td>
+    <td class="l">앞 차시에 세운 정제 방향 확인</td>
+    <td class="l mt" rowspan="4">상세가이드 01 「전처리 — 결측치 처리」 「타겟 분리 &amp; 인코딩」</td>
+    <td class="l tk" rowspan="4">—</td>
+    <td class="l me" rowspan="4">—</td>
+  </tr>
+  <tr><td class="st">전개</td><td class="mi">90</td><td class="l">[강사] 결측치 처리 → 희소 범주 병합 → 파생변수 생성 → 범주형 인코딩 시연 → [훈련생] 본인 데이터 정제 → [강사] 순회 점검</td></tr>
+  <tr><td class="st">정리</td><td class="mi">15</td><td class="l">정제 전후의 행과 열 수 비교 · 손실된 데이터 확인</td></tr>
+  <tr class="sb"><th colspan="2">소계</th><td class="l">✔ 120분 (2시간) 구성</td></tr>
+  <tr>
+    
+    <td class="no" rowspan="4">10</td>
+    <td class="tp" rowspan="4">검증 데이터 분할<small>클래스 분포를 유지하면서 학습과 검증 데이터를 나눌 수 있다.</small></td>
+    <td class="st">도입</td><td class="mi">15</td>
+    <td class="l">학습에 쓴 데이터로 성능을 재면 안 되는 이유</td>
+    <td class="l mt" rowspan="4">상세가이드 01 「검증 데이터 분할」</td>
+    <td class="l tk" rowspan="4">—</td>
+    <td class="l me" rowspan="4">—</td>
+  </tr>
+  <tr><td class="st">전개</td><td class="mi">90</td><td class="l">[강사] 8 대 2 분할 시연 → 층화 추출로 클래스 분포를 유지하는 방법 → 분할 전후 양성비율 확인 → [훈련생] 본인 데이터 분할 · 비율 확인</td></tr>
+  <tr><td class="st">정리</td><td class="mi">15</td><td class="l">분할 결과 확인 · 분할하지 않은 경우와 비교</td></tr>
+  <tr class="sb"><th colspan="2">소계</th><td class="l">✔ 120분 (2시간) 구성</td></tr>
+  <tr>
+    
+    <td class="no" rowspan="4">11</td>
+    <td class="tp" rowspan="4">모델 학습<small>이진분류 모델을 학습시키고 불균형에 대응할 수 있다.</small></td>
+    <td class="st">도입</td><td class="mi">15</td>
+    <td class="l">분류 모델의 종류 개관</td>
+    <td class="l mt" rowspan="4">상세가이드 01 「모델 학습 — 랜덤포레스트」</td>
+    <td class="l tk" rowspan="4">—</td>
+    <td class="l me" rowspan="4">—</td>
+  </tr>
+  <tr><td class="st">전개</td><td class="mi">90</td><td class="l">[강사] 랜덤포레스트 학습 시연 → 불균형 데이터에서 클래스 가중치의 역할 → 주요 하이퍼파라미터 개요 → [훈련생] 본인 모델 학습 → [강사] 학습 실패 사례 점검</td></tr>
+  <tr><td class="st">정리</td><td class="mi">15</td><td class="l">학습 완료 확인 · 다음 차시 평가 예고</td></tr>
+  <tr class="sb"><th colspan="2">소계</th><td class="l">✔ 120분 (2시간) 구성</td></tr>
+  <tr>
+    
+    <td class="no" rowspan="4">12</td>
+    <td class="tp" rowspan="4">성능 평가 · 지표 해석<small>성능지표를 출력하고 지표 선택의 근거를 서술할 수 있다.</small></td>
+    <td class="st">도입</td><td class="mi">15</td>
+    <td class="l">정확도만 높은 모델의 함정 — 불균형 데이터의 예</td>
+    <td class="l mt" rowspan="4">상세가이드 01 「평가 — 정확도 vs ROC-AUC」 · 실행화면 01-2 · 01-4</td>
+    <td class="l tk" rowspan="4">모델 성능 보고</td>
+    <td class="l me" rowspan="4">—</td>
+  </tr>
+  <tr><td class="st">전개</td><td class="mi">90</td><td class="l">[강사] 정확도 · ROC-AUC · Precision · Recall 출력 → 불균형에서 ROC-AUC 를 주지표로 삼는 근거 → 클래스 가중치를 뺀 경우와 비교 → ROC 곡선과 특성중요도 시각화 → [훈련생] 본인 모델 평가 → 6차시 인사이트와 대조</td></tr>
+  <tr><td class="st">정리</td><td class="mi">15</td><td class="l">지표 선택 근거 서술 · 모델 성능 보고 제출</td></tr>
+  <tr class="sb"><th colspan="2">소계</th><td class="l">✔ 120분 (2시간) 구성</td></tr>
+  <tr>
+    <td class="day" rowspan="16">4일차<small>07-16 (목)</small></td>
+    <td class="no" rowspan="4">13</td>
+    <td class="tp" rowspan="4">모델 저장<small>학습한 모델을 파일로 저장하고 실행 환경의 버전을 맞출 수 있다.</small></td>
+    <td class="st">도입</td><td class="mi">15</td>
+    <td class="l">학습한 모델을 왜 파일로 남기는가</td>
+    <td class="l mt" rowspan="4">상세가이드 01 「모델 저장」</td>
+    <td class="l tk" rowspan="4">—</td>
+    <td class="l me" rowspan="4">버전이 어긋나면 02 단계에서 모델이 열리지 않는다</td>
+  </tr>
+  <tr><td class="st">전개</td><td class="mi">90</td><td class="l">[강사] 모델 파일 저장 시연 → 라이브러리 버전 고정 → 학습 환경과 서비스 환경의 버전 일치 확인 방법 → [훈련생] 본인 모델 저장 · 02 폴더로 배치</td></tr>
+  <tr><td class="st">정리</td><td class="mi">15</td><td class="l">저장 경로와 버전 기록 · 불일치 시 나타나는 오류 예고</td></tr>
+  <tr class="sb"><th colspan="2">소계</th><td class="l">✔ 120분 (2시간) 구성</td></tr>
+  <tr>
+    
+    <td class="no" rowspan="4">14</td>
+    <td class="tp" rowspan="4">입력 정의서 작성<small>입력 정의서를 규격대로 작성하여 화면 자동 생성의 근거를 만들 수 있다.</small></td>
+    <td class="st">도입</td><td class="mi">15</td>
+    <td class="l">화면의 입력칸을 사람이 일일이 만들 때 생기는 문제</td>
+    <td class="l mt" rowspan="4">상세가이드 01 「모델 저장」 · 작업지시서 「피처 정의」</td>
+    <td class="l tk" rowspan="4">모델 파일 · 입력 정의서</td>
+    <td class="l me" rowspan="4">이 파일의 규격이 어긋나면 03 단계에서 화면이 그려지지 않는다</td>
+  </tr>
+  <tr><td class="st">전개</td><td class="mi">90</td><td class="l">[강사] 입력 정의서의 구조 설명(이름 · 표시명 · 종류 · 선택지) → 이 파일 하나가 API 문서와 입력 화면을 자동으로 만드는 원리 → [훈련생] 본인 입력 정의서 작성 → 02 폴더로 저장 → [강사] 규격 점검</td></tr>
+  <tr><td class="st">정리</td><td class="mi">15</td><td class="l">두 파일(모델 · 입력 정의서) 제출 확인</td></tr>
+  <tr class="sb"><th colspan="2">소계</th><td class="l">✔ 120분 (2시간) 구성</td></tr>
+  <tr>
+    
+    <td class="no" rowspan="4">15</td>
+    <td class="tp" rowspan="4">ML API 뼈대<small>모델을 불러와 예측하는 API 의 뼈대를 만들 수 있다.</small></td>
+    <td class="st">도입</td><td class="mi">15</td>
+    <td class="l">모델을 API 로 만드는 이유 · 매번 학습하지 않는 구조</td>
+    <td class="l mt" rowspan="4">상세가이드 02 「1부 1 ~ 3」</td>
+    <td class="l tk" rowspan="4">—</td>
+    <td class="l me" rowspan="4">—</td>
+  </tr>
+  <tr><td class="st">전개</td><td class="mi">90</td><td class="l">[강사] 설치 목록 작성 → 모델 로드와 예측 함수 분리 → 애플리케이션 생성과 시작 시 1회 모델 적재 → [훈련생] 코드 작성 → [강사] 순회 점검</td></tr>
+  <tr><td class="st">정리</td><td class="mi">15</td><td class="l">기동 확인 · 다음 차시 예고</td></tr>
+  <tr class="sb"><th colspan="2">소계</th><td class="l">✔ 120분 (2시간) 구성</td></tr>
+  <tr>
+    
+    <td class="no" rowspan="4">16</td>
+    <td class="tp" rowspan="4">예측 엔드포인트<small>예측 결과를 라벨과 확률로 반환하는 엔드포인트를 구현할 수 있다.</small></td>
+    <td class="st">도입</td><td class="mi">15</td>
+    <td class="l">요청과 응답의 형태 · JSON 구조 설명</td>
+    <td class="l mt" rowspan="4">상세가이드 02 「1부 4 ~ 6」 「2부 2 ~ 4」 · 실행화면 02-1</td>
+    <td class="l tk" rowspan="4">—</td>
+    <td class="l me" rowspan="4">—</td>
+  </tr>
+  <tr><td class="st">전개</td><td class="mi">90</td><td class="l">[강사] 요청 스키마 정의 → 상태 확인과 입력 정의 엔드포인트 → 예측 엔드포인트와 라벨 · 확률 반환 → [훈련생] 코드 작성 → 자동 생성 문서에서 예측 시험 → 위험이 높은 경우와 낮은 경우 비교</td></tr>
+  <tr><td class="st">정리</td><td class="mi">15</td><td class="l">자동 생성 문서 화면 캡처 · 결과 확인</td></tr>
+  <tr class="sb"><th colspan="2">소계</th><td class="l">✔ 120분 (2시간) 구성</td></tr>
+  <tr>
+    <td class="day" rowspan="16">5일차<small>07-17 (금)</small></td>
+    <td class="no" rowspan="4">17</td>
+    <td class="tp" rowspan="4">이력 저장소 · 오류 처리<small>예측 이력을 저장하는 저장소를 만들고 오류를 처리할 수 있다.</small></td>
+    <td class="st">도입</td><td class="mi">15</td>
+    <td class="l">예측 결과를 남겨야 하는 이유</td>
+    <td class="l mt" rowspan="4">상세가이드 02 「1부 7」 「2부 9」</td>
+    <td class="l tk" rowspan="4">—</td>
+    <td class="l me" rowspan="4">—</td>
+  </tr>
+  <tr><td class="st">전개</td><td class="mi">90</td><td class="l">[강사] 이력 테이블 생성 → 생성 · 조회 · 수정 · 삭제 함수 작성 → 없는 자원과 잘못된 요청에 대한 오류 처리 → [훈련생] 코드 작성 → [강사] 점검</td></tr>
+  <tr><td class="st">정리</td><td class="mi">15</td><td class="l">저장소 동작 확인 · 오류 응답 확인</td></tr>
+  <tr class="sb"><th colspan="2">소계</th><td class="l">✔ 120분 (2시간) 구성</td></tr>
+  <tr>
+    
+    <td class="no" rowspan="4">18</td>
+    <td class="tp" rowspan="4">CRUD 엔드포인트<small>예측 이력의 네 동작을 구현하고 수정 시 재예측되게 할 수 있다.</small></td>
+    <td class="st">도입</td><td class="mi">15</td>
+    <td class="l">수정이 단순 덮어쓰기가 아닌 이유</td>
+    <td class="l mt" rowspan="4">상세가이드 02 「1부 8」 「2부 5 ~ 8」</td>
+    <td class="l tk" rowspan="4">ML API 동작 확인</td>
+    <td class="l me" rowspan="4">수정 시 재예측되지 않으면 9번 채점 항목이 보통 이하로 내려간다</td>
+  </tr>
+  <tr><td class="st">전개</td><td class="mi">90</td><td class="l">[강사] 이력 엔드포인트 다섯 개 추가 → 수정 시 새 입력으로 재예측하는 처리 → [훈련생] 코드 작성 → 자동 생성 문서에서 생성 · 조회 · 수정 · 삭제 네 동작 검증 → 없는 번호로 오류 확인</td></tr>
+  <tr><td class="st">정리</td><td class="mi">15</td><td class="l">ML API 동작 확인 제출 · 컨테이너화 예고</td></tr>
+  <tr class="sb"><th colspan="2">소계</th><td class="l">✔ 120분 (2시간) 구성</td></tr>
+  <tr>
+    
+    <td class="no" rowspan="4">19</td>
+    <td class="tp" rowspan="4">컨테이너 포장<small>작성한 API 를 컨테이너로 만들어 기동할 수 있다.</small></td>
+    <td class="st">도입</td><td class="mi">15</td>
+    <td class="l">내 PC 에서만 동작하는 문제 · 환경 차이</td>
+    <td class="l mt" rowspan="4">상세가이드 02 「1부 9」 「2부 10」</td>
+    <td class="l tk" rowspan="4">—</td>
+    <td class="l me" rowspan="4">—</td>
+  </tr>
+  <tr><td class="st">전개</td><td class="mi">90</td><td class="l">[강사] 컨테이너 정의 파일 작성 → 이미지 빌드 → 컨테이너로 기동 → [훈련생] 본인 API 컨테이너화 → 로컬 실행 결과와 대조</td></tr>
+  <tr><td class="st">정리</td><td class="mi">15</td><td class="l">이미지 목록 확인 · 다음 단계 예고</td></tr>
+  <tr class="sb"><th colspan="2">소계</th><td class="l">✔ 120분 (2시간) 구성</td></tr>
+  <tr>
+    
+    <td class="no" rowspan="4">20</td>
+    <td class="tp" rowspan="4">풀스택 템플릿 이해<small>제공된 템플릿의 구성을 파악하고 만들 부분을 구분할 수 있다.</small></td>
+    <td class="st">도입</td><td class="mi">15</td>
+    <td class="l">서비스를 여러 개로 나누는 이유</td>
+    <td class="l mt" rowspan="4">상세가이드 03 「핵심 개념」 「템플릿 구성」 · 풀스택 템플릿</td>
+    <td class="l tk" rowspan="4">—</td>
+    <td class="l me" rowspan="4">인증 코드를 고치면 감점된다. 만들 것은 ML 연결 부분뿐이다</td>
+  </tr>
+  <tr><td class="st">전개</td><td class="mi">90</td><td class="l">[강사] 템플릿 구성 확인(데이터베이스 · 캐시 · 서버 · 화면) → 이미 있는 것과 만들 것의 구분 → 인증 설정은 그대로 둔다는 원칙 → [훈련생] 템플릿 내려받고 구조 확인 · 기동 시험</td></tr>
+  <tr><td class="st">정리</td><td class="mi">15</td><td class="l">만들 파일 두 개를 확인 · 다음 차시 예고</td></tr>
+  <tr class="sb"><th colspan="2">소계</th><td class="l">✔ 120분 (2시간) 구성</td></tr>
+  <tr>
+    <td class="day" rowspan="16">6일차<small>07-20 (월)</small></td>
+    <td class="no" rowspan="4">21</td>
+    <td class="tp" rowspan="4">컨테이너 통합 구성<small>여러 컨테이너를 하나의 구성으로 묶어 기동할 수 있다.</small></td>
+    <td class="st">도입</td><td class="mi">15</td>
+    <td class="l">컨테이너끼리 서로를 찾는 방법</td>
+    <td class="l mt" rowspan="4">상세가이드 03 「1부 0 ~ 2」</td>
+    <td class="l tk" rowspan="4">—</td>
+    <td class="l me" rowspan="4">—</td>
+  </tr>
+  <tr><td class="st">전개</td><td class="mi">90</td><td class="l">[강사] 구성 파일에 ML 서비스 추가 → 서버가 ML 을 찾도록 주소 연결 → 기동 순서와 의존 관계 설명 → [훈련생] 구성 파일 수정 → [강사] 점검</td></tr>
+  <tr><td class="st">정리</td><td class="mi">15</td><td class="l">다섯 컨테이너 목록 확인</td></tr>
+  <tr class="sb"><th colspan="2">소계</th><td class="l">✔ 120분 (2시간) 구성</td></tr>
+  <tr>
+    
+    <td class="no" rowspan="4">22</td>
+    <td class="tp" rowspan="4">백엔드 중계 구현<small>서버가 ML 요청을 중계하도록 컨트롤러를 작성할 수 있다.</small></td>
+    <td class="st">도입</td><td class="mi">15</td>
+    <td class="l">서버가 ML 을 직접 부르지 않고 중계만 하는 이유 · 인증이 걸리는 위치</td>
+    <td class="l mt" rowspan="4">상세가이드 03 「1부 3」</td>
+    <td class="l tk" rowspan="4">—</td>
+    <td class="l me" rowspan="4">—</td>
+  </tr>
+  <tr><td class="st">전개</td><td class="mi">90</td><td class="l">[강사] 예측 컨트롤러 신규 작성 — ML 주소 주입 → 공통 전달 함수 → 요청 형태 변환 → 엔드포인트 일곱 개 연결 → [훈련생] 코드 작성 → [강사] 순회 점검</td></tr>
+  <tr><td class="st">정리</td><td class="mi">15</td><td class="l">서버를 거친 예측 동작 확인</td></tr>
+  <tr class="sb"><th colspan="2">소계</th><td class="l">✔ 120분 (2시간) 구성</td></tr>
+  <tr>
+    
+    <td class="no" rowspan="4">23</td>
+    <td class="tp" rowspan="4">예측 화면 구현<small>입력 정의서를 읽어 입력 폼을 자동으로 만드는 화면을 구현할 수 있다.</small></td>
+    <td class="st">도입</td><td class="mi">15</td>
+    <td class="l">입력칸을 하드코딩하면 감점되는 이유</td>
+    <td class="l mt" rowspan="4">상세가이드 03 「1부 4 ~ 5」 · 실행화면 03-4</td>
+    <td class="l tk" rowspan="4">—</td>
+    <td class="l me" rowspan="4">입력 정의서를 고치면 화면이 따라 바뀌는지로 자동 생성을 확인한다</td>
+  </tr>
+  <tr><td class="st">전개</td><td class="mi">90</td><td class="l">[강사] 예측 화면 신규 작성 — 상태와 초기 로딩 → 생성과 수정을 한 함수로 처리 → 입력 정의서를 읽어 폼 자동 생성 → 경로 등록 → [훈련생] 코드 작성 → 화면 확인</td></tr>
+  <tr><td class="st">정리</td><td class="mi">15</td><td class="l">폼이 자동으로 그려지는지 확인</td></tr>
+  <tr class="sb"><th colspan="2">소계</th><td class="l">✔ 120분 (2시간) 구성</td></tr>
+  <tr>
+    
+    <td class="no" rowspan="4">24</td>
+    <td class="tp" rowspan="4">통합 기동 · 동작 검증<small>전체 서비스를 기동하고 동작을 검증하며 결과를 해석할 수 있다.</small></td>
+    <td class="st">도입</td><td class="mi">15</td>
+    <td class="l">제출 전 확인할 것 · 채점 항목과 실행화면의 대응</td>
+    <td class="l mt" rowspan="4">상세가이드 03 「2부」 · 실행화면 03-1 ~ 03-9</td>
+    <td class="l tk" rowspan="4">실행화면 캡처</td>
+    <td class="l me" rowspan="4">다음 차시가 평가이므로 미완성 조에게 보충 방법을 안내한다</td>
+  </tr>
+  <tr><td class="st">전개</td><td class="mi">90</td><td class="l">[훈련생] 컨테이너 다섯 개 기동 → 회원가입과 로그인 → 예측과 이력의 생성 · 조회 · 수정 · 삭제 확인 → 실행화면 단계별 캡처 → 예측 결과를 6차시 인사이트와 대조해 해석 → [강사] 조별 점검 · 미비 사항 지적</td></tr>
+  <tr><td class="st">정리</td><td class="mi">15</td><td class="l">실행화면 캡처 제출 · 평가 진행 방식 안내</td></tr>
+  <tr class="sb"><th colspan="2">소계</th><td class="l">✔ 120분 (2시간) 구성</td></tr>
+  <tr class="ev">
+    <td class="day" rowspan="8">7일차<small>07-21 (화)</small></td>
+    <td class="no" rowspan="2">25</td>
+    <td class="tp" rowspan="2">문제해결시나리오 평가 ①<small>공공데이터 융합 기초 (채점표 ① 30점)</small></td>
+    <td class="st">평가</td><td class="mi">120</td>
+    <td class="l">공공데이터 검색 · 확보 / 구조 · 유형 · 척도 파악 / 출처 · 제공기관 · 갱신주기 · 이용허락범위 / 품질 진단 / 타겟 정의 · 독립변수 선별</td>
+    <td class="l mt" rowspan="2">학생 제출용 문제지 · 평가도구 채점표 · 실습 PC · 저장소</td>
+    <td class="l tk" rowspan="2">내부평가</td>
+    <td class="l me" rowspan="2">평가 안내 · 제출물 확인 · 부정행위 유의사항 · 중간 제출 확인</td>
+  </tr>
+  <tr class="sb"><th colspan="2">소계</th><td class="l">✔ 120분 (2시간) 구성</td></tr>
+  <tr class="ev">
+    
+    <td class="no" rowspan="2">26</td>
+    <td class="tp" rowspan="2">문제해결시나리오 평가 ②<small>정제 · 가공 · 모델 학습 · 저장 (채점표 ② 01 · 02)</small></td>
+    <td class="st">평가</td><td class="mi">120</td>
+    <td class="l">정제 · 가공하여 분석 가능한 형태로 구축 / 모델 파일과 입력 정의서 저장</td>
+    <td class="l mt" rowspan="2">학생 제출용 문제지 · 평가도구 채점표 · 실습 PC · 저장소</td>
+    <td class="l tk" rowspan="2">내부평가</td>
+    <td class="l me" rowspan="2">—</td>
+  </tr>
+  <tr class="sb"><th colspan="2">소계</th><td class="l">✔ 120분 (2시간) 구성</td></tr>
+  <tr class="ev">
+    
+    <td class="no" rowspan="2">27</td>
+    <td class="tp" rowspan="2">문제해결시나리오 평가 ③<small>모델 API 서비스 · 예측 이력 CRUD (채점표 ② 03 · 04)</small></td>
+    <td class="st">평가</td><td class="mi">120</td>
+    <td class="l">모델 API 서비스 / 예측 이력 생성 · 조회 · 수정 · 삭제</td>
+    <td class="l mt" rowspan="2">학생 제출용 문제지 · 평가도구 채점표 · 실습 PC · 저장소</td>
+    <td class="l tk" rowspan="2">내부평가</td>
+    <td class="l me" rowspan="2">—</td>
+  </tr>
+  <tr class="sb"><th colspan="2">소계</th><td class="l">✔ 120분 (2시간) 구성</td></tr>
+  <tr class="ev">
+    
+    <td class="no" rowspan="2">28</td>
+    <td class="tp" rowspan="2">문제해결시나리오 평가 ④<small>통합 · 인증 · 동작 검증 (채점표 ② 05)</small></td>
+    <td class="st">평가</td><td class="mi">120</td>
+    <td class="l">컨테이너 통합과 인증 / 동작 검증과 결과 해석 / 제출물 확인 — PPT · 소스 01 · 02 · 03 · 저장소 링크</td>
+    <td class="l mt" rowspan="2">학생 제출용 문제지 · 평가도구 채점표 · 실습 PC · 저장소</td>
+    <td class="l tk" rowspan="2">내부평가</td>
+    <td class="l me" rowspan="2">—</td>
+  </tr>
+  <tr class="sb"><th colspan="2">소계</th><td class="l">✔ 120분 (2시간) 구성</td></tr>
+</table>
+
+<p class="fn">
+  <span class="chk">✔</span> 28차시 × 120분 = 3,360분 = 56시간 — ③주차별계획 및 교수계획서와 일치<br>
+  <span class="chk">✔</span> 차시 번호 1 ~ 28 연속 — ③주차별계획 및 훈련일지와 동일<br>
+  <span class="chk">✔</span> 평가 4차시(25 ~ 28)는 2026-07-21 09:00 ~ 18:00 에 연속 실시
+</p>
+
+<div class="note">
+  <b class="t">작성 요령</b>
+  전개 칸의 활동은 <b>상세가이드 01 · 02 · 03</b> 의 절 구조를 그대로 옮긴 것입니다.
+  강사 시연 뒤에 훈련생이 <b>본인 조가 고른 데이터</b>로 같은 절차를 수행하므로, 조마다 화면과 수치가 다릅니다.
+  진도 편차가 생기면 비고 열의 지침에 따라 보충합니다.
+  평가 차시는 도입 · 전개 · 정리로 나누지 않고 평가 진행 시간만 기재했습니다.
+</div>
+
+<footer>
+  공공데이터 융합 DBMS 구축 · 28차시 56시간 · 담당 정우균 ·
+  (디지털컨버전스) 공공데이터 융합 풀스택 개발자 양성과정E<br>
+  교수학습방법은 교수계획서의 강의 및 시연 · 조별실습 · 프리젠테이션 및 질의응답을 따랐습니다.
+</footer>
+
+</div>

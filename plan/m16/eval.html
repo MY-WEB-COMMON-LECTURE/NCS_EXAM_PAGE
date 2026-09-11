@@ -1,0 +1,455 @@
+<meta charset="utf-8"><title>평가 계획 — 공공데이터 융합 DBMS 구축</title>
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+  /* 이 페이지에만 있는 것. 공통 규칙은 assets/site.css 에 있습니다. */
+  .wrap{max-width:1320px}
+  h1{font-size:22px;letter-spacing:-.02em;margin:0 0 5px}
+  .sub{font-size:12.5px;color:#555;margin:0 0 4px;padding:0;border:0}
+  .sub b{color:#000}
+  .rule{border-bottom:2px solid #000;margin:12px 0 20px}
+
+  .pnav{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 18px}
+  .pnav a{border:1px solid #999;color:#555;font-size:12px;padding:3px 10px;text-decoration:none}
+  .pnav a.on{background:#000;border-color:#000;color:#fff;font-weight:700}
+  .pnav a:hover{border-color:#000;color:#000}
+  .pnav a.on:hover{color:#fff}
+
+  h2{font-size:15px;margin:32px 0 9px;border-bottom:1px solid #000;padding-bottom:6px}
+  h2 span{font-weight:400;color:#555;font-size:12.5px;margin-left:8px}
+  table{margin:0 0 6px;font-size:12.5px}
+  th,td{padding:7px 8px;vertical-align:middle}
+  th{font-size:11.5px}
+  td.l{text-align:left;line-height:1.65}
+  td.no{font-weight:700;white-space:nowrap}
+  td.nm{text-align:left;font-weight:700;line-height:1.55}
+  td.cs{white-space:nowrap}
+  td.el{font-weight:700;background:#fafafa;font-size:12px;line-height:1.6}
+  td.el small{display:block;font-weight:400;color:#555;font-size:11px;margin-top:3px}
+  tr.sum td,tr.sum th{background:#eee;font-weight:700}
+  tr.tot td,tr.tot th{background:#000;color:#fff;font-weight:700}
+  .rb td.l{font-size:12px;line-height:1.6}
+  .rb td.g{text-align:left;font-size:12px;line-height:1.6}
+  .rb td.x{background:#fafafa}
+  .chk{font-weight:700}
+
+  .note{border:1px solid #000;padding:12px 15px;margin:18px 0;font-size:13px;line-height:1.8}
+  .note b.t{display:block;font-size:11.5px;letter-spacing:.05em;margin-bottom:7px}
+  .warn{border:1px solid #000;border-left-width:4px}
+  .fn{font-size:12px;color:#555;line-height:1.85;margin:12px 0 0}
+  .fn b{color:#000}
+  @media print{.top,.pnav{display:none}table{font-size:10px}h2{margin-top:20px}}
+</style>
+<script src="../../assets/auth.js"></script>
+<script>EXAM_AUTH.guard("../../");</script>
+
+<div class="top"><div class="tbar">
+  <div class="brand"><a href="../../index.html">평가 자료</a><small><a href="../../courses/c1.html">평가 모듈 목록</a> / 공공데이터 융합 DBMS 구축 / 운영계획서</small></div>
+  <div class="tuser" id="tUser"><b id="tName"></b><button id="tOut" type="button">로그아웃</button></div>
+</div></div>
+<script>EXAM_AUTH.paintTop("../../");</script>
+
+<div class="wrap">
+
+<h1>⑤ 평가 계획 (내부평가)</h1>
+<p class="sub">교과목 <b>공공데이터 융합 DBMS 구축</b> · 평가방법 <b>문제해결시나리오 100점</b> · 평가시점 능력단위 종료</p>
+<p class="sub">평가일자 <b>2026-07-21 (09:00 ~ 18:00)</b> · 평가 시간은 훈련시간에 포함 · 훈련유형 일반 국비(계좌제)</p>
+<div class="rule"></div>
+
+<div class="pnav">
+  <a href="index.html">① 교과개요</a>
+  <a href="ncs.html">② 성취기준 매핑</a>
+  <a href="weeks.html">③ 주차별계획</a>
+  <a href="lesson.html">④ 차시별 지도안</a>
+  <a class="on" href="eval.html">⑤ 평가계획</a>
+  <a href="notice.html">⑥ 훈련생 안내문</a>
+</div>
+
+<!-- ═══════ 1 ═══════ -->
+<h2>1. 평가 방법 및 비중</h2>
+
+<table>
+  <tr>
+    <th style="width:34px">No</th>
+    <th style="width:132px">평가 방법</th>
+    <th style="width:50px">비중</th>
+    <th style="width:62px">평가시간<br>(h)</th>
+    <th style="width:120px">시기 (차시)</th>
+    <th>평가 내용 · 문항 구성</th>
+    <th style="width:190px">평가 도구 · 증빙</th>
+    <th style="width:128px">평가 대상<br>능력단위요소</th>
+  </tr>
+  <tr>
+    <td class="no">1</td>
+    <td class="nm">문제해결시나리오<br>(내부평가)</td>
+    <td>100%</td>
+    <td>8.0</td>
+    <td class="cs">25 ~ 28차시<br>2026-07-21</td>
+    <td class="l">채점표 ① 공공데이터 융합 기초 5항목 30점 + 채점표 ② 공공데이터 융합 DBMS 구축 5항목 70점 · 조별로 직접 확보한 공공데이터로 모델 학습 → API 서비스 → 풀스택 통합까지 수행</td>
+    <td class="l">학생 제출용 문제지 · PPT(실행화면 캡처 포함) · 소스 폴더 01 / 02 / 03 · GitHub 저장소 링크</td>
+    <td class="l">공공데이터 융합 기초<br>공공데이터 융합 DBMS 구축</td>
+  </tr>
+  <tr class="tot">
+    <th colspan="2">합계</th>
+    <td>100%</td>
+    <td>8.0</td>
+    <td colspan="4">✔ 비중 합계 100% · 평가 시간 합계 8시간 (훈련시간 포함)</td>
+  </tr>
+</table>
+
+<p class="fn">
+  본 교과목의 평가는 능력단위 종료 시점에 <b>1회 일괄</b>로 실시합니다.
+  형성평가 · 지필평가 · 별도 실습과제를 두지 않으며, 차시마다 제출하는 산출물은
+  ③주차별계획의 「평가 · 과제」 열에 적힌 <b>중간 산출물</b>로서 성적에 직접 반영하지 않고 평가 당일 제출물의 근거 자료로 씁니다.
+</p>
+
+<!-- ═══════ 2 ═══════ -->
+<h2>2. 채점표 ① 공공데이터 융합 기초 <span>30점 · 5항목 × 6점</span></h2>
+
+<table>
+  <tr>
+    <th style="width:42px">번호</th>
+    <th>채점 기준</th>
+    <th style="width:50px">배점</th>
+    <th style="width:78px">성취기준</th>
+    <th style="width:78px">문제지<br>항목</th>
+  </tr>
+  <tr>
+    <td class="no">01</td>
+    <td class="l">공공데이터포털(data.go.kr)에서 분석 목적에 적합한 행 단위 CSV 를 확보하고, 출처 · 제공기관 · 건수 · 이용허락범위를 명시했는가</td>
+    <td>6</td><td>1.1 · 1.3</td><td>1 · 3</td>
+  </tr>
+  <tr>
+    <td class="no">02</td>
+    <td class="l">데이터의 구조(행 · 열)와 각 컬럼의 유형 · 척도(명목 / 비율 등)를 파악하여 분석 가능 여부를 판단했는가</td>
+    <td>6</td><td>1.2</td><td>2</td>
+  </tr>
+  <tr>
+    <td class="no">03</td>
+    <td class="l">품질 진단을 수행했는가 (결측치 건수, 범주 개수, 표기 불일치, 희소 범주 등을 수치로 제시)</td>
+    <td>6</td><td>1.4</td><td>4</td>
+  </tr>
+  <tr>
+    <td class="no">04</td>
+    <td class="l">분석 목적에 맞는 이진 타겟을 정의하고 그 기준을 근거와 함께 서술했는가</td>
+    <td>6</td><td>1.5</td><td>5</td>
+  </tr>
+  <tr>
+    <td class="no">05</td>
+    <td class="l">데이터 누수가 되는 컬럼(타겟 구성요소 · 사후 결과값)을 식별해 제외하고, 남긴 독립변수의 선정 근거를 서술했는가</td>
+    <td>6</td><td>1.5</td><td>5</td>
+  </tr>
+  <tr class="sum">
+    <th colspan="2">소계</th><td>30</td><td colspan="2">1.1 ~ 1.5</td>
+  </tr>
+</table>
+
+<!-- ═══════ 3 ═══════ -->
+<h2>3. 채점표 ② 공공데이터 융합 DBMS 구축 <span>70점 · 5항목 × 14점</span></h2>
+
+<table>
+  <tr>
+    <th style="width:42px">번호</th>
+    <th>채점 기준</th>
+    <th style="width:50px">배점</th>
+    <th style="width:78px">성취기준</th>
+    <th style="width:78px">문제지<br>항목</th>
+  </tr>
+  <tr>
+    <td class="no">01</td>
+    <td class="l">데이터를 정제 · 가공하고(인코딩 · 파생변수 · 희소범주 처리 등) 클래스 분포를 고려해 8 대 2 로 분할한 뒤 모델을 학습시켰는가. 성능지표(정확도 · ROC-AUC · Precision · Recall)를 출력하고 지표 선택의 근거를 서술했는가</td>
+    <td>14</td><td>2.1</td><td>6</td>
+  </tr>
+  <tr>
+    <td class="no">02</td>
+    <td class="l">학습한 모델을 model.pkl 로, 입력 정의를 feature_spec.json(name · label · kind · options)으로 저장했는가. 저장 환경의 라이브러리 버전이 서비스 환경과 일치하는가</td>
+    <td>14</td><td>2.2</td><td>7</td>
+  </tr>
+  <tr>
+    <td class="no">03</td>
+    <td class="l">FastAPI 로 /health · /spec · /predict 를 구현하여 예측 결과(라벨 · 확률)를 반환하는가. 잘못된 요청 · 없는 자원에 대한 오류 처리(404 등)가 되는가</td>
+    <td>14</td><td>2.3</td><td>8</td>
+  </tr>
+  <tr>
+    <td class="no">04</td>
+    <td class="l">예측 이력을 DB 에 저장하고 생성 · 조회 · 수정 · 삭제(CRUD)가 모두 동작하는가. 특히 수정 시 새 입력으로 재예측되어 결과가 갱신되는가</td>
+    <td>14</td><td>2.4</td><td>9</td>
+  </tr>
+  <tr>
+    <td class="no">05</td>
+    <td class="l">docker compose 로 DB · Redis · ML · 서버 · 화면 컨테이너가 통합 기동되고, 로그인해야 예측이 가능하며, 입력 화면이 feature_spec 기반으로 자동 생성되는가</td>
+    <td>14</td><td>2.5 · 2.6</td><td>10 · 11</td>
+  </tr>
+  <tr class="sum">
+    <th colspan="2">소계</th><td>70</td><td colspan="2">2.1 ~ 2.6</td>
+  </tr>
+</table>
+
+<div class="note warn">
+  <b class="t">채점표와 세부 루브릭의 관계</b>
+  위 두 채점표는 <b>평가도구 HWP 제출용</b> 구분입니다. 채점표 ② 는 다섯 항목이지만
+  성취기준은 여섯 개이며, <b>2.6 「구축한 서비스의 동작을 검증하고 분석 결과를 해석 · 설명할 수 있다」</b> 가
+  05 항목 안에 묻혀 있습니다.
+  아래 4절의 세부 루브릭은 <b>학생 제출용 문제지의 11항목</b> 을 따르므로 2.6 이 독립 항목(11번 10점)으로 살아납니다.
+  <b>채점은 4절의 11항목으로 매기고, 그 결과를 위 채점표의 배점으로 합산해 HWP 에 옮겨 적습니다.</b>
+  두 방식의 합계는 모두 30점 + 70점 = 100점으로 같습니다.
+</div>
+
+<!-- ═══════ 4 ═══════ -->
+<h2>4. 세부 채점 루브릭 <span>학생 제출용 문제지 11항목 기준 · 100점</span></h2>
+
+<table class="rb">
+  <tr>
+    <th style="width:30px">#</th>
+    <th style="width:118px">평가 항목</th>
+    <th style="width:42px">배점</th>
+    <th style="width:24%">우수 (90 ~ 100%)</th>
+    <th style="width:24%">보통 (70 ~ 89%)</th>
+    <th style="width:24%">미흡 (~ 69%)</th>
+    <th style="width:62px">성취<br>기준</th>
+    <th style="width:96px">채점 근거</th>
+  </tr>
+
+  <tr>
+    <td class="no">1</td>
+    <td class="nm">공공데이터<br>검색 · 확보</td>
+    <td>5</td>
+    <td class="g">포털에서 행 단위 CSV 를 직접 확보하고, 분석 목적과 데이터의 대응 관계를 선정 이유로 서술했다</td>
+    <td class="g">행 단위 CSV 를 확보했으나 선정 이유가 형식적이다</td>
+    <td class="g">집계 데이터를 골랐거나 포털 외의 출처를 썼다</td>
+    <td>1.1</td>
+    <td class="g">문제지 · CSV 파일</td>
+  </tr>
+  <tr class="x">
+    <td class="no">2</td>
+    <td class="nm">구조 · 유형 ·<br>척도 파악</td>
+    <td>5</td>
+    <td class="g">행과 열의 규모를 제시하고 모든 컬럼의 자료형과 척도를 판별해 분석 가능 여부를 판단했다</td>
+    <td class="g">구조는 제시했으나 척도 구분이 일부 누락되었다</td>
+    <td class="g">컬럼 목록만 나열하고 유형 · 척도 판단이 없다</td>
+    <td>1.2</td>
+    <td class="g">문제지 · 노트북</td>
+  </tr>
+  <tr>
+    <td class="no">3</td>
+    <td class="nm">출처 · 제공기관 ·<br>갱신주기 ·<br>이용허락범위</td>
+    <td>5</td>
+    <td class="g">네 항목을 모두 명시하고 데이터셋 식별번호까지 적었다</td>
+    <td class="g">출처와 제공기관은 적었으나 갱신주기 또는 이용허락범위가 빠졌다</td>
+    <td class="g">출처 표기가 없거나 포털 주소만 적었다</td>
+    <td>1.3</td>
+    <td class="g">문제지</td>
+  </tr>
+  <tr class="x">
+    <td class="no">4</td>
+    <td class="nm">품질 진단</td>
+    <td>10</td>
+    <td class="g">결측치 건수와 비율 · 표기 불일치 · 희소 범주를 수치로 제시하고 정제 방향을 항목별로 세웠다</td>
+    <td class="g">결측치는 수치로 제시했으나 표기 불일치 · 희소 범주 진단이 얕다</td>
+    <td class="g">품질 문제를 문장으로만 언급하고 수치 근거가 없다</td>
+    <td>1.4</td>
+    <td class="g">문제지 · 노트북</td>
+  </tr>
+  <tr>
+    <td class="no">5</td>
+    <td class="nm">타겟 정의 ·<br>독립변수 선별</td>
+    <td>5</td>
+    <td class="g">이진 타겟의 기준을 근거와 함께 서술하고, 누수 컬럼을 식별해 제외한 이유를 컬럼별로 밝혔다</td>
+    <td class="g">타겟은 정의했으나 누수 컬럼 배제 근거가 일반론에 머문다</td>
+    <td class="g">타겟 기준이 불명확하거나 누수 컬럼이 독립변수에 남아 있다</td>
+    <td>1.5</td>
+    <td class="g">문제지 · 노트북</td>
+  </tr>
+
+  <tr class="sum">
+    <th colspan="2">공공데이터 융합 기초 — 소계</th>
+    <td>30</td>
+    <td colspan="3">채점표 ① 01 ~ 05 (각 6점) 으로 합산</td>
+    <td colspan="2">1.1 ~ 1.5</td>
+  </tr>
+
+  <tr>
+    <td class="no">6</td>
+    <td class="nm">정제 · 가공하여<br>분석 가능한<br>형태로 구축</td>
+    <td>15</td>
+    <td class="g">결측 · 희소 범주 · 인코딩을 모두 처리하고, 클래스 분포를 유지한 8 대 2 분할과 학습을 마쳤으며 지표 선택 근거를 서술했다</td>
+    <td class="g">정제와 학습은 마쳤으나 층화 분할이 빠졌거나 지표 선택 근거가 약하다</td>
+    <td class="g">정제가 불완전해 학습이 되지 않거나 분할 없이 전체로 학습했다</td>
+    <td>2.1</td>
+    <td class="g">노트북 · 실행 결과</td>
+  </tr>
+  <tr class="x">
+    <td class="no">7</td>
+    <td class="nm">모델 ·<br>입력정의서 저장</td>
+    <td>10</td>
+    <td class="g">model.pkl 과 feature_spec.json 을 규격대로 저장하고 학습 · 서비스 환경의 라이브러리 버전을 일치시켰다</td>
+    <td class="g">두 파일을 저장했으나 입력 정의서의 항목이 일부 빠졌거나 버전이 어긋난다</td>
+    <td class="g">모델만 저장하고 입력 정의서가 없다</td>
+    <td>2.2</td>
+    <td class="g">01 / 02 폴더</td>
+  </tr>
+  <tr>
+    <td class="no">8</td>
+    <td class="nm">모델 API 서비스</td>
+    <td>10</td>
+    <td class="g">/health · /spec · /predict 가 모두 동작하고 라벨과 확률을 반환하며, 잘못된 요청과 없는 자원에 오류를 반환한다</td>
+    <td class="g">예측은 되나 상태 · 입력 정의 엔드포인트가 없거나 오류 처리가 없다</td>
+    <td class="g">API 가 기동되지 않거나 예측이 실패한다</td>
+    <td>2.3</td>
+    <td class="g">02 폴더 · 문서 화면</td>
+  </tr>
+  <tr class="x">
+    <td class="no">9</td>
+    <td class="nm">예측 이력 CRUD</td>
+    <td>15</td>
+    <td class="g">생성 · 조회 · 수정 · 삭제가 모두 동작하고, 수정 시 새 입력으로 재예측되어 결과가 갱신된다</td>
+    <td class="g">네 동작이 되나 수정이 값만 덮어쓰고 재예측되지 않는다</td>
+    <td class="g">이력이 저장되지 않거나 일부 동작이 빠졌다</td>
+    <td>2.4</td>
+    <td class="g">02 / 03 폴더 · 캡처</td>
+  </tr>
+  <tr>
+    <td class="no">10</td>
+    <td class="nm">컨테이너 통합 ·<br>인증</td>
+    <td>10</td>
+    <td class="g">다섯 컨테이너가 한 번에 기동되고, 로그인해야 예측이 가능하며, 입력 화면이 입력 정의서로 자동 생성된다</td>
+    <td class="g">통합 기동은 되나 인증이 적용되지 않거나 입력 화면이 하드코딩되어 있다</td>
+    <td class="g">컨테이너가 개별로만 실행되거나 화면이 서버에 연결되지 않는다</td>
+    <td>2.5</td>
+    <td class="g">03 폴더 · 캡처</td>
+  </tr>
+  <tr class="x">
+    <td class="no">11</td>
+    <td class="nm">동작 검증 ·<br>결과 해석</td>
+    <td>10</td>
+    <td class="g">실행화면을 단계별로 캡처하고, 예측 결과를 품질 진단에서 도출한 인사이트와 대조해 해석했다</td>
+    <td class="g">캡처는 갖췄으나 결과 해석이 수치 나열에 그친다</td>
+    <td class="g">캡처가 일부 없거나 결과 해석이 없다</td>
+    <td>2.6</td>
+    <td class="g">PPT · 실행화면</td>
+  </tr>
+
+  <tr class="sum">
+    <th colspan="2">공공데이터 융합 DBMS 구축 — 소계</th>
+    <td>70</td>
+    <td colspan="3">채점표 ② 01 ~ 05 (각 14점) 으로 합산</td>
+    <td colspan="2">2.1 ~ 2.6</td>
+  </tr>
+  <tr class="tot">
+    <th colspan="2">배점 합계</th>
+    <td>100</td>
+    <td colspan="5">✔ 100점 만점 · 채점표 ① 30점 + ② 70점과 일치</td>
+  </tr>
+</table>
+
+<!-- ═══════ 5 ═══════ -->
+<h2>5. 이수 · 재평가 기준</h2>
+
+<table>
+  <tr>
+    <th style="width:150px">훈련유형</th>
+    <th style="width:200px">출석 기준</th>
+    <th style="width:190px">성적 기준</th>
+    <th>재평가 · 보충</th>
+  </tr>
+  <tr>
+    <td class="el">일반 국비<br>(계좌제)<small>본 교과목 해당</small></td>
+    <td class="l">교과 출석률 <b>80% 이상</b><br>(교과 총출석 기준 준용)</td>
+    <td class="l"><b>종합 60점 이상</b><br>100점 만점 기준</td>
+    <td class="l">60점 미만 또는 평가 미참여 시 보충학습 후 <b>재평가 1회</b>.
+      재평가 일정은 교무와 협의해 정하고 훈련생에게 사전 안내합니다.</td>
+  </tr>
+  <tr>
+    <td class="el">과정평가형</td>
+    <td class="l" colspan="3">해당 없음 — 본 교과목은 <b>비NCS 자체 개발 교과목</b>이므로 과정평가형 능력단위별 내부평가 대상이 아닙니다.</td>
+  </tr>
+  <tr>
+    <td class="el">KDT</td>
+    <td class="l" colspan="3">해당 없음</td>
+  </tr>
+</table>
+
+<div class="note">
+  <b class="t">결시 처리</b>
+  평가가 8시간 1회이고 비중이 100% 이므로, 평가일에 결석하면 취득 점수가 없습니다.
+  <b>결석자평가일을 사전에 지정</b>하여 ⑥훈련생 안내문과 평가 모듈 목록에 함께 표기해야 합니다.
+  다음 교과목(공공데이터 융합 실무 프로젝트)이 이어지므로, 결석자평가는 본 평가 다음 훈련일에 실시하는 것을 원칙으로 합니다.
+</div>
+
+<!-- ═══════ 6 ═══════ -->
+<h2>6. 데이터 선정 기준 <span>평가 전 승인 절차</span></h2>
+
+<p class="fn" style="margin:0 0 10px">
+  조별로 <b>서로 다른 데이터</b>를 직접 검색해 고릅니다. 예시로 쓰인 데이터는 사용할 수 없습니다.
+  3차시(데이터 선정서 제출) 시점에 강사가 아래 기준으로 확인하고 승인합니다.
+</p>
+
+<table>
+  <tr>
+    <th style="width:96px">구분</th>
+    <th style="width:300px">기준</th>
+    <th>확인 방법 · 사례</th>
+  </tr>
+  <tr>
+    <td class="el">필수</td>
+    <td class="l">행 단위 데이터일 것 (한 줄 = 한 사건 · 한 건)</td>
+    <td class="l">통계 · 집계 데이터는 학습할 수 없습니다</td>
+  </tr>
+  <tr>
+    <td class="el">필수</td>
+    <td class="l">이진 타겟을 만들 수 있을 것</td>
+    <td class="l">적합 / 부적합, 사고 유무처럼 데이터에 이미 있거나, 연속값을 중앙값으로 나눠 만들 수 있어야 합니다</td>
+  </tr>
+  <tr>
+    <td class="el">필수</td>
+    <td class="l">공공데이터포털(data.go.kr) 에서 받은 CSV 일 것</td>
+    <td class="l">데이터셋 식별번호를 문제지에 적습니다</td>
+  </tr>
+  <tr>
+    <td class="el">탈락</td>
+    <td class="l">타겟으로 삼을 결과 컬럼이 없는 경우</td>
+    <td class="l">접수 · 신고 현황처럼 결과가 기록되지 않은 데이터</td>
+  </tr>
+  <tr>
+    <td class="el">탈락</td>
+    <td class="l">소수 클래스가 지나치게 적은 경우</td>
+    <td class="l">양성이 수 건에 그치면 학습 · 검증이 되지 않습니다</td>
+  </tr>
+  <tr>
+    <td class="el">탈락</td>
+    <td class="l">파일이 과대하거나 이진 타겟이 불명확한 경우</td>
+    <td class="l">수십 MB · 100열 이상은 실습 시간 안에 다루기 어렵습니다</td>
+  </tr>
+  <tr>
+    <td class="el">탈락</td>
+    <td class="l">규모가 부족한 경우</td>
+    <td class="l">지자체 단위 데이터는 수십 행 이하가 많습니다</td>
+  </tr>
+  <tr>
+    <td class="el">주의</td>
+    <td class="l">데이터 누수 위험이 있는 컬럼을 확인할 것</td>
+    <td class="l">타겟을 구성하는 컬럼과 사건 종료 후 확정되는 사후 결과값은 독립변수에서 제외합니다.
+      성능이 비정상적으로 높으면(ROC-AUC 0.99 등) 누수를 의심하고 점검합니다</td>
+  </tr>
+</table>
+
+<p class="fn">
+  <span class="chk">✔</span> 비중 합계 100% · 평가시간 8.0시간 — ③주차별계획의 평가 차시와 일치<br>
+  <span class="chk">✔</span> 배점 합계 100점 — ②성취기준 매핑표의 요소별 배점 30 + 70 과 일치<br>
+  <span class="chk">✔</span> 성취기준 1.1 ~ 2.6 열한 개가 모두 채점 항목에 대응 — 누락 없음
+</p>
+
+<div class="note">
+  <b class="t">작성 요령</b>
+  채점 기준 문장은 <b>평가도구(내부평가 채점기준)</b> 의 정답 항목을 그대로 옮긴 것입니다.
+  루브릭의 등급 서술은 본 계획서에서 새로 작성했으며, 채점 시 세 등급 가운데 하나를 고르고
+  해당 항목 배점에 등급 비율을 곱해 득점을 산출합니다.
+  채점 근거 열의 산출물이 없으면 그 항목은 <b>미흡</b> 으로 판정합니다.
+</div>
+
+<footer>
+  공공데이터 융합 DBMS 구축 · 56시간 · 문제해결시나리오 100점 · 담당 정우균 ·
+  (디지털컨버전스) 공공데이터 융합 풀스택 개발자 양성과정E<br>
+  채점 기준은 평가도구(내부평가 채점기준)를 따랐습니다. 일반 국비(계좌제) 훈련유형 기준으로 작성했습니다.
+</footer>
+
+</div>
