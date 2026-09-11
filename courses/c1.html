@@ -87,14 +87,14 @@
       var gu = GUIDE[m.id];
       var gbtn = (gu && !shut)
         ? '<a class="btn" href="../'+esc(gu)+'">가이드</a>'
-        : '<a class="btn d">가이드</a>';
+        : '<span class="non">—</span>';
       var btn = (pg && !shut)
         ? '<a class="btn" href="../'+esc(pg)+'">평가내역</a>'
         : '<a class="btn d">평가내역</a>';
       var pl = PLAN[m.id];
       var pcell = adm
         ? '<td class="tdb sc">'+(pl ? '<a class="btn" href="../'+esc(pl)+'">계획서</a>'
-                                    : '<a class="btn d">계획서</a>')+'</td>'
+                                    : '<span class="non">—</span>')+'</td>'
         : '';
       var tools = adm
         ? '<button class="lk'+(lk?' on':'')+'" data-m="'+esc(m.id)+'" type="button">'+

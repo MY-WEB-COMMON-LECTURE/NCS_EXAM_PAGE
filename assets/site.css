@@ -109,6 +109,7 @@ tr.open td.nm .mlink{border-bottom-width:2px;font-weight:700}
 
 /* 모듈 표 CRUD */
 .tdb{white-space:nowrap}
+.non{color:#bbb}          /* 해당 사항이 없는 칸 */
 .tdb .btn{margin-right:3px}
 .med2,.mdel{border:1px solid #000;background:#fff;color:#000;font-size:11px;
             padding:1px 6px;cursor:pointer;font-family:inherit;margin-left:3px;display:none}
