@@ -38,8 +38,8 @@
             ['page','평가내역','text']];
   var editing=-1;
 
-  var GUIDE={ m01:'guides/m01.html', m16:'guides/m16.html' };   // 준비 가이드가 있는 모듈
-  var PLAN ={ m16:'plan/m16/index.html' };        // 운영계획서가 있는 모듈 (관리자 전용)
+  var GUIDE={ m01:'guides/m01.html', m02:'guides/m02.html', m03:'guides/m03.html', m04:'guides/m04.html', m05:'guides/m05.html', m06:'guides/m06.html', m07:'guides/m07.html', m08:'guides/m08.html', m09:'guides/m09.html', m10:'guides/m10.html', m11:'guides/m11.html', m12:'guides/m12.html', m16:'guides/m16.html' };   // 준비 가이드가 있는 모듈
+  var PLAN ={ m01:'plan/m01/index.html', m02:'plan/m02/index.html', m03:'plan/m03/index.html', m04:'plan/m04/index.html', m05:'plan/m05/index.html', m06:'plan/m06/index.html', m07:'plan/m07/index.html', m08:'plan/m08/index.html', m09:'plan/m09/index.html', m10:'plan/m10/index.html', m11:'plan/m11/index.html', m12:'plan/m12/index.html', m16:'plan/m16/index.html' };   // 운영계획서가 있는 모듈 (관리자 전용)
   function base(){ return (window.EXAM_MODULES||[]).slice(); }
   function list(){
     try{ var d=localStorage.getItem(MKEY); if(d) return JSON.parse(d); }catch(e){}

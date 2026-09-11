@@ -10,7 +10,7 @@
  *   4. 본문 전체를 AES-256-GCM 으로 암호화합니다
  *   5. 껍데기 HTML(잠금 화면 + 암호문)만 내보냅니다
  *
- * 배포본에 평문으로 남는 것은 site.css 와 gate.js 뿐이고, 둘 다 내용이 없습니다.
+ * 배포본에 평문으로 남는 것은 site.css 와 guide.css 와 gate.js 뿐이고, 셋 다 판면 규칙만 있습니다.
  * 비밀번호는 어디에도 저장하지 않습니다. 바꾸려면 다시 빌드하면 됩니다.
  */
 import { readFileSync, writeFileSync, mkdirSync, readdirSync, statSync, rmSync, existsSync } from 'node:fs';
@@ -212,6 +212,7 @@ async function main() {
 
   mkdirSync(join(OUT, 'assets'), { recursive: true });
   writeFileSync(join(OUT, 'assets/site.css'), readFileSync(join(ROOT, 'assets/site.css')));
+  writeFileSync(join(OUT, 'assets/guide.css'), readFileSync(join(ROOT, 'assets/guide.css')));
   writeFileSync(join(OUT, 'assets/gate.js'), readFileSync(join(ROOT, 'assets/gate.js')));
   writeFileSync(join(OUT, 'assets/auth.js'), AUTH_SHIM);
   writeFileSync(join(OUT, '.nojekyll'), '');
